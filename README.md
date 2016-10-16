@@ -1,24 +1,31 @@
-# README
+# Anna and Ryan Sitting in a Tree README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the application for AnnaAndRyanSittingInATree.com, the central information source for those friends and family invited to celebrate the wedding of Anna Birinyi and Ryan Wallace.
 
-Things you may want to cover:
+* Ruby version: 2.3.1
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get started with the app, clone the repo and then install the needed gems:
 
-* Configuration
+```
+$ bundle install --without production
+```
 
-* Database creation
+Next, migrate the database:
 
-* Database initialization
+```
+$ rails db:migrate
+```
 
-* How to run the test suite
+Finally, run the test suite to verify that everything is working correctly:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails test
+```
 
-* Deployment instructions
+If the test suite passes, you'll be ready to run the app in a local server:
 
-* ...
+```
+$ rails server
+```
