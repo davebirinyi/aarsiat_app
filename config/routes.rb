@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-
-  get 'static_pages/savedate'
-
-  root 'application#savedate'
+  root 'static_pages#savedate'
+  get  'static_pages/savedate'
+  get  'static_pages/home'
 end
