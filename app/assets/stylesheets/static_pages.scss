@@ -2,9 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+@font-face {
+  font-family: "WesleyPosterJF";
+  src: font-url("WesleyPosterJF.tff") format("truetype");
+}
+
 body, html, main {
   height: 100%;
-  font-family: "WesleyPosterJF.tff", Arial, Sans-serif;
+  font-family: "WesleyPosterJF", Arial, sans-serif;
+  color: #4B3E38;
 }
 
 .fixed-bg1 {
@@ -28,10 +35,39 @@ body, html, main {
   background-color: white;
 }
 
-.text-container {
+.text-container1 {
   display: block;
   margin: auto;
   padding-top: 2%;
   justify-content: center;
   height:100%; width:33%;
+}
+
+.text-container2 {
+  display: block;
+  margin: auto;
+  padding-top: 2%;
+  justify-content: center;
+  height:100%; width:auto;
+}
+
+.text-lrg {
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  margin: .5em; 
+}
+
+.text-med {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  margin: .75em; 
+}
+
+.text-sml {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin: 3em; 
 }
