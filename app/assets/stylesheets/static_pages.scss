@@ -1,3 +1,37 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html, main {
+  height: 100%;
+  font-family: "WesleyPosterJF.tff", Arial, Sans-serif;
+}
+
+.fixed-bg1 {
+  margin: 2%;
+  padding: 0;
+  max-height: 90%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
+}
+.fixed-bg2 {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: white;
+}
+
+.text-container {
+  display: block;
+  margin: auto;
+  padding-top: 2%;
+  justify-content: center;
+  height:100%; width:33%;
+}
