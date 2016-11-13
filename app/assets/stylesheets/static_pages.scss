@@ -17,7 +17,7 @@ body, html, main {
 .fixed-bg1 {
   margin: 2%;
   padding-bottom: 0;
-  min-height: 92%;
+  height: 92%;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@ body, html, main {
 
 #forest {
   display: flex;
-  max-width: 33%;
+  max-width: 99%;
   max-height: 99%;
   justify-content: center;
   align-items: center;
@@ -85,22 +85,14 @@ body, html, main {
 // Mobile
 
 @media only screen and (max-width: 1024px) {
-  .fixed-bg1 {
-  margin: 2%;
-  padding: 0;
-  min-height: 92%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-image: image-url("2016.11.12.greentrees.sizedbg.589x768.jpg");
-}
-  #forest {
-  display: flex;
-  max-width: 66%;
-  max-height: 99%;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
+    .fixed-bg1 {
+    margin: 2%;
+    padding: 0;
+    min-height: 92%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: image-url("2016.11.12.greentrees.sizedbg.589x768.jpg");
+  }
 }
