@@ -14,7 +14,7 @@ body, html, main {
   color: #4B3E38;
 }
 
-.fixed-bg1 {
+.savedate-fixed-bg1 {
   margin: 2%;
   padding-bottom: 0;
   height: 92%;
@@ -24,7 +24,7 @@ body, html, main {
   background-position: center center;
   background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
 }
-.fixed-bg2 {
+.savedate-fixed-bg2 {
   margin: 0;
   padding-top: 20%;
   min-height: 99%;
@@ -35,7 +35,7 @@ body, html, main {
   background-color: white;
 }
 
-.text-container1 {
+.savedate-text-container1 {
   display: block;
   margin: auto;
   padding-top: 2%;
@@ -43,7 +43,7 @@ body, html, main {
   height:100%; width:auto;
 }
 
-#forest {
+#savedate-forest {
   display: flex;
   max-width: 99%;
   max-height: 99%;
@@ -52,7 +52,7 @@ body, html, main {
   margin: auto;
 }
 
-.text-container2 {
+.savedate-text-container2 {
   display: block;
   margin: auto;
   padding-top: 2%;
@@ -60,21 +60,21 @@ body, html, main {
   height:100%; width:auto;
 }
 
-.text-lrg {
+.savedate-text-lrg {
   font-size: 4em;
   display: flex;
   justify-content: center;
   margin: .5em; 
 }
 
-.text-med {
+.savedate-text-med {
   font-size: 2.5em;
   display: flex;
   justify-content: center;
   margin: .75em; 
 }
 
-.text-sml {
+.savedate-text-sml {
   font-size: 1.5em;
   display: flex;
   justify-content: center;
@@ -85,7 +85,7 @@ body, html, main {
 // Mobile
 
 @media only screen and (max-width: 1024px) {
-    .fixed-bg1 {
+    .savedate-fixed-bg1 {
     margin: 2%;
     padding: 0;
     min-height: 92%;
