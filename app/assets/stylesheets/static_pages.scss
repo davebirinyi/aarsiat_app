@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-@font-face {
-  font-family: "WesleyPosterJF";
-  src: font-url("WesleyPosterJF.tff") format("truetype");
-}
 
 
 body, html, main {
@@ -14,6 +10,12 @@ body, html, main {
   margin: 0;
 }
 
+// ############################ MOBILE ORIENTATION ############################
+// This site is designed to be MOBILE-FIRST. Below are the default stylings,
+// intended for initial mobile renders. (The Desktop Orientation section can be
+// found further down this file.)
+
+// HOME PAGE - Mobile Orientation
 
 .dumbojumbo {
   font-size: 16em;
@@ -99,10 +101,10 @@ body, html, main {
 
 
 
-// SAVEDATE PAGE
+// SAVEDATE PAGE - Mobile Orientation
 
 #savedate-wholepage {
-  font-family: "WesleyPosterJF", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   color: #4B3E38;
   height: 100%;
   margin: 0;
@@ -116,7 +118,7 @@ body, html, main {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
+  background-image: image-url("2016.11.12.greentrees.sizedbg.589x768.jpg");
 }
 .savedate-fixed-bg2 {
   margin: 0;
@@ -176,9 +178,15 @@ body, html, main {
 }
 
 
-// SAVEDATE PAGE Mobile
+// ########################### DESKTOP ORIENTATION ############################
+// This site is designed to be MOBILE-FIRST. Below are the explicit adjustments
+// necessary for larger desktop renders. (Mobile Orientation section is above.)
 
-@media only screen and (max-width: 1024px) {
+// HOME PAGE - Desktop Orientation
+
+// SAVEDATE PAGE - Desktop Orientation
+
+@media only screen and (min-width: 1024px) {
     .savedate-fixed-bg1 {
     margin: 2%;
     padding: 0;
@@ -187,6 +195,6 @@ body, html, main {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: image-url("2016.11.12.greentrees.sizedbg.589x768.jpg");
+    background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
   }
 }
