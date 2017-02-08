@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
 body, html, main {
   height: 100%;
   margin: 0;
@@ -14,76 +11,93 @@ body, html, main {
 // This site is designed to be MOBILE-FIRST. Below are the default stylings,
 // intended for initial mobile renders. (The Desktop Orientation section can be
 // found further down this file.)
+//
+// ------------------------------ COLOR PALETTE: ------------------------------
+
+// Bondi Blue ---------------------- #008DB8
+// Kelp Gray ----------------------- #4B4F40
+// Mantis Green -------------------- #7EBF59
+
+// ---------------------------- Table of Contents: ----------------------------
+// 
+// ---------------------------- HOME PAGE - Mobile ----------------------------
+// ---- CLASS DEFINITIONS
+// -------- .section_header
+// -------- .mid_section_splash_text
+// 
+// ---- ID DEFINITIONS
+// -------- #welcome_splash
+// -------- #intro
+// -------- #rsvp
+// -------- #lodging
+// -------- #schedule
+// -------- #activities
+// -------- #venue
+// -------- #registry
+// -------- #directions
+// -------- #contact
+// 
+// ---------------------------- SAVEDATE - Mobile -----------------------------
+// ---- CLASS DEFINITIONS
+// -------- .savedate-fixed-bg1
+// -------- .savedate-fixed-bg2
+// -------- .savedate-text-container1
+// -------- .savedate-text-container2
+// -------- .savedate-text-lrg
+// -------- .savedate-text-med
+// -------- .savedate-text-sml
+// 
+// ----- ID DEFINITIONS
+// -------- #savedate-wholepage
+// -------- #savedate-forest
+// 
+// ---------------------------- HOME PAGE - Desktop ---------------------------
+// -------- .section_container
+// 
+// ---------------------------- SAVEDATE - Desktop ----------------------------
+// -------- .savedate-fixed-bg1
 
 
 // HOME PAGE - Mobile Orientation
+// ---- HOME PAGE CLASS DEFINITIONS
 
-.dumbojumbo {
-  font-size: 16em;
-  margin: 0;
+.section_header {
+
 }
-
-
-
-#welcome_splash {
+.section_container {
   margin: 0;
   padding-bottom: 0;
   height: 100%;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   background-position: center center;
-  // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
-  background-color: green;
+  background-color: #fff;
+}
+.mid_section_splash_text {
+
+}
+
+// ---- HOME PAGE ID DEFINITIONS
+
+#welcome_splash {
+
 }
 #intro {
-  margin: 0;
-  min-height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: white;
+  height: 50%;
+  background-color: #aaa;
 }
 #rsvp {
-  margin: 0;
-  height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
   // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
-  background-color: green;
 }
 #lodging {
-  margin: 0;
-  height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-  // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
-  background-color: white;
+
 }
 #schedule {
-  margin: 0;
-  height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-  // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
-  background-color: green;
+
 }
 #activities {
-  margin: 0;
-  height: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
-  // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
-  background-color: white;
+
 }
 #venue {
 
@@ -95,7 +109,8 @@ body, html, main {
 
 }
 #contact {
-  
+  height: 50%;
+  background-color: #
 }
 
 
@@ -112,13 +127,7 @@ body, html, main {
 
 
 // SAVEDATE PAGE - Mobile Orientation
-
-#savedate-wholepage {
-  font-family: Arial, sans-serif;
-  color: #4B3E38;
-  height: 100%;
-  margin: 0;
-}
+// ---- SAVEDATE CLASS DEFINITIONS
 
 .savedate-fixed-bg1 {
   margin: 2%;
@@ -140,7 +149,6 @@ body, html, main {
   background-position: center center;
   background-color: white;
 }
-
 .savedate-text-container1 {
   display: block;
   margin: auto;
@@ -148,7 +156,40 @@ body, html, main {
   justify-content: center;
   height:100%; width:auto;
 }
+.savedate-text-container2 {
+  display: block;
+  margin: auto;
+  padding-top: 2%;
+  justify-content: center;
+  height:100%; width:auto;
+}
+.savedate-text-lrg {
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  margin: .5em; 
+}
+.savedate-text-med {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  margin: .75em; 
+}
+.savedate-text-sml {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin: 3em; 
+}
 
+// ---- SAVEDATE ID DEFINITIONS
+
+#savedate-wholepage {
+  font-family: Arial, sans-serif;
+  color: #4B3E38;
+  height: 100%;
+  margin: 0;
+}
 #savedate-forest {
   display: flex;
   max-width: 99%;
@@ -158,35 +199,6 @@ body, html, main {
   margin: auto;
 }
 
-.savedate-text-container2 {
-  display: block;
-  margin: auto;
-  padding-top: 2%;
-  justify-content: center;
-  height:100%; width:auto;
-}
-
-.savedate-text-lrg {
-  font-size: 4em;
-  display: flex;
-  justify-content: center;
-  margin: .5em; 
-}
-
-.savedate-text-med {
-  font-size: 2.5em;
-  display: flex;
-  justify-content: center;
-  margin: .75em; 
-}
-
-.savedate-text-sml {
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  margin: 3em; 
-}
-
 
 // ########################### DESKTOP ORIENTATION ############################
 // This site is designed to be MOBILE-FIRST. Below are the explicit adjustments
@@ -194,10 +206,23 @@ body, html, main {
 
 // HOME PAGE - Desktop Orientation
 
+@media only screen and (min-width: 1024px) {
+  .section_container {
+    margin: 0;
+    padding-bottom: 0;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+  }
+}
+
 // SAVEDATE PAGE - Desktop Orientation
 
 @media only screen and (min-width: 1024px) {
-    .savedate-fixed-bg1 {
+  .savedate-fixed-bg1 {
     margin: 2%;
     padding: 0;
     min-height: 92%;
