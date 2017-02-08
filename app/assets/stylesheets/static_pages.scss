@@ -2,25 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body, html, main {
-  height: 100%;
-  margin: 0;
-}
 
-// ############################ MOBILE ORIENTATION ############################
-// This site is designed to be MOBILE-FIRST. Below are the default stylings,
-// intended for initial mobile renders. (The Desktop Orientation section can be
-// found further down this file.)
-//
+
+
 // ------------------------------ COLOR PALETTE: ------------------------------
 
 // Bondi Blue ---------------------- #008DB8
 // Kelp Gray ----------------------- #4B4F40
 // Mantis Green -------------------- #7EBF59
 
-// ---------------------------- Table of Contents: ----------------------------
+
+
+
+// ############################ TABLE OF CONTENTS: ############################
+// ---------------------------- GLOBAL DEFINITIONS ----------------------------
+// -------- body, html
 // 
-// ---------------------------- HOME PAGE - Mobile ----------------------------
+// ---------------------------- HOME PAGE - MOBILE ----------------------------
 // ---- CLASS DEFINITIONS
 // -------- .section_header
 // -------- .mid_section_splash_text
@@ -37,7 +35,7 @@ body, html, main {
 // -------- #directions
 // -------- #contact
 // 
-// ---------------------------- SAVEDATE - Mobile -----------------------------
+// ---------------------------- SAVEDATE - MOBILE -----------------------------
 // ---- CLASS DEFINITIONS
 // -------- .savedate-fixed-bg1
 // -------- .savedate-fixed-bg2
@@ -51,12 +49,25 @@ body, html, main {
 // -------- #savedate-wholepage
 // -------- #savedate-forest
 // 
-// ---------------------------- HOME PAGE - Desktop ---------------------------
+// ---------------------------- HOME PAGE - DESKTOP ---------------------------
 // -------- .section_container
 // 
-// ---------------------------- SAVEDATE - Desktop ----------------------------
+// ---------------------------- SAVEDATE - DESKTOP ----------------------------
 // -------- .savedate-fixed-bg1
 
+
+// ############################ GLOBAL DEFINITIONS ############################
+// These top level definitions apply to multiple static pages.
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+// ############################ MOBILE ORIENTATION ############################
+// This site is designed to be MOBILE-FIRST. Below are the default stylings,
+// intended for initial mobile renders. (The Desktop Orientation section can be
+// found further down this file.)
 
 // HOME PAGE - Mobile Orientation
 // ---- HOME PAGE CLASS DEFINITIONS
@@ -66,35 +77,39 @@ body, html, main {
 }
 .section_container {
   margin: 0;
-  padding-bottom: 0;
+  padding: 0;
   height: 100%;
   background-size: cover;
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #fff;
+  background-color: #008DB8;
+  color: #fff;
 }
 .mid_section_splash_text {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // ---- HOME PAGE ID DEFINITIONS
 
 #welcome_splash {
-
+  background-image: image-url("anna_and_ryan-208.jpg");
+  background-position: center bottom;
 }
 #intro {
-  height: 50%;
-  background-color: #aaa;
+  height: 60%;
+  background-color: #7EBF59;
 }
 #rsvp {
-  // background-image: image-url("2016.10.19.greentrees.sizedbg.1920x1080.jpg");
+  // background-image: image-url("");
 }
 #lodging {
 
 }
 #schedule {
-
+  // background-image: image-url("");
 }
 #activities {
 
@@ -103,22 +118,15 @@ body, html, main {
 
 }
 #registry {
-
+  height: 40%;
 }
 #directions {
-
+  // background-image: image-url("");
 }
 #contact {
-  height: 50%;
-  background-color: #
+  height: 60%;
+  background-color: #4B4F40;
 }
-
-
-
-
-
-
-
 
 
 
@@ -208,14 +216,7 @@ body, html, main {
 
 @media only screen and (min-width: 1024px) {
   .section_container {
-    margin: 0;
-    padding-bottom: 0;
-    height: 100%;
-    background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #fff;
   }
 }
 
