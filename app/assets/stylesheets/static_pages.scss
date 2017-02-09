@@ -11,7 +11,12 @@
 // Kelp Gray ----------------------- #4B4F40
 // Mantis Green -------------------- #7EBF59
 
+// ------------------------------ FONT PALETTE: -------------------------------
 
+// font-family: 'Homemade Apple', cursive;
+// font-family: 'Verdana', sans-serif;
+// font-family: 'Georgia', serif;
+// font-family: 'Times New Roman', serif;
 
 
 // ############################ TABLE OF CONTENTS: ############################
@@ -21,9 +26,11 @@
 // ---------------------------- HOME PAGE - MOBILE ----------------------------
 // ---- CLASS DEFINITIONS
 // -------- .section_header
+// -------- .section_container
 // -------- .mid_section_splash_text
 // 
 // ---- ID DEFINITIONS
+// ------[SECTION HEADERS]
 // -------- #welcome_splash
 // -------- #intro
 // -------- #rsvp
@@ -64,15 +71,31 @@ body, html {
   margin: 0;
 }
 
+p {
+  font-family: 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: .8em;
+  letter-spacing: .1em;
+}
+
 // ############################ MOBILE ORIENTATION ############################
 // This site is designed to be MOBILE-FIRST. Below are the default stylings,
 // intended for initial mobile renders. (The Desktop Orientation section can be
 // found further down this file.)
 
 // HOME PAGE - Mobile Orientation
-// ---- HOME PAGE CLASS DEFINITIONS
+// ---- HOME PAGE CLASS DEFINITIONS ....
 
 .section_header {
+  font-size: 2em;
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  letter-spacing: .1em;
+  text-transform: lowercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
 
 }
 .section_container {
@@ -87,12 +110,23 @@ body, html {
   color: #fff;
 }
 .mid_section_splash_text {
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  height: inherit;
+  font-family: 'Homemade Apple', cursive;
+  font-weight: normal;
+  font-size: 1.8em;
+  letter-spacing: .1em;
 }
 
-// ---- HOME PAGE ID DEFINITIONS
+// ---- HOME PAGE ID DEFINITIONS ####
+#excited {
+  display: none;
+}
+// ------[SECTION HEADERS]
 
 #welcome_splash {
   background-image: image-url("anna_and_ryan-208.jpg");
@@ -103,7 +137,7 @@ body, html {
   background-color: #7EBF59;
 }
 #rsvp {
-  // background-image: image-url("");
+  background-image: image-url("anna_and_ryan-237.jpg");
 }
 #lodging {
 
@@ -215,8 +249,15 @@ body, html {
 // HOME PAGE - Desktop Orientation
 
 @media only screen and (min-width: 1024px) {
+  // Parallax scrolling for stronger performing machines.
   .section_container {
     background-attachment: fixed;
+  }
+
+  // A magic re-appearing div!
+  #excited {
+    display: inherit;
+    font-size: 1.2em;
   }
 }
 
