@@ -6,6 +6,9 @@
   </div>
 </div>
 <div class="section_container" id="intro">
+  <div>
+    <img src="welcome_sign.png">
+  </div>
   <p>
     We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
   </p>
@@ -15,12 +18,16 @@
   
 </div>
 <div class="section_container" id="rsvp">
-  <h2 class="section_header">
-    Répondez, S'il Vous Plaît
-  </h2>
-  
-  <p>RSVP</p>
-  
+  <div>
+    <h2 class="section_header">
+      Répondez, S'il Vous Plaît
+    </h2>
+  </div>
+  <div class="flex_center">
+    <p>
+      <%= link_to("RSVP", "#", class: "see_thru_button") %>
+    </p>
+  </div>
 </div>
 <div class="section_container" id="lodging">
   <h2 class="section_header">
@@ -41,7 +48,6 @@
   <p>
     If you are the camping type, there are also several campsite in the park. The closest being Cougar Rock. https://www.nps.gov/mora/planyourvisit/campgrounds.htm 
   </p>
-  
 </div>
 <div class="section_container" id="schedule">
   <h2 class="section_header">
@@ -59,7 +65,6 @@
     5:30pm Cocktail hour near the Gazebo
     6:30pm Reception Dinner near the Gazebo
   </p>
-  
 </div>
 <div class="section_container" id="activities">
   <h2 class="section_header">
@@ -71,7 +76,6 @@
   <p>
     Mt. Rainier is just next door and offers many things to see and do. There are trails all over the park from short child friendly ones, to longer multi-day treks. Longmire and Paradise are also two beautiful lodges on the south side of the park. http://visitrainier.com 
   </p>
-  
 </div>
 <div class="section_container" id="venue">
   <h2 class="section_header">
@@ -138,10 +142,12 @@
       We are excited to have you join us. If you have any questions don’t hesitate to contact us.
     </h3>    
   </div>
-  <p>
-    Anna 206.459.8713 or anna.birinyi@gmail.com
-  </p>
-  <p>
-    Ryan 206.659.1036 or wallace.ryan@gmail.com
-  </p>
+  <div>
+    <p class="flex_center">
+      Anna <a href="tel:+12064598713">206.459.8713</a> or <a href="mailto:anna.birinyi@gmail.com">anna.birinyi@gmail.com</a>
+    </p>
+    <p class="flex_center">
+      Ryan <a href="tel:+12066591036">206.659.1036</a> or <a href="mailto:wallace.ryan@gmail.com">wallace.ryan@gmail.com</a>
+    </p>
+  </div>
 </div>
