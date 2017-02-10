@@ -1,13 +1,37 @@
+<div id="navbar">
+  <ul class="topnav">
+    <li class="left">
+      <%= link_to(image_tag("small_tree_emblem.png", size: 52, alt: "Home")) %>  
+    </li>
+    <li >
+      <%= link_to("Venue", "#venue") %>
+    </li>
+    <li>
+      <%= link_to("Activities", "#activities") %>
+    </li>
+    <li>
+      <%= link_to("Schedule", "#schedule") %>
+    </li>
+    <li>
+      <%= link_to("Lodging", "#lodging") %>
+    </li>
+    <li>
+      <%= link_to("RSVP", "#rsvp", class: "active") %>
+    </li>
+  </ul>
+</div>
+
+
 <div class="section_container" id="welcome_splash">
-  <div class="mid_section_splash_text">
+  <div class="mid_section_splash_text" id="join_us">
     <h3>
-      We hope you will join us in the forest!
+      <span>We hope you will join us in the forest!</span>
     </h3>    
   </div>
 </div>
 <div class="section_container" id="intro">
-  <div>
-    <img src="welcome_sign.png">
+  <div class="flex_center">
+    <img src="<%= image_url("welcome_sign.png") %>" id="welcome_sign">
   </div>
   <p>
     We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
