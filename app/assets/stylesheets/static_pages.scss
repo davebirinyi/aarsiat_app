@@ -4,7 +4,6 @@
 
 
 
-
 // ------------------------------ COLOR PALETTE: ------------------------------
 
 // Mantis Green -------------------- #7EBF59
@@ -21,16 +20,12 @@
 
 // ############################ TABLE OF CONTENTS: ############################
 // ---------------------------- GLOBAL DEFINITIONS ----------------------------
-// -------- body, html
-// 
+// -------- body, html, p
+// ----------------------------- NAVBAR - MOBILE ------------------------------
+// ---- NAVBAR
 // ---------------------------- HOME PAGE - MOBILE ----------------------------
-// ---- CLASS DEFINITIONS
-// -------- .section_header
-// -------- .section_container
-// -------- .mid_section_splash_text
-// 
-// ---- ID DEFINITIONS
-// ------[SECTION HEADERS]
+// ---- CLASS
+// ---- SECTIONS
 // -------- #welcome_splash
 // -------- #intro
 // -------- #rsvp
@@ -41,31 +36,23 @@
 // -------- #registry
 // -------- #directions
 // -------- #contact
-// 
 // ---------------------------- SAVEDATE - MOBILE -----------------------------
-// ---- CLASS DEFINITIONS
-// -------- .savedate-fixed-bg1
-// -------- .savedate-fixed-bg2
-// -------- .savedate-text-container1
-// -------- .savedate-text-container2
-// -------- .savedate-text-lrg
-// -------- .savedate-text-med
-// -------- .savedate-text-sml
-// 
-// ----- ID DEFINITIONS
-// -------- #savedate-wholepage
-// -------- #savedate-forest
-// 
+// ---- CLASS
+// ---- ID
+// ----------------------------- NAVBAR - MOBILE ------------------------------
+// ---- NAVBAR
 // ---------------------------- HOME PAGE - DESKTOP ---------------------------
-// -------- .section_container
-// 
+// ---- CLASS
+// ---- SECTIONS
 // ---------------------------- SAVEDATE - DESKTOP ----------------------------
-// -------- .savedate-fixed-bg1
 
 
 // ############################ GLOBAL DEFINITIONS ############################
 // These top level definitions apply to multiple static pages.
 
+* {
+  box-sizing: border-box;
+}
 body, html {
   height: 100%;
   margin: 0;
@@ -77,6 +64,14 @@ p {
   font-size: 1.2em;
   letter-spacing: .1em;
 }
+
+// ############################ MOBILE ORIENTATION ############################
+// This site is designed to be MOBILE-FIRST. Below are the default stylings,
+// intended for initial mobile renders. (The Desktop Orientation section can be
+// found further down this file.)
+
+// ----------------------------- NAVBAR - MOBILE ------------------------------
+
 ul.topnav {
     list-style-type: none;
     margin: 0;
@@ -96,14 +91,42 @@ ul.topnav li a {
     text-decoration: none;
 }
 
+// RESPONSIVE COLUMNS
 
-// ############################ MOBILE ORIENTATION ############################
-// This site is designed to be MOBILE-FIRST. Below are the default stylings,
-// intended for initial mobile renders. (The Desktop Orientation section can be
-// found further down this file.)
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 3px 80px 80px 80px;
+}
+.col {
+  display: block;
+  float:left;
+  margin: 0%;
+}
+.col:first-child { margin-left: 0; }
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.span_2_of_2, .span_1_of_2 { width: 100%; margin-bottom: -20px;}
 
-// HOME PAGE - Mobile Orientation
-// ---- HOME PAGE CLASS DEFINITIONS ....
+@media only screen and (min-width: 1024px) {
+  .col { 
+    margin: 0% 0% 0% 4%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .span_2_of_2 {
+    width: 100%;
+  }
+  .span_1_of_2 {
+    width: 48%;
+  }
+}
+
+// ---------------------------- HOME PAGE - MOBILE ----------------------------
+
+// HOME PAGE CLASS DEFINITIONS - MOBILE
 
 .section_header {
   font-size: 2em;
@@ -114,12 +137,11 @@ ul.topnav li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
 }
 .section_container {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 125%;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -127,59 +149,69 @@ ul.topnav li a {
   background-color: #4B4F40;
   color: #fff;
 }
-.mid_section_splash_text {
+// Magic disappearing div!
+.splash_text {
   display: none;
 }
-.see_thru_button:link, .see_thru_button:visited  {
-  padding: 12px 20px 12px 32px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #fff;
-  color: #fff;
-  font-size: 1.9em;
-  letter-spacing: .25em;
-  text-align: center;
-  text-decoration: none;
-}
-.see_thru_button:hover, .see_thru_button:active {
-  background-color: #fff;
-  color: #4B4F40;
-}
+
 .flex_center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// ---- HOME PAGE ID DEFINITIONS ####
-#join_us {
-  padding-top: 25%;
-}
-#welcome_sign {
-  margin-top: -129px;
-}
-#excited {
-  display: none;
-}
-// ------[SECTION HEADERS]
+// SECTIONS - MOBILE
 
 #welcome_splash {
   background-image: image-url("anna_and_ryan-204.jpg");
   background-position: center bottom;
-  height: 125%;
   margin-top: -290px;
+  h3 {
+    padding-top: 25%;
+  }
 }
 #intro {
-  height: 60%;
+  height: auto;
   background-color: #fff;
   color: #4B4F40;
+  #welcome_sign {
+    margin-top: -129px;
+    margin-bottom: 1.3em;
+  }
+  p {
+    text-indent: 1.5em;
+    text-align: justify;
+  }
 }
 #rsvp {
   background-image: image-url("anna_and_ryan-237.jpg");
+  a:link, a:visited  {
+    padding: 12px 20px 12px 32px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fff;
+    color: #fff;
+    font-size: 1.9em;
+    letter-spacing: .25em;
+    text-align: center;
+    text-decoration: none;
+  }
+  a:hover, a:active {
+    background-color: #fff;
+    color: #4B4F40;
+  }
 }
 #lodging {
   background-color: #fff;
   color: #4B4F40;
+  height: auto;
+  margin: 0;
+  padding-top: 0;
+  #tree_emblem {
+    margin-top: -79px;
+    margin-bottom: -79px;
+    padding-bottom: 40px;
+  }
 }
 #schedule {
   background-image: image-url("anna_and_ryan-88.jpg");
@@ -187,22 +219,47 @@ ul.topnav li a {
 #activities {
   background-color: #fff;
   color: #4B4F40;
+  height: auto;
+  #two_trees {
+    margin-top: -69px;
+    margin-bottom: -69px;
+    padding-bottom: 40px; 
+  }
 }
 #venue {
-
+  height: auto;
 }
 #registry {
-  height: 40%;
+  height: auto;
   background-color: #fff;
   color: #4B4F40;
+  #registered_retailers {
+    display: flex;
+    flex-direction: column;
+  }
 }
 #directions {
   background-image: image-url("anna_and_ryan-197.jpg");
 }
 #contact {
-  height: 60%;
+  height: auto;
   background-color: #4B4F40;
   margin-top: -27px;
+  padding-top: 2px;
+  padding-bottom: 20px;
+  h3 {
+    padding: 10px 40px;
+  }
+  a {
+    color: #fff;
+    padding: 0px .4em;
+  }
+  small {
+    padding: 40px 0 4px 0;
+    text-transform: uppercase;
+    font-size: .6em;
+    letter-spacing: .18em;
+  }
 }
 
 
@@ -211,8 +268,9 @@ ul.topnav li a {
 
 
 
-// SAVEDATE PAGE - Mobile Orientation
-// ---- SAVEDATE CLASS DEFINITIONS
+// ---------------------------- SAVEDATE - MOBILE -----------------------------
+
+// SAVEDATE CLASS DEFINITIONS - MOBILE
 
 .savedate-fixed-bg1 {
   margin: 2%;
@@ -267,7 +325,7 @@ ul.topnav li a {
   margin: 3em; 
 }
 
-// ---- SAVEDATE ID DEFINITIONS
+// ---- SAVEDATE ID DEFINITIONS - MOBILE
 
 #savedate-wholepage {
   font-family: Arial, sans-serif;
@@ -289,9 +347,10 @@ ul.topnav li a {
 // This site is designed to be MOBILE-FIRST. Below are the explicit adjustments
 // necessary for larger desktop renders. (Mobile Orientation section is above.)
 
-// HOME PAGE - Desktop Orientation
+// ----------------------------- NAVBAR - DESKTOP -----------------------------
 
 @media only screen and (min-width: 1024px) {
+  #navbar {margin-left: 20px; margin-right: 20px;}
   ul.topnav {
       list-style-type: none;
       margin-top: 24px;
@@ -308,8 +367,8 @@ ul.topnav li a {
       text-align: center;
       padding-left: 12px;
       padding-top: 5px;
-      padding-right: 5px;
-      padding-bottom: 8px;
+      padding-right: 6px;
+      padding-bottom: 7px;
       text-decoration: none;
   }
   ul.topnav li.left {float: left;}
@@ -322,39 +381,57 @@ ul.topnav li a {
   ul.topnav li a.active:not(:hover) {
     padding-left: 10px;
     padding-top: 3px;
-    padding-right: 3px;
-    padding-bottom: 6px;
+    padding-right: 4px;
+    padding-bottom: 5px;
     border-style: solid;
     border-width: 2px;
     border-color: #fff;
     color: #fff;
     background-color: rgba(60,40,20,.2);
   }
+}
+
+// ---------------------------- HOME PAGE - DESKTOP ---------------------------
+
+@media only screen and (min-width: 1024px) {
+
+  // CLASS DEFINITIONS - DESKTOP
 
   // Parallax scrolling for stronger performing machines.
   .section_container {background-attachment: fixed;}
-  .mid_section_splash_text {  
-    padding: 40px;
+
+  // Magic re-appearing div!
+  .splash_text {  
     display: flex;
     justify-content: center;
     text-align: center;
     height: inherit;
     font-family: 'Homemade Apple', cursive;
     font-weight: normal;
-    font-size: 1.8em;
     letter-spacing: .1em;
   }
+
+  // SECTIONS - DESKTOP
+
   #welcome_splash {
     margin-top: -105px;
+    // Magic re-appearing div!
+    h3 {font-size: 2.1em;}
   }
-  // A magic re-appearing div!
-  #excited {
-    display: inherit;
-    font-size: 1.2em;
+  #registry {
+    #registered_retailers {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: initial;
+    }
+  }
+  #contact {
+    // Magic re-appearing div!
+    h3 {font-size: 1.4em;}
   }
 }
 
-// SAVEDATE PAGE - Desktop Orientation
+// ---------------------------- SAVEDATE - DESKTOP ----------------------------
 
 @media only screen and (min-width: 1024px) {
   .savedate-fixed-bg1 {

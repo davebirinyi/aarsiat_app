@@ -1,7 +1,7 @@
-<div id="navbar">
+<nav id="navbar">
   <ul class="topnav">
     <li class="left">
-      <%= link_to(image_tag("small_tree_emblem.png", size: 52, alt: "Home")) %>  
+      <%= link_to("⌂", "#welcome_splash") %> 
     </li>
     <li >
       <%= link_to("Venue", "#venue") %>
@@ -19,44 +19,53 @@
       <%= link_to("RSVP", "#rsvp", class: "active") %>
     </li>
   </ul>
-</div>
+</nav>
 
 
-<div class="section_container" id="welcome_splash">
-  <div class="mid_section_splash_text" id="join_us">
+<section class="section_container" id="welcome_splash">
+  <div class="splash_text">
     <h3>
-      <span>We hope you will join us in the forest!</span>
+      We hope you will join us in the forest!
     </h3>    
   </div>
-</div>
-<div class="section_container" id="intro">
+</section>
+<section class="section_container" id="intro">
   <div class="flex_center">
     <img src="<%= image_url("welcome_sign.png") %>" id="welcome_sign">
   </div>
-  <p>
-    We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
-  </p>
-  <p>
-     We will begin the weekend with a welcome dinner Friday night to which all are invited. Saturday morning will be a wonderful time to start the day enjoying yoga in the Tom Tom Yurt. You can then enjoy all that Mt. Rainier has to offer taking in the beauty of the outdoors that we love so. Or book a massage at the Spa. We’ll start the festivities at 4:30pm with a pre-ceremony snack and drink. After the ceremony in the forest Sanctuary we’ll have a cocktail hour, then family style dinner. Cake, drink and of course s’mores will be shared to continue the fun.
-  </p>
-  
-</div>
-<div class="section_container" id="rsvp">
-  <div>
-    <h2 class="section_header">
-      Répondez, S'il Vous Plaît
-    </h2>
+  <div class="section group">
+    <div class="col span_1_of_2">
+      <p>
+        We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
+      </p>
+      <p>
+        We will begin the weekend with a welcome dinner <time datetime="2017-07-07 18:00">Friday night</time> to which all are invited. <time datetime="2017-07-08 07:00">Saturday morning</time> will be a wonderful time to start the day enjoying yoga in the Tom Tom Yurt.
+      </p>
+    </div>
+    <div class="col span_1_of_2">
+      <p>
+        You can then enjoy all that Mt. Rainier has to offer taking in the beauty of the outdoors that we love so. Or book a massage at the Spa. We’ll start the festivities at <time datetime="2017-07-08 16:30">4:30pm</time> with a pre-ceremony snack and drink. After the ceremony in the forest Sanctuary we’ll have a <time datetime="2017-07-08 17:30">cocktail hour</time>, then <time datetime="2017-07-08 18:30">family style dinner</time>. Cake, drinks and of course s’mores will be shared to continue the fun.
+      </p>
+    </div>
   </div>
+</section>
+<section class="section_container" id="rsvp">
+  <header>
+    <h2 class="section_header">Répondez, S'il Vous Plaît</h2>
+  </header>
   <div class="flex_center">
     <p>
-      <%= link_to("RSVP", "#", class: "see_thru_button") %>
+      <%= link_to("RSVP", "#") %>
     </p>
   </div>
-</div>
-<div class="section_container" id="lodging">
-  <h2 class="section_header">
-    Lodging
-  </h2>
+</section>
+<section class="section_container" id="lodging">
+  <div class="flex_center">
+    <%= image_tag("tree_emblem.png", id: "tree_emblem") %>
+  </div>
+  <header>
+    <h2 class="section_header">Lodging</h2>
+  </header>
   <p>
     Wellspring Spa is located near the town of Ashford, WA about 3 miles west of Mt. Rainier National Park. Summer is a busy time for the park, we suggest securing lodging early.
   </p>
@@ -72,39 +81,42 @@
   <p>
     If you are the camping type, there are also several campsite in the park. The closest being Cougar Rock. https://www.nps.gov/mora/planyourvisit/campgrounds.htm 
   </p>
-</div>
-<div class="section_container" id="schedule">
-  <h2 class="section_header">
-    Schedule
-  </h2>
+</section>
+<section class="section_container" id="schedule">
+  <header>
+    <h2 class="section_header">Schedule</h2>
+  </header>
   <p>
-    Friday July 7, 2017
-    6pm Welcome dinner, casual dinner at the Gazebo
+    <time datetime="2017-07-07">Friday July 7, 2017</time>
+    <time datetime="2017-07-07 18:00">6pm</time> Welcome dinner, casual dinner at the Gazebo
   </p>
   <p>
-    Saturday July 8, 2017
-    7 and 10am Yoga in the Tom Tom Yurt
-    4:30pm Pre-Ceremony Snack and Drink near the Gazebo
-    5pm Wedding Ceremony and Vows in the Sanctuary
-    5:30pm Cocktail hour near the Gazebo
-    6:30pm Reception Dinner near the Gazebo
+    <time datetime="2017-07-08 07:00">Saturday July 8, 2017</time>
+    <time datetime="2017-07-08 07:00">7am</time> and <time datetime="2017-07-08 10:00">10am</time> Yoga in the Tom Tom Yurt
+    <time datetime="2017-07-08 16:30">4:30pm</time> Pre-Ceremony Snack and Drink near the Gazebo
+    <time datetime="2017-07-08 17:00">5pm</time> Wedding Ceremony and Vows in the Sanctuary
+    <time datetime="2017-07-08 17:30">5:30pm</time> Cocktail hour near the Gazebo
+    <time datetime="2017-07-08 18:30">6:30pm</time> Reception Dinner near the Gazebo
   </p>
-</div>
-<div class="section_container" id="activities">
-  <h2 class="section_header">
-    Things to Do Nearby
-  </h2>
+</section>
+<section class="section_container" id="activities">
+  <div class="flex_center">
+    <%= image_tag("two_trees.png", id: "two_trees") %>
+  </div>
+  <header>
+    <h2 class="section_header">Things to Do Nearby</h2>
+  </header>
   <p>
-    Wellspring Spa has a variety of things to do on site. There are a couple saunas and hot tubs available to soak or bake in, and a labyrinth to wander and meditate in. Ryan’s friend Emily will be teaching yoga in the Tom Tom Yurt on Saturday morning at 7am and 10 am. If you would like to book yourself a massage please call Wellspring at 
+    Wellspring Spa has a variety of things to do on site. There are a couple saunas and hot tubs available to soak or bake in, and a labyrinth to wander and meditate in. Ryan’s friend Emily will be teaching yoga in the Tom Tom Yurt on Saturday morning at <time datetime="2017-07-08 07:00">7am</time> and <time datetime="2017-07-08 10:00">10am</time>. If you would like to book yourself a massage please call Wellspring at 
   </p>
   <p>
     Mt. Rainier is just next door and offers many things to see and do. There are trails all over the park from short child friendly ones, to longer multi-day treks. Longmire and Paradise are also two beautiful lodges on the south side of the park. http://visitrainier.com 
   </p>
-</div>
-<div class="section_container" id="venue">
-  <h2 class="section_header">
-    Venue
-  </h2>
+</section>
+<section class="section_container" id="venue">
+  <header>
+    <h2 class="section_header">Venue</h2>
+  </header>
   <p>
     Wellspring Spa sits just outside Mt. Rainier National Park. It is a wonderful and somewhat remote space that highlights the beauty of Washington's forests. 
   </p>
@@ -118,7 +130,7 @@
     As with any location in Washington there is always the chance of rain.  Also, being out in the woods means it most likely will cool off in the evening (mid 40s). We suggest coming prepared with several layers to change into. 
   </p>
   <p>
-    Wellspring Spa is remote, there is very limited, to no cell coverage. Do not plan on having access to your devices while at the property (or in Mt. Rainier NP). There is a landline phone booth in Ashford if you need to place a call. 
+    Wellspring Spa is remote, there is very limited, to no cell coverage. Do not plan on having access to your devices while at the property (or in Mt. Rainier National Park). There is a landline phone booth in Ashford if you need to place a call. 
   </p>
   <p>
     There are no pets or smoking allowed and fires are only in the designated ring in the Gazebo. Please help us maintain the beauty of the location by following a “leave no trace” policy. 
@@ -126,24 +138,41 @@
   <p>
     [add the map here?]
   </p>
-</div>
-<div class="section_container" id="registry">
-  <h2 class="section_header">
-    Registry
-  </h2>
-  <p>
+</section>
+<section class="section_container" id="registry">
+  <header>
+    <h2 class="section_header">Registry</h2>
+  </header>
+  <p class="flex_center">
     We are registered at:
   </p>
-  <p>
-    Food52 https://food52.com/shop/registry
-    Crate & Barrel  http://www.crateandbarrel.com/gift-registry/ 
-    REI  https://www.rei.com/lists 
-</p>
-</div>
-<div class="section_container" id="directions">
-  <h2 class="section_header">
-    Directions
-  </h2>
+  <div class="">
+    <div id="registered_retailers">
+      <div class="flex_center">
+        <%= link_to(
+          image_tag("registered_food52.png", id: ""),
+          "https://food52.com/shop/registry",
+          alt: "Food52") %>
+      </div>
+      <div class="flex_center">
+        <%= link_to(
+          image_tag("registered_crate.png", id: ""),
+          "http://www.crateandbarrel.com/gift-registry/",
+          alt: "Crate & Barrel") %>
+      </div>
+      <div class="flex_center">
+        <%= link_to(
+          image_tag("registered_rei.png", id: ""),
+          "https://www.rei.com/lists",
+          alt: "REI") %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section_container" id="directions">
+  <header>
+    <h2 class="section_header">Directions</h2>
+  </header>
   <p>
     Wellspring Spa’s address is 54922 Kernahan Road East, Ashford, WA 98304
   </p>
@@ -156,22 +185,25 @@
   <p>
     From Portland (or other points south):
   </p>
-</div>
-<div class="section_container" id="contact">
-  <h2 class="section_header">
-    Contact Information
-  </h2>
-  <div class="mid_section_splash_text" id="excited">
+</section>
+<section class="section_container" id="contact">
+  <header>
+    <h2 class="section_header">Contact Information</h2>
+  </header>
+  <div class="splash_text">
     <h3>
       We are excited to have you join us. If you have any questions don’t hesitate to contact us.
     </h3>    
   </div>
   <div>
     <p class="flex_center">
-      Anna <a href="tel:+12064598713">206.459.8713</a> or <a href="mailto:anna.birinyi@gmail.com">anna.birinyi@gmail.com</a>
+      Anna: <a href="tel:+12064598713">206.459.8713</a> or <a href="mailto:anna.birinyi@gmail.com">anna.birinyi@gmail.com</a>
     </p>
     <p class="flex_center">
-      Ryan <a href="tel:+12066591036">206.659.1036</a> or <a href="mailto:wallace.ryan@gmail.com">wallace.ryan@gmail.com</a>
+      Ryan: <a href="tel:+12066591036">206.659.1036</a> or <a href="mailto:wallace.ryan@gmail.com">wallace.ryan@gmail.com</a>
     </p>
+    <small class="flex_center">
+      Photography by --oh, oh god, what's the photographer's name??
+    </small>
   </div>
-</div>
+</section>
