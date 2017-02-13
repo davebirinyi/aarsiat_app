@@ -24,6 +24,7 @@
 // ----------------------------- NAVBAR - MOBILE ------------------------------
 // ---- NAVBAR
 // ---------------------------- HOME PAGE - MOBILE ----------------------------
+// ---- RESPONSIVE COLUMNS
 // ---- CLASS
 // ---- SECTIONS
 // -------- #welcome_splash
@@ -64,6 +65,12 @@ p {
   font-size: 1.2em;
   letter-spacing: .1em;
 }
+a { color: inherit; }
+.emphasis {
+  font-style: italic;
+  color: #7EBF59;
+}
+
 
 // ############################ MOBILE ORIENTATION ############################
 // This site is designed to be MOBILE-FIRST. Below are the default stylings,
@@ -91,12 +98,14 @@ ul.topnav li a {
     text-decoration: none;
 }
 
+// ---------------------------- HOME PAGE - MOBILE ----------------------------
+
 // RESPONSIVE COLUMNS
 
 .section {
   clear: both;
   padding: 0px;
-  margin: 3px 80px 80px 80px;
+  margin: .2em 2em 2em 2em;
 }
 .col {
   display: block;
@@ -110,12 +119,14 @@ ul.topnav li a {
 .span_2_of_2, .span_1_of_2 { width: 100%; margin-bottom: -20px;}
 
 @media only screen and (min-width: 1024px) {
+  .section {
+    clear: both;
+    padding: 0px;
+    margin: .2em 5em 5em 5em;
+  }
   .col { 
     margin: 0% 0% 0% 4%;
   }
-}
-
-@media only screen and (min-width: 1024px) {
   .span_2_of_2 {
     width: 100%;
   }
@@ -123,8 +134,6 @@ ul.topnav li a {
     width: 48%;
   }
 }
-
-// ---------------------------- HOME PAGE - MOBILE ----------------------------
 
 // HOME PAGE CLASS DEFINITIONS - MOBILE
 
@@ -185,6 +194,7 @@ ul.topnav li a {
 }
 #rsvp {
   background-image: image-url("anna_and_ryan-237.jpg");
+  header { padding: 52% 0% 8% 0%; }
   a:link, a:visited  {
     padding: 12px 20px 12px 32px;
     border-style: solid;
@@ -212,9 +222,64 @@ ul.topnav li a {
     margin-bottom: -79px;
     padding-bottom: 40px;
   }
+  #lodging_options {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  #camping_options { 
+    div { padding: 20px 0 60px 0; }
+  }
+  p {
+    padding: 0 20px;
+    text-align: justify;
+  }
 }
 #schedule {
   background-image: image-url("anna_and_ryan-88.jpg");
+  header { padding-top: 32px; }
+  table {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.3em;
+    letter-spacing: .1em;
+    padding: 0 10px 30px 10px;
+    border-collapse: collapse;
+  }
+  th { 
+    padding-top: .3em;
+    padding-bottom: .2em;
+    font-family: 'Homemade Apple', cursive;
+    font-weight: normal;
+    letter-spacing: .1em;
+    font-weight: normal;
+    font-size: 1.8em;
+    text-transform: lowercase; 
+  }
+  td { padding: .5em; }
+  td:first-child { 
+    width: 40%;
+    padding-right: 1em;
+    text-align: right; 
+  }
+  tr:nth-child(2),
+  tr:nth-child(4),
+  tr:nth-child(5),
+  tr:nth-child(6),
+  tr:nth-child(7),
+  tr:nth-child(8) {
+      background-color: rgba(30,20,10,.5);
+      border-left: solid 2px;
+      border-right: solid 2px;
+  }
+  tr:nth-child(2),
+  tr:nth-child(4) {
+      border-top: solid 2px;
+  }
+  tr:nth-child(2),
+  tr:nth-child(8) {
+    border-bottom: solid 2px;
+  }
 }
 #activities {
   background-color: #fff;
@@ -225,9 +290,19 @@ ul.topnav li a {
     margin-bottom: -69px;
     padding-bottom: 40px; 
   }
+  p {
+    text-indent: 1.5em;
+    text-align: justify;
+  }
 }
 #venue {
   height: auto;
+  padding-bottom: 1px;
+  header { padding-top: 30px; }
+  p {
+    text-indent: 1.5em;
+    text-align: justify;
+  }
 }
 #registry {
   height: auto;
@@ -236,10 +311,16 @@ ul.topnav li a {
   #registered_retailers {
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
   }
 }
 #directions {
-  background-image: image-url("anna_and_ryan-197.jpg");
+  background-image: image-url("angled_map_bg-1366.jpg");
+  header { padding: 20px; }
+  p {
+    padding: 0 20px;
+    text-align: justify;
+  }
 }
 #contact {
   height: auto;
@@ -251,7 +332,6 @@ ul.topnav li a {
     padding: 10px 40px;
   }
   a {
-    color: #fff;
     padding: 0px .4em;
   }
   small {
@@ -418,11 +498,33 @@ ul.topnav li a {
     // Magic re-appearing div!
     h3 {font-size: 2.1em;}
   }
+  #rsvp {
+    header {
+      padding: 22% 0% 8% 0%;
+    }
+  }
+  #lodging {
+    #lodging_options {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: initial;
+    }
+    p {
+      padding: 0 26%;
+      text-align: justify;
+    }
+  }
   #registry {
     #registered_retailers {
       display: flex;
       justify-content: space-around;
       flex-direction: initial;
+    }
+  }
+  #directions {
+    p {
+      padding: 0 26%;
+      text-align: justify;
     }
   }
   #contact {
