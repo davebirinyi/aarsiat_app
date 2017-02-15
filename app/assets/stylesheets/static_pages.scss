@@ -6,7 +6,6 @@
 
 // ------------------------------ COLOR PALETTE: ------------------------------
 
-// Persian Red --------------------- #D53223
 // Mantis Green -------------------- #7EBF59
 // Bondi Blue ---------------------- #008DB8
 // Kelp Gray ----------------------- #4B4F40
@@ -69,7 +68,7 @@ p {
 a { color: inherit; }
 .emphasis {
   font-style: italic;
-  color: #D53223;
+  color: #7EBF59;
 }
 
 
@@ -296,14 +295,7 @@ ul.topnav li a {
     text-align: justify;
   }
 }
-#photobreak_one {
-  background-image: image-url("anna_and_ryan-210.jpg");
-  background-position: center bottom;
-  height: 25%;
-}
 #venue {
-  background-color: #fff;
-  color: #4B4F40;
   height: auto;
   padding-bottom: 1px;
   header { padding-top: 30px; }
@@ -311,11 +303,6 @@ ul.topnav li a {
     text-indent: 1.5em;
     text-align: justify;
   }
-}
-#photobreak_two {
-  background-image: image-url("anna_and_ryan-27.jpg");
-  background-position: center bottom;
-  height: 50%;
 }
 #registry {
   height: auto;
@@ -327,24 +314,13 @@ ul.topnav li a {
     padding-bottom: 20px;
   }
 }
-#photobreak_three {
-  background-image: image-url("angled_map_bg-1366.jpg");
-  height: 50%;
-}
 #directions {
-  height: auto;
-  background-color: #fff;
-  color: #4B4F40;
+  background-image: image-url("angled_map_bg-1366.jpg");
   header { padding: 20px; }
   p {
     padding: 0 20px;
     text-align: justify;
   }
-}
-#photobreak_four {
-  background-image: image-url("anna_and_ryan-272.jpg");
-  background-position: center bottom;
-  height: 70%;
 }
 #contact {
   height: auto;
