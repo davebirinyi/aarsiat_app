@@ -136,6 +136,17 @@ ul.topnav li a {
   }
 }
 
+// FORM HANDLING
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+
 // HOME PAGE CLASS DEFINITIONS - MOBILE
 
 .section_header {

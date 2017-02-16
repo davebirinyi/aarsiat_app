@@ -1,22 +1,22 @@
 <nav id="navbar">
   <ul class="topnav">
     <li class="left">
-      <%= link_to("⌂", "#welcome_splash") %> 
+      <%= link_to("⌂", home_path + "#welcome_splash") %> 
     </li>
     <li >
-      <%= link_to("Venue", "#venue") %>
+      <%= link_to("Venue", home_path + "#venue") %>
     </li>
     <li>
-      <%= link_to("Activities", "#activities") %>
+      <%= link_to("Activities", home_path + "#activities") %>
     </li>
     <li>
-      <%= link_to("Schedule", "#schedule") %>
+      <%= link_to("Schedule", home_path + "#schedule") %>
     </li>
     <li>
-      <%= link_to("Lodging", "#lodging") %>
+      <%= link_to("Lodging", home_path + "#lodging") %>
     </li>
     <li>
-      <%= link_to("RSVP", "#rsvp", class: "active") %>
+      <%= link_to("RSVP", rsvp_path, class: "active") %>
     </li>
   </ul>
 </nav>
@@ -55,7 +55,7 @@
   </header>
   <div class="flex_center">
     <p>
-      <%= link_to("RSVP", "#") %>
+      <%= link_to("RSVP", rsvp_path ) %>
     </p>
   </div>
 </section>
