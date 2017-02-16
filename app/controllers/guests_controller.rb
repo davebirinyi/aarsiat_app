@@ -9,7 +9,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-    @guest = Guest.new(params[:guest])    # Not the final implementation!
+    @guest = Guest.new(guest_params)    # Not the final implementation!
     if @guest.save
       # Handle a successful save.
     else
