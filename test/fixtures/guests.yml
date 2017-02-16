@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   name: MyString
-#   email: MyString
-#   saturday_adults: 1
-#   saturday_children: 1
-#   vegan: false
-#   food_restrictions: MyString
-#   friday_adults: 1
-#   friday_children: 1
-#   yoga_early: 1
-#   yoga_late: 1
+dbcooper:
+  name: DB Cooper
+  email: nevercaught@boeing.com
+  saturday_adults: 1
+  saturday_children: 0
+  vegan: false
+  food_restrictions: bourbon and water, please
+  friday_adults: 1
+  friday_children: 0
+  yoga_early: 1
+  yoga_late: 0
 
 # two:
 #   name: MyString
