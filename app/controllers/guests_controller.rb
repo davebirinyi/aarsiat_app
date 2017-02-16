@@ -9,9 +9,10 @@ class GuestsController < ApplicationController
   end
 
   def create
-    @guest = Guest.new(guest_params)    # Not the final implementation!
+    @guest = Guest.new(guest_params)
     if @guest.save
-      # Handle a successful save.
+      flash[:success] = "Thanks for your response!"
+      redirect_to @guest
     else
       render 'new'
     end
