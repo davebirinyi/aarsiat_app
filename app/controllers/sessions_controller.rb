@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
     guest = Guest.find_by(email: params[:session][:email].downcase)
     if guest
       # Log the guest in and redirect to guest's show page (w/ rsvp details).
+      lookup guest
+      redirect_to guest
     else
       flash.now[:danger] = "Reservation not found. Is this email address 
         correctly entered? If so, perhaps you need to go 
