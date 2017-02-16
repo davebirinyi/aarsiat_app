@@ -6,7 +6,7 @@ class CreateGuests < ActiveRecord::Migration[5.0]
       t.integer :saturday_adults 
       t.integer :saturday_children, :default => 0
       t.boolean :vegan,             :default => false
-      t.string  :food_restrictions, :default => null
+      t.string  :food_restrictions
       t.integer :friday_adults,     :default => 0
       t.integer :friday_children,   :default => 0
       t.integer :yoga_early,        :default => 0
