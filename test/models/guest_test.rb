@@ -62,4 +62,11 @@ class GuestTest < ActiveSupport::TestCase
     @guest.save
     assert_not duplicate_guest.valid?
   end
+
+  test "email addresses should be saved as lower-case" do
+    mixed_case_email = "Foo@ExAMPle.CoM"
+    @guest.email = mixed_case_email
+    @guest.save
+    assert_equal mixed_case_email.downcase, @guest.reload.email
+  end
 end
