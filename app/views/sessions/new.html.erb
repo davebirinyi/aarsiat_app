@@ -4,12 +4,12 @@
 <section>
   <h1>Reservation Lookup</h1>
   <div>
-    <%= form_for(:session, url: lookup_path) do |f| %>
+    <%= form_for(:session, url: check_path) do |f| %>
 
       <%= f.label :email %>
       <%= f.email_field :email, class: "form_control" %>
 
-      <%= f.submit "Look me up", class: "" %>
+      <%= f.submit "Check Reservation", class: "" %>
     <% end %>
 
     <p>Is this your first time to the site? You can <%= link_to "RSVP here", rsvp_path %>.</p>

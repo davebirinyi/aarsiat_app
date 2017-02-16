@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get    '/home',      to: 'static_pages#home'
   get    '/rsvp',      to: 'guests#new'
   post   '/rsvp',      to: 'guests#create'
-  get    '/lookup',    to: 'sessions#new'
-  post   '/lookup',    to: 'sessions#create'
-  delete '/logout',    to: 'sessions#destroy'
+  get    '/check',     to: 'sessions#new'
+  post   '/check',     to: 'sessions#create'
+  delete '/checkout',  to: 'sessions#destroy'
   resources :guests
 end

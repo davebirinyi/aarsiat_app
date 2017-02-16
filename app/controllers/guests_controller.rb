@@ -11,6 +11,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save
+      check @guest   # check reservation / check in
       flash[:success] = "Thanks for your response!"
       redirect_to @guest
     else

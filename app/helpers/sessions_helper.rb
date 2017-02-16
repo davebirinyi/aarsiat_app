@@ -1,6 +1,6 @@
 module SessionsHelper
-  # Looks up the given guest.
-  def lookup(guest)
+  # Checks in the given guest.
+  def check(guest)
     session[:guest_id] = guest.id
   end
 
