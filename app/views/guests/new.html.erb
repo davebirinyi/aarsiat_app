@@ -6,14 +6,16 @@
     <p>We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.</p>
 
     <%= form_for(@guest) do |f| %>
+      <%= render "shared/error_messages" %>
+
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: "form_control" %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: "form_control" %>
 
       <%= f.label :saturday_adults, "Adults in Your Party" %>
-      <%= f.select :saturday_adults, (0..6).to_a, :prompt => '' %>
+      <%= f.select :saturday_adults, (0..6).to_a, :prompt => "", class: "form_control" %>
 
       <%= f.label :saturday_children, "Children in Your Party" %>
       <%= f.select :saturday_children, (0..6).to_a, :selected => 0 %>
