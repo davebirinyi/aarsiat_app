@@ -50,5 +50,14 @@
 
       <%= f.submit "Submit Response", class: "" %>
     <% end %>
+
+    <p>
+      Have you filled out this form before?
+      <% if checked_in? %>
+        See your <%= link_to("existing reservation", current_guest, class: "emphasis") %>.
+      <% else %>
+        Check for an <%= link_to("existing reservation", check_path) %>.
+      <% end %>
+    </p>
   </div>
 </section>

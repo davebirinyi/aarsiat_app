@@ -2,3 +2,6 @@
 <%= render "layouts/flasher" %>
 
 <%= @guest.name %>, <%= @guest.email %>
+
+
+<p>Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.</p>

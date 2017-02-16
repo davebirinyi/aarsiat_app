@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     guest = Guest.find_by(email: params[:session][:email].downcase)
     if guest
-      # Log the guest in and redirect to guest's show page (w/ rsvp details).
+      # Check the guest in and redirect to guest's show page (w/ rsvp details).
       check guest
       redirect_to guest
     else
@@ -17,5 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    check_out
+    redirect_to root_url
   end
 end

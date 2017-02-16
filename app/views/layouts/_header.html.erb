@@ -17,7 +17,7 @@
     </li>
     <li>
       <% if checked_in? %>
-        <%= link_to("RSVP", current_guest, class: "active") %>
+        <%= link_to("See Reservation", current_guest, class: "active") %>
       <% else %>
         <%= link_to("RSVP", rsvp_path, class: "active") %>
       <% end %>
