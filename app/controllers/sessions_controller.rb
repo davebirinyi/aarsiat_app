@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
     if guest
       # Log the guest in and redirect to guest's show page (w/ rsvp details).
     else
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:danger] = "Reservation not found. Is this email address 
+        correctly entered? If so, perhaps you need to go 
+        #{view_context.link_to('RSVP', rsvp_path)}.".html_safe
       render 'new'
     end
   end
