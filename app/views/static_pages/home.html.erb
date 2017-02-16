@@ -16,7 +16,11 @@
       <%= link_to("Lodging", home_path + "#lodging") %>
     </li>
     <li>
-      <%= link_to("RSVP", rsvp_path, class: "active") %>
+      <% if checked_in? %>
+        <%= link_to("RSVP", current_guest, class: "active") %>
+      <% else %>
+        <%= link_to("RSVP", rsvp_path, class: "active") %>
+      <% end %>
     </li>
   </ul>
 </nav>
@@ -55,7 +59,11 @@
   </header>
   <div class="flex_center">
     <p>
-      <%= link_to("RSVP", rsvp_path ) %>
+      <% if checked_in? %>
+        <%= link_to("See Your Reservation", current_guest) %>
+      <% else %>
+        <%= link_to("RSVP", rsvp_path) %>
+      <% end %>
     </p>
   </div>
 </section>
