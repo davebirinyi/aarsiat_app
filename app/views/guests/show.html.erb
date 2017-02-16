@@ -3,5 +3,15 @@
 
 <%= @guest.name %>, <%= @guest.email %>
 
+<p>
+<%= @guest.saturday_adults %>
+<%= @guest.saturday_children %>
+<%= @guest.vegan %>
+<%= @guest.food_restrictions %>
+<%= @guest.friday_adults %>
+<%= @guest.friday_children %>
+<%= @guest.yoga_early %>
+<%= @guest.yoga_late %>
+</p>
 
 <p>Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.</p>
