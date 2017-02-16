@@ -5,7 +5,7 @@
     <h2>The Wedding</h2>
     <p>We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.</p>
 
-    <%= form_for(@guest) do |f| %>
+    <%= form_for(@guest, url: rsvp_path) do |f| %>
       <%= render "shared/error_messages" %>
 
       <%= f.label :name %>
