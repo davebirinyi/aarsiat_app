@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  saturday_adults: 1
-  saturday_children: 1
-  vegan: false
-  food_restrictions: MyString
-  friday_adults: 1
-  friday_children: 1
-  yoga_early: 1
-  yoga_late: 1
+# one:
+#   name: MyString
+#   email: MyString
+#   saturday_adults: 1
+#   saturday_children: 1
+#   vegan: false
+#   food_restrictions: MyString
+#   friday_adults: 1
+#   friday_children: 1
+#   yoga_early: 1
+#   yoga_late: 1
 
-two:
-  name: MyString
-  email: MyString
-  saturday_adults: 1
-  saturday_children: 1
-  vegan: false
-  food_restrictions: MyString
-  friday_adults: 1
-  friday_children: 1
-  yoga_early: 1
-  yoga_late: 1
+# two:
+#   name: MyString
+#   email: MyString
+#   saturday_adults: 1
+#   saturday_children: 1
+#   vegan: false
+#   food_restrictions: MyString
+#   friday_adults: 1
+#   friday_children: 1
+#   yoga_early: 1
+#   yoga_late: 1
