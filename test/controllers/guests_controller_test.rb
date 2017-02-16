@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GuestsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get guests_new_url
+    get rsvp_path
     assert_response :success
   end
 
