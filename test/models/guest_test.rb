@@ -6,7 +6,14 @@ class GuestTest < ActiveSupport::TestCase
     @guest = Guest.new(
       name: "Example Guest", 
       email: "guest@thewedding.com",
-      saturday_adults: 1)
+      saturday_adults: 1,
+      saturday_children: 1,
+      vegan: false,
+      food_restrictions: "",
+      friday_adults: 0,
+      friday_children: 0,
+      yoga_early: 0,
+      yoga_late: 0)
   end
 
   test "should be valid" do

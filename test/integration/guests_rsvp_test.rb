@@ -14,9 +14,16 @@ class GuestsResponseTest < ActionDispatch::IntegrationTest
   test "valid rsvp information" do
     get rsvp_path
     assert_difference 'Guest.count', 1 do
-      post guests_path, params: { guest: { name:  "Example Guest",
-                                         email: "guest@wedding.com",
-                                         saturday_adults: 1 } }
+      post guests_path, params: { guest: {  name:  "Example Guest",
+                                            email: "guest@wedding.com",
+                                            saturday_adults: 1,
+                                            saturday_children: 1,
+                                            vegan: false,
+                                            food_restrictions: "",
+                                            friday_adults: 0,
+                                            friday_children: 0,
+                                            yoga_early: 0,
+                                            yoga_late: 0 } }
     end
     follow_redirect!
     assert_template 'guests/show'

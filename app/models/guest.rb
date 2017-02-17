@@ -7,7 +7,7 @@ class Guest < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :saturday_adults, presence: true
   validates :saturday_children, presence: true
-  # validates :vegan, presence: true
+  validates :vegan, inclusion: { in: [true, false] }
   # validates :food_restrictions, presence: true
   validates :friday_adults, presence: true
   validates :friday_children, presence: true
