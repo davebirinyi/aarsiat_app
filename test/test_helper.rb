@@ -12,4 +12,17 @@ class ActiveSupport::TestCase
   def is_checked_in?
     !session[:guest_id].nil?
   end
+
+  # Log in as a particular guest.
+  def check_in_as(guest)
+    session[:guest_id] = guest.id
+  end
+end
+
+class ActionDispatch::IntegrationTest
+
+  # Log in as a particular guest.
+  def check_in_as(guest, email: 'nevercaught@boeing.com')
+    post check_path, params: { session: { email: guest.email } }
+  end
 end

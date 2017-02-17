@@ -12,14 +12,14 @@ dbcooper:
   yoga_early: 1
   yoga_late: 0
 
-# two:
-#   name: MyString
-#   email: MyString
-#   saturday_adults: 1
-#   saturday_children: 1
-#   vegan: false
-#   food_restrictions: MyString
-#   friday_adults: 1
-#   friday_children: 1
-#   yoga_early: 1
-#   yoga_late: 1
+dondraper:
+  name: Don Draper
+  email: dickwhitman@scdp.com
+  saturday_adults: 1
+  saturday_children: 2
+  vegan: false
+  food_restrictions: old fashioned
+  friday_adults: 1
+  friday_children: 0
+  yoga_early: 0
+  yoga_late: 2

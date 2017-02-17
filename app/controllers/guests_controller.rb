@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
 
   before_action :checked_in_guest, only: [:show, :edit, :update]
+  before_action :correct_guest,   only: [:show, :edit, :update]
 
   def show
     @guest = Guest.find(params[:id])
@@ -53,7 +54,7 @@ class GuestsController < ApplicationController
 
     # Before filters
 
-    # Confirms a checked-in user.
+    # Confirms a checked-in guest.
     def checked_in_guest
       unless checked_in?
         flash[:danger] = "Check for a reservation by entering your email address."
