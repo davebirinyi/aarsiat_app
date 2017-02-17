@@ -33,7 +33,7 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect update when checked in as wrong guest" do
-    log_in_as(@other_guest)
+    check_in_as(@other_guest)
     patch guest_path(@guest), params: { guest: { name: @guest.name,
                                               email: @guest.email } }
     assert flash.empty?

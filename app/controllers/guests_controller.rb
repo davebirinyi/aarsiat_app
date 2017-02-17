@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
 
   before_action :checked_in_guest, only: [:show, :edit, :update]
-  before_action :correct_guest,   only: [:show, :edit, :update]
+  before_action :correct_guest,    only: [:show, :edit, :update]
 
   def show
     @guest = Guest.find(params[:id])
@@ -23,13 +23,13 @@ class GuestsController < ApplicationController
   end
 
   def edit
-    @guest = Guest.find(params[:id])
+    # @guest = Guest.find(params[:id])
   end
 
   def update
-    @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
+    # @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
     if @guest.update_attributes(guest_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Reservation updated"
       redirect_to @guest
     else
       render 'edit'
@@ -60,5 +60,11 @@ class GuestsController < ApplicationController
         flash[:danger] = "Check for a reservation by entering your email address."
         redirect_to check_url
       end
+    end
+
+    # Confirms the correct guest.
+    def correct_guest
+      @guest = Guest.find(params[:id])
+      redirect_to(root_url) unless current_guest?(@guest)
     end
 end

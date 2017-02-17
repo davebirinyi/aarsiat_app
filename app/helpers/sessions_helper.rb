@@ -4,6 +4,11 @@ module SessionsHelper
     session[:guest_id] = guest.id
   end
 
+  # Returns true if the given guest is the current guest.
+  def current_guest?(guest)
+    guest == current_guest
+  end
+
   # Returns the current checked-in guest (if any).
   def current_guest
     @current_guest ||= Guest.find_by(id: session[:guest_id])
@@ -14,7 +19,7 @@ module SessionsHelper
     !current_guest.nil?
   end
 
-  # Logs out the current user.
+  # Logs out the current guest.
   def check_out
     session.delete(:guest_id)
     @current_guest = nil
