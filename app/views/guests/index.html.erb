@@ -1,0 +1,18 @@
+<section>
+  <h1 class="flex_center">GODZILLA MODE ENGAGED</h1>
+  <div class="flex_center">
+    <%= image_tag("godzillamode.jpg", alt: "Godzilla Mode") %>
+  </div>
+  <div class="flex_center">
+    <ul class="guests">
+      <% @guests.each do |guest| %>
+        <li>
+          <%= link_to guest.name, guest %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="flex_center">
+    <%= image_tag("godzilla.jpg", alt: "Pretty in Pink") %>
+  </div>
+</section>

@@ -3,6 +3,10 @@ class GuestsController < ApplicationController
   before_action :checked_in_guest, only: [:show, :edit, :update]
   before_action :correct_guest,    only: [:show, :edit]
 
+  def index
+    @guests = Guest.all
+  end
+
   def show
     @guest = Guest.find(params[:id])
   end
