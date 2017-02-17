@@ -32,9 +32,9 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  test "should redirect update when checked in as wrong guest" do
+  test "should redirect show when checked in as wrong guest" do
     check_in_as(@other_guest)
-    patch guest_path(@guest), params: { guest: { name: @guest.name,
+    get guest_path(@guest), params: { guest: { name: @guest.name,
                                               email: @guest.email } }
     assert flash.empty?
     assert_redirected_to root_url

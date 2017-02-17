@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
 
   before_action :checked_in_guest, only: [:show, :edit, :update]
-  before_action :correct_guest,    only: [:show, :edit, :update]
+  before_action :correct_guest,    only: [:show, :edit]
 
   def show
     @guest = Guest.find(params[:id])
@@ -14,7 +14,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save
-      check @guest   # check reservation / check in
+      check @guest
       flash[:success] = "Thanks for your response!"
       redirect_to @guest
     else
@@ -27,7 +27,7 @@ class GuestsController < ApplicationController
   end
 
   def update
-    # @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
+    @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
     if @guest.update_attributes(guest_params)
       flash[:success] = "Reservation updated"
       redirect_to @guest
