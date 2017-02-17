@@ -19,6 +19,10 @@ class GuestsController < ApplicationController
     end
   end
 
+  def edit
+    @guest = Guest.find(params[:id])
+  end
+
   private
 
     def guest_params
