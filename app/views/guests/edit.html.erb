@@ -1,0 +1,55 @@
+<%= render "layouts/header" %>
+<%= render "layouts/flasher" %>
+
+
+<section>
+  <h1>Edit Your Reservation</h1>
+  <div>
+    <h2>The Wedding</h2>
+    <p>Ceremony and Reception, Saturday July 8th:</p>
+
+    <%= form_for(@guest, url: rsvp_path) do |f| %>
+      <%= render "shared/error_messages" %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form_control" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form_control" %>
+
+      <%= f.label :saturday_adults, "Adults in Your Party" %>
+      <%= f.select :saturday_adults, (0..6).to_a, class: "form_control" %>
+
+      <%= f.label :saturday_children, "Children in Your Party" %>
+      <%= f.select :saturday_children, (0..6).to_a %>
+
+    <p>Reception food is vegetarian. Do you have other food restrictions?</p>
+
+      <%= f.label :vegan, "Vegan" %>
+      <%= f.check_box :vegan %>
+
+      <%= f.label :food_restrictions, "Other" %>
+      <%= f.text_field :food_restrictions %>
+
+    <h2>Welcome Dinner</h2>
+    <p>Friday July 7th, starting at 6pm:</p>
+
+      <%= f.label :friday_adults, "Adults attending Welcome Dinner" %>
+      <%= f.select :friday_adults, (0..6).to_a %>
+
+      <%= f.label :friday_children, "Children attending Welcome Dinner" %>
+      <%= f.select :friday_children, (0..6).to_a %>
+
+    <h2>Yoga</h2>
+    <p>Led by <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga") %> Saturday morning.</p>
+
+      <%= f.label :yoga_early, "Guests attending 7am session" %>
+      <%= f.select :yoga_early, (0..6).to_a %>
+      <%= f.label :yoga_late, "Guests attending 10am session" %>
+      <%= f.select :yoga_late, (0..6).to_a %>
+
+      <%= f.submit "Save Changes", class: "" %>
+    <% end %>
+
+  </div>
+</section>

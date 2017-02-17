@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get    '/home',      to: 'static_pages#home'
   get    '/rsvp',      to: 'guests#new'
   post   '/rsvp',      to: 'guests#create'
+  patch  '/rsvp',      to: 'guests#update'
   get    '/check',     to: 'sessions#new'
   post   '/check',     to: 'sessions#create'
   delete '/check_out',  to: 'sessions#destroy'
