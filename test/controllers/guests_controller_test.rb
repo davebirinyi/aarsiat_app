@@ -12,7 +12,7 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should redirect guests to rsvp"
+  test "should redirect guests to rsvp" do
     get guests_path
     assert_response :success
   end
