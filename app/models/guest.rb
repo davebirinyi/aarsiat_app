@@ -15,7 +15,7 @@ class Guest < ApplicationRecord
   validates :yoga_late, presence: true
 
   def self.to_csv
-    attributes = %w{ name email saturday_adults saturday_children vegan food_restrictions friday_adults friday_children yoga_early yoga_late }
+    attributes = %w{ name email saturday_adults saturday_children vegan food_restrictions friday_adults friday_children yoga_early yoga_late updated_at}
 
     CSV.generate(headers: true) do |csv|
       csv << attributes

@@ -3,6 +3,11 @@
   <div class="flex_center">
     <%= image_tag("godzillamode.jpg", alt: "Godzilla Mode") %>
   </div>
+  <p align="center">This data may also be downloaded as a <%= link_to("CSV file", "godzillamode.csv") %>. The last update was made <%= time_ago_in_words(@guests.order("updated_at").last.updated_at) %> ago. (It was <%= @guests.order("updated_at").last.name %>)
+
+
+
+
   <div class="flex_center">
     <table>
       <tr>
@@ -16,8 +21,9 @@
         <th>Friday Children</th>
         <th>Yoga 7am</th>
         <th>Yoga 10am</th>
+        <th>Last Updated</th>
       </tr>
-      <% @guests.each do |guest| %>
+      <% @guests.order("updated_at DESC").each do |guest| %>
       <tr>
         <td><%= guest.name %></td>
         <td><%= guest.email %></td>
@@ -29,11 +35,12 @@
         <td><%= guest.friday_children %></td>
         <td><%= guest.yoga_early %></td>
         <td><%= guest.yoga_late %></td>
+        <td><%= time_ago_in_words(guest.updated_at) %></td>
       </tr>
       <% end %>
     </table>
   </div>
-  <div class="flex_center">
+  <!-- <div class="flex_center">
     <%= image_tag("godzilla.jpg", alt: "Pretty in Pink") %>
-  </div>
+  </div> -->
 </section>
