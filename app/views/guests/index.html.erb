@@ -4,13 +4,34 @@
     <%= image_tag("godzillamode.jpg", alt: "Godzilla Mode") %>
   </div>
   <div class="flex_center">
-    <ul class="guests">
+    <table>
+      <tr>
+        <th>Guest Name</th>
+        <th>Email Address</th>
+        <th>Saturday Adults</th>
+        <th>Saturday Children</th>
+        <th>Vegan</th>
+        <th>Food Restrictions</th>
+        <th>Friday Adults</th>
+        <th>Friday Children</th>
+        <th>Yoga 7am</th>
+        <th>Yoga 10am</th>
+      </tr>
       <% @guests.each do |guest| %>
-        <li>
-          <%= link_to guest.name, guest %>
-        </li>
+      <tr>
+        <td><%= guest.name %></td>
+        <td><%= guest.email %></td>
+        <td><%= guest.saturday_adults %></td>
+        <td><%= guest.saturday_children %></td>
+        <td><%= guest.vegan %></td>
+        <td><%= guest.food_restrictions %></td>
+        <td><%= guest.friday_adults %></td>
+        <td><%= guest.friday_children %></td>
+        <td><%= guest.yoga_early %></td>
+        <td><%= guest.yoga_late %></td>
+      </tr>
       <% end %>
-    </ul>
+    </table>
   </div>
   <div class="flex_center">
     <%= image_tag("godzilla.jpg", alt: "Pretty in Pink") %>
