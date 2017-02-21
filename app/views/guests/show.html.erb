@@ -1,6 +1,10 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
+<%= render "layouts/nav_backing" %>
 
+
+<section class="section_container" id="reservation">
+  <h1>Your Reservation</h1>
 <%= @guest.name %>, <%= @guest.email %>
 
 <p>
@@ -17,5 +21,7 @@
 <p><%= link_to "Make Changes to the Reservation", edit_guest_path(current_guest) %></p>
 
 <p>Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.</p>
+
+</section>
 
 <%= render "layouts/footer" %>

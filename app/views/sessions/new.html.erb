@@ -1,7 +1,9 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
+<%= render "layouts/nav_backing" %>
 
-<section>
+
+<section class="section_container" id="check">
   <h1>Reservation Lookup</h1>
   <div>
     <%= form_for(:session, url: check_path) do |f| %>

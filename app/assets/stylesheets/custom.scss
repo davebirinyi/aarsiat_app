@@ -3,17 +3,20 @@
 
 // ------------------------------ COLOR PALETTE: ------------------------------
 
-// Persian Red --------------------- #D53223
-// Mantis Green -------------------- #7EBF59
-// Bondi Blue ---------------------- #008DB8
-// Kelp Gray ----------------------- #4B4F40
+$white: #fff;
+$spanish_white: #dfd3bb;
+$persian_red: #D53223;
+$mantis_green: #7EBF59;
+$bondi_blue: #008DB8;
+$kelp_gray: #4B4F40;
+$warming_gray: rgba(60,40,20,.3);
 
 // ------------------------------ FONT PALETTE: -------------------------------
 
-// font-family: 'Homemade Apple', cursive;
-// font-family: 'Verdana', sans-serif;
-// font-family: 'Georgia', serif;
-// font-family: 'Times New Roman', serif;
+$homemade_apple: 'Homemade Apple', cursive;
+$verdana: 'Verdana', sans-serif;
+$georgia: 'Georgia', serif;
+$timesnewroman: 'Times New Roman', serif;
 
 
 // ############################ TABLE OF CONTENTS: ############################
@@ -58,7 +61,7 @@ body, html {
   padding: 0;
 }
 p {
-  font-family: 'Times New Roman', serif;
+  font-family: $timesnewroman;
   font-weight: normal;
   font-size: 1.2em;
   letter-spacing: .1em;
@@ -66,7 +69,7 @@ p {
 a { color: inherit; }
 .emphasis {
   font-style: italic;
-  color: #D53223;
+  color: $persian_red;
 }
 
 
@@ -83,18 +86,29 @@ ul.topnav {
     padding: 0;
     overflow: hidden;
     text-transform: lowercase;
-    text-shadow: 1px 1px 20px #fff;
+    text-shadow: 1px 1px 20px $white;
 }
 ul.topnav li {float: none;}
 ul.topnav li a {
     display: block;
-    color: #4B4F40;
+    color: $kelp_gray;
     font-size: 1.6em;
     letter-spacing: .25em;
     text-align: center;
     padding-bottom: 14px;
     text-decoration: none;
 }
+#nav_backing {
+  background: $kelp_gray; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, $spanish_white 0%, $mantis_green 50%, $kelp_gray 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, $spanish_white 0%,$mantis_green 50%, $kelp_gray 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, $spanish_white 0%, $mantis_green 50%, $kelp_gray 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$mantis_green', endColorstr='$kelp_gray',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height: 46%;
+  margin-top: -290px;
+}
+
+
 
 // ---------------------------- HOME PAGE - MOBILE ----------------------------
 
@@ -136,9 +150,9 @@ ul.topnav li a {
 // FORM HANDLING
 
 #error_explanation {
-  color: red;
+  color: $persian_red;
   ul {
-    color: red;
+    color: $persian_red;
     margin: 0 0 30px 0;
   }
 }
@@ -148,7 +162,7 @@ ul.topnav li a {
 
 .section_header {
   font-size: 2em;
-  font-family: 'Georgia', serif;
+  font-family: $georgia;
   font-weight: normal;
   letter-spacing: .1em;
   text-transform: lowercase;
@@ -164,8 +178,8 @@ ul.topnav li a {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #4B4F40;
-  color: #fff;
+  background-color: $kelp_gray;
+  color: $white;
 }
 // Magic disappearing div!
 .splash_text {
@@ -190,8 +204,8 @@ ul.topnav li a {
 }
 #intro {
   height: auto;
-  background-color: #fff;
-  color: #4B4F40;
+  background-color: $white;
+  color: $kelp_gray;
   #welcome_sign {
     margin-top: -129px;
     margin-bottom: 1.3em;
@@ -208,21 +222,21 @@ ul.topnav li a {
     padding: 12px 20px 12px 32px;
     border-style: solid;
     border-width: 2px;
-    border-color: #fff;
-    color: #fff;
+    border-color: $white;
+    color: $white;
     font-size: 1.9em;
     letter-spacing: .25em;
     text-align: center;
     text-decoration: none;
   }
   a:hover, a:active {
-    background-color: #fff;
-    color: #4B4F40;
+    background-color: $white;
+    color: $kelp_gray;
   }
 }
 #lodging {
-  background-color: #fff;
-  color: #4B4F40;
+  background-color: $white;
+  color: $kelp_gray;
   height: auto;
   margin: 0;
   padding-top: 0;
@@ -248,7 +262,7 @@ ul.topnav li a {
   background-image: image-url("anna_and_ryan-88.jpg");
   header { padding-top: 32px; }
   table {
-    font-family: 'Times New Roman', serif;
+    font-family: $timesnewroman;
     font-weight: normal;
     font-size: 1.3em;
     letter-spacing: .1em;
@@ -258,7 +272,7 @@ ul.topnav li a {
   th { 
     padding-top: .3em;
     padding-bottom: .2em;
-    font-family: 'Homemade Apple', cursive;
+    font-family: $homemade_apple;
     font-weight: normal;
     letter-spacing: .1em;
     font-weight: normal;
@@ -292,7 +306,7 @@ ul.topnav li a {
 }
 #activities {
   background-color: #fff;
-  color: #4B4F40;
+  color: $kelp_gray;
   height: auto;
   #two_trees {
     margin-top: -69px;
@@ -311,7 +325,7 @@ ul.topnav li a {
 }
 #venue {
   background-color: #fff;
-  color: #4B4F40;
+  color: $kelp_gray;
   height: auto;
   padding-bottom: 1px;
   header { padding-top: 30px; }
@@ -328,7 +342,7 @@ ul.topnav li a {
 #registry {
   height: auto;
   background-color: #fff;
-  color: #4B4F40;
+  color: $kelp_gray;
   #registered_retailers {
     display: flex;
     flex-direction: column;
@@ -342,7 +356,7 @@ ul.topnav li a {
 #directions {
   height: auto;
   background-color: #fff;
-  color: #4B4F40;
+  color: $kelp_gray;
   header { padding: 20px; }
   p {
     padding: 0 20px;
@@ -356,7 +370,7 @@ ul.topnav li a {
 }
 #contact {
   height: auto;
-  background-color: #4B4F40;
+  background-color: $kelp_gray;
   margin-top: -27px;
   padding-top: 2px;
   padding-bottom: 20px;
@@ -374,7 +388,69 @@ ul.topnav li a {
   }
 }
 
-
+#rsvp_page, #edit {
+  height: auto;
+  min-height: 90%;
+  background-color: #fff;
+  color: $kelp_gray;
+  h2 {
+    font-family: $homemade_apple;
+    color: $mantis_green;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  p:last-child {
+    padding-bottom: 100px;
+  }
+  li {
+    text-align: center;
+    list-style-type: none;
+    padding: .5em;
+  }
+  label {
+    font-family: $georgia;
+    letter-spacing: .1em;
+    padding-right: 1em;
+  }
+  #submit_button {
+    font-family: serif;
+    color: $kelp_gray;
+    text-transform: lowercase;
+    background-color: $white;
+    border: $kelp_gray;
+    padding: 12px 20px 12px 32px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $kelp_gray;
+    font-size: 1.4em;
+    letter-spacing: .25em;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 0 0 0;
+  }
+  #submit_button:hover, :active {
+      background-color: $kelp_gray;
+      border-color: $white;
+      color: $white;
+    }
+}
+#edit {
+  height: auto;
+  background-color: #fff;
+  color: $kelp_gray;
+}
+#reservation {
+  height: auto;
+  background-color: #fff;
+  color: $kelp_gray;
+}
+#check {
+  height: auto;
+  background-color: #fff;
+  color: $kelp_gray;
+}
 
 
 
@@ -501,7 +577,15 @@ ul.topnav li a {
     color: #fff;
     background-color: rgba(60,40,20,.2);
   }
+  #nav_backing {
+    // background-image: image-url("nav_backing_trees.jpg");
+    // background-position: center top;
+    // background-size: contain;
+    height: 19%;
+    margin-top: -105px;
+  }
 }
+
 
 // ---------------------------- HOME PAGE - DESKTOP ---------------------------
 
