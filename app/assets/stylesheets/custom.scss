@@ -102,10 +102,22 @@ ul.topnav li a {
 }
 #nav_backing {
   background: $kelp_gray; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, $spanish_white 0%, $mantis_green 50%, $kelp_gray 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, $spanish_white 0%,$mantis_green 50%, $kelp_gray 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, $spanish_white 0%, $mantis_green 50%, $kelp_gray 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$mantis_green', endColorstr='$kelp_gray',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-linear-gradient(-45deg, 
+                                $spanish_white 0%, 
+                                $mantis_green 50%, 
+                                $kelp_gray 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, 
+                                $spanish_white 0%,
+                                $mantis_green 50%, 
+                                $kelp_gray 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, 
+                                $spanish_white 0%, 
+                                $mantis_green 50%, 
+                                $kelp_gray 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( 
+                                startColorstr='$mantis_green', 
+                                endColorstr='$kelp_gray',
+                                GradientType=1 ); /* IE6-9 fallback */
   height: 46%;
   margin-top: -290px;
 }
@@ -331,6 +343,11 @@ ul.topnav li a {
   color: $kelp_gray;
   height: auto;
   padding-bottom: 1px;
+  #three_trees {
+    margin-top: -69px;
+    margin-bottom: -69px;
+    padding-bottom: 20px; 
+  }
   header { padding-top: 30px; }
   p {
     text-indent: 1.5em;
@@ -346,10 +363,15 @@ ul.topnav li a {
   height: auto;
   background-color: #fff;
   color: $kelp_gray;
+  #solo_tree {
+    margin-top: -69px;
+    margin-bottom: -69px;
+    padding-bottom: 48px; 
+  }
   #registered_retailers {
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
   }
 }
 #photobreak_three {
@@ -360,6 +382,11 @@ ul.topnav li a {
   height: auto;
   background-color: #fff;
   color: $kelp_gray;
+  #single_tree {
+    margin-top: -69px;
+    margin-bottom: -69px;
+    padding-bottom: 25px; 
+  }
   header { padding: 20px; }
   p {
     padding: 0 20px;
