@@ -79,24 +79,26 @@ a { color: inherit; }
 // found further down this file.)
 
 // ----------------------------- NAVBAR - MOBILE ------------------------------
-
-ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-transform: lowercase;
-    text-shadow: 1px 1px 20px $white;
+nav {
+  margin-top: 20px;
 }
-ul.topnav li {float: none;}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+ul.topnav li {
+  float: none;
+}
 ul.topnav li a {
-    display: block;
-    color: $kelp_gray;
-    font-size: 1.6em;
-    letter-spacing: .25em;
-    text-align: center;
-    padding-bottom: 14px;
-    text-decoration: none;
+  display: block;
+  color: $white;
+  font-size: 1.6em;
+  letter-spacing: .25em;
+  text-align: center;
+  padding-bottom: 14px;
+  text-decoration: none;
 }
 #nav_backing {
   background: $kelp_gray; /* Old browsers */
@@ -194,13 +196,14 @@ ul.topnav li a {
 
 // SECTIONS - MOBILE
 
-#welcome_splash {
-  background-image: image-url("anna_and_ryan-204.jpg");
+#welcome {
+  background-image: linear-gradient( rgba(40, 30, 20, 0.4),
+                    rgba(60, 40, 20, 0) ),
+                    url("anna_and_ryan-204.jpg");
   background-position: center bottom;
-  margin-top: -290px;
-  h3 {
-    padding-top: 25%;
-  }
+  margin-top: -300px;
+  display: table;
+  width: 100%;
 }
 #intro {
   height: auto;
@@ -351,7 +354,7 @@ ul.topnav li a {
 }
 #photobreak_three {
   background-image: image-url("angled_map_bg-1366.jpg");
-  height: 50%;
+  height: 25%;
 }
 #directions {
   height: auto;
@@ -390,7 +393,6 @@ ul.topnav li a {
 
 #rsvp_page, #edit, #reservation, #check {
   height: auto;
-  // min-height: 90%;
   background-color: #fff;
   color: $kelp_gray;
   h2 {
@@ -579,9 +581,6 @@ ul.topnav li a {
     background-color: rgba(60,40,20,.2);
   }
   #nav_backing {
-    // background-image: image-url("nav_backing_trees.jpg");
-    // background-position: center top;
-    // background-size: contain;
     height: 19%;
     margin-top: -105px;
   }
@@ -610,10 +609,15 @@ ul.topnav li a {
 
   // SECTIONS - DESKTOP
 
-  #welcome_splash {
+  #welcome {
+    background-image: image-url("anna_and_ryan-204.jpg");
+    background-position: center bottom;
     margin-top: -105px;
     // Magic re-appearing div!
-    h3 {font-size: 2.1em;}
+    h3 {
+      padding-top: 25%;
+      font-size: 2.1em;
+    }
   }
   #rsvp {
     header {

@@ -1,26 +1,28 @@
 <nav id="navbar">
-  <ul class="topnav">
-    <li class="left">
-      <%= link_to("⌂", home_path + "#welcome_splash") %> 
-    </li>
-    <li >
-      <%= link_to("Venue", home_path + "#venue") %>
-    </li>
-    <li>
-      <%= link_to("Activities", home_path + "#activities") %>
-    </li>
-    <li>
-      <%= link_to("Schedule", home_path + "#schedule") %>
-    </li>
-    <li>
-      <%= link_to("Lodging", home_path + "#lodging") %>
-    </li>
-    <li>
-      <% if checked_in? %>
-        <%= link_to("See Reservation", current_guest, class: "active") %>
-      <% else %>
-        <%= link_to("RSVP", rsvp_path, class: "active") %>
-      <% end %>
-    </li>
-  </ul>
+  <div>
+    <ul class="topnav">
+      <li class="left">
+        <%= link_to("⌂", home_path) %> 
+      </li>
+      <li >
+        <%= link_to("Venue", home_path + "#venue") %>
+      </li>
+      <li>
+        <%= link_to("Activities", home_path + "#activities") %>
+      </li>
+      <li>
+        <%= link_to("Schedule", home_path + "#schedule") %>
+      </li>
+      <li>
+        <%= link_to("Lodging", home_path + "#lodging") %>
+      </li>
+      <li>
+        <% if checked_in? %>
+          <%= link_to("See Reservation", current_guest, class: "active") %>
+        <% else %>
+          <%= link_to("RSVP", rsvp_path, class: "active") %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </nav>
