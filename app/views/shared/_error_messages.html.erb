@@ -1,5 +1,5 @@
 <% if @guest.errors.any? %>
-  <div id="error_explanation">
+  <div class="flex_center" id="error_explanation">
     <div class="emphasis">
       The form contains <%= pluralize(@guest.errors.count, "error") %>.
     </div>

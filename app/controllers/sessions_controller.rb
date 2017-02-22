@@ -9,8 +9,9 @@ class SessionsController < ApplicationController
       check guest
       redirect_to guest
     else
+      # Three-per-em space included after "go" to hack in whitespace
       flash.now[:danger] = "Reservation not found. Is this email address 
-        correctly entered? If so, perhaps you need to go 
+        correctly entered? If so, perhaps you need to go 
         #{view_context.link_to('RSVP', rsvp_path)}.".html_safe
       render 'new'
     end

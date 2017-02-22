@@ -1,21 +1,20 @@
 <%= render "layouts/header" %>
-<%= render "layouts/flasher" %>
 <%= render "layouts/nav_backing" %>
 
 
 <section class="section_container" id="check">
-  <h1>Reservation Lookup</h1>
-  <div>
+  <h1 class="section_header">Reservation Lookup</h1>
+  <%= render "layouts/flasher" %>
+  <table class="flex_center">
     <%= form_for(:session, url: check_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form_control" %>
-
-      <%= f.submit "Check Reservation", class: "" %>
+    <td><%= f.label :email %></td>
+    <td><%= f.email_field :email, class: "form_control" %></td>
+  </table>
+  <div class="flex_center">
+    <%= f.submit "Check Reservation", class: "submit_button" %>
     <% end %>
-
-    <p>Is this your first time to the site? You can <%= link_to "RSVP here", rsvp_path %>.</p>
   </div>
+  <p>Is this your first time to the site? You can <%= link_to "RSVP here", rsvp_path %>.</p>
 </section>
 
 <%= render "layouts/footer" %>

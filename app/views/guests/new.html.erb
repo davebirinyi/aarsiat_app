@@ -6,75 +6,92 @@
 <section class="section_container" id="rsvp_page">
   <h1 class="section_header">RSVP</h1>
   <div>
-    <h2>The Wedding</h2>
-    <p>We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.</p>
-
     <%= form_for(@guest, url: rsvp_path) do |f| %>
-    <ul>
-      <li>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form_control" %>
-      </li>
-      <li>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form_control" %>
-      </li>
-      <li>
-      <%= f.label :saturday_adults, "Adults in Your Party" %>
-      <%= f.select :saturday_adults, (0..6).to_a, :prompt => "", class: "form_control" %>
-      </li>
-      <li>
-      <%= f.label :saturday_children, "Children in Your Party" %>
-      <%= f.select :saturday_children, (0..6).to_a, :selected => 0, class: "form_control" %>
-      </li>
-    </ul>
-
-    <p>Reception food is vegetarian. Do you have any other food restrictions?</p>
-
-    <ul>
-      <li>
-      <%= f.label :vegan, "Vegan" %>
-      <%= f.check_box :vegan, class: "form_control" %>
-      <%= f.label :food_restrictions, "Other" %>
-      <%= f.text_field :food_restrictions, class: "form_control" %>
-      </li>
-    </ul>
-    <h2>Welcome Dinner</h2>
-    <p>All are invited to join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.</p>
-    <ul>
-      <li>
-      <%= f.label :friday_adults, "Adults" %>
-      <%= f.select :friday_adults, (0..6).to_a, :selected => 0, class: "form_control" %>
-      </li>
-      <li>
-      <%= f.label :friday_children, "Children" %>
-      <%= f.select :friday_children, (0..6).to_a, :selected => 0, class: "form_control" %>
-      </li>
-    </ul>
-    <h2>Yoga</h2>
-    <p>Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga") %>, will be joining us and leading two yoga classes Saturday morning.</p>
-    <ul>
-      <li>
-      <%= f.label :yoga_early, "7am session" %>
-      <%= f.select :yoga_early, (0..6).to_a, :selected => 0, class: "form_control" %>
-      </li>
-      <li>
-      <%= f.label :yoga_late, "10am session" %>
-      <%= f.select :yoga_late, (0..6).to_a, :selected => 0, class: "form_control" %>
-      </li>
-      <li>
-      <%= f.submit "Submit Response", id: "submit_button" %>
-      </li>
-    </ul>
       <%= render "shared/error_messages" %>
+
+    <h2>The Wedding</h2>
+    <p>
+      We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.
+    </p>
+
+    <table class="flex_center">
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.email_field :email%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
+        <td><%= f.select :saturday_adults, (0..6).to_a, :prompt => ""%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :saturday_children, "Children in Your Party" %></td>
+        <td><%= f.select :saturday_children, (0..6).to_a, :selected => 0%></td>
+      </tr>
+    </table>
+
+    <p>
+      Reception food is vegetarian. Do you have any other food restrictions?
+    </p>
+
+    <table class="flex_center">
+      <tr>
+        <td>
+          <%= f.label :vegan, "Vegan" %>
+          <%= f.check_box :vegan%>
+        </td>
+        <td>
+          <%= f.label :food_restrictions, "Other" %>
+          <%= f.text_field :food_restrictions%>
+        </td>
+      </tr>
+    </table>
+
+    <h2>Welcome Dinner</h2>
+    <p>
+      All are invited to join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.
+    </p>
+
+    <table class="flex_center">
+      <tr>
+        <td><%= f.label :friday_adults, "Adults" %></td>
+        <td><%= f.select :friday_adults, (0..6).to_a, :selected => 0%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :friday_children, "Children" %></td>
+        <td><%= f.select :friday_children, (0..6).to_a, :selected => 0%></td>
+      </tr>
+    </table>
+
+    <h2>Yoga</h2>
+    <p>
+      Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga") %>, will be joining us and leading two yoga classes Saturday morning.
+    </p>
+
+    <table class="flex_center">
+      <tr>
+        <td><%= f.label :yoga_early, "7am session" %></td>
+        <td><%= f.select :yoga_early, (0..6).to_a, :selected => 0%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :yoga_late, "10am session" %></td>
+        <td><%= f.select :yoga_late, (0..6).to_a, :selected => 0%></td>
+      </tr>
+    </table>
+    <div class="flex_center" id="submit_box">
+      <%= f.submit "Submit Response", class: "submit_button" %>
+    </div>
+
     <% end %>
 
     <p>
-      Have you filled out this form before?
       <% if checked_in? %>
-        See your <%= link_to("Existing Reservation", current_guest, class: "emphasis") %>.
+        It appears you have already submitted a response. See your <%= link_to("Existing Reservation", current_guest, class: "emphasis") %>.
       <% else %>
-        Check for an <%= link_to("existing reservation", check_path) %>.
+        Have you filled out this form before? Check for an <%= link_to("existing reservation", check_path) %>.
       <% end %>
     </p>
   </div>
