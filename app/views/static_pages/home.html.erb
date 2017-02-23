@@ -250,12 +250,32 @@
   <p>
     As it is <span class="emphasis">a remote area with limited cell reception</span>, we suggest printing off or downloading a map of the area or directions for all your activities. 
   </p>
-  <p>
-    From Seattle (or other points north): 
-  </p>
-  <p>
-    From Portland (or other points south):
-  </p>
+  <div class="section group" id="direction_links">
+    <div class="col span_1_of_2">
+      <fig class="flex_center">
+        <%= link_to(
+          image_tag("from_seattle.jpg", id: ""),
+          "https://www.google.com/maps/dir/Seattle,+Washington/54922+Kernahan+Rd+E,+Ashford,+WA+98304/",
+          alt: "From Seattle") %>
+      </fig>
+      <figcaption class="flex_center">
+        From Seattle (or other points north)
+      </figcaption>
+    </div>
+    <div class="col span_1_of_2">
+      <fig class="flex_center">
+        <%= link_to(
+          image_tag("from_portland.jpg", id: ""),
+          "https://www.google.com/maps/dir/Portland,+Oregon/54922+Kernahan+Rd+E,+Ashford,+WA+98304/",
+          alt: "From Portland") %>
+      </fig>
+      <figcaption class="flex_center">
+        From Portland (or other points south) 
+      </figcaption>
+    </div>
+  </div>
+
+
 </section>
 
 <section class="section_container" id="photobreak_four"></section>

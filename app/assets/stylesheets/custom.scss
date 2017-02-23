@@ -376,7 +376,7 @@ ul.topnav li a {
 }
 #photobreak_three {
   background-image: image-url("angled_map_bg-1366.jpg");
-  height: 25%;
+  height: 35%;
 }
 #directions {
   height: auto;
@@ -391,6 +391,12 @@ ul.topnav li a {
   p {
     padding: 0 20px;
     text-align: justify;
+  }
+  fig {
+    padding-top: 30px;
+  }
+  figcaption {
+    padding-bottom: 50px;
   }
 }
 #photobreak_four {
@@ -666,7 +672,7 @@ ul.topnav li a {
     #registered_retailers {
       display: flex;
       justify-content: space-around;
-      flex-direction: initial;
+      flex-direction: row;
     }
   }
   #directions {
