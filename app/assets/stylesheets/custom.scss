@@ -80,7 +80,8 @@ a { color: inherit; }
 
 // ----------------------------- NAVBAR - MOBILE ------------------------------
 nav {
-  margin-top: 20px;
+  background: $kelp_gray;
+  margin-top: 0;
 }
 ul.topnav {
   list-style-type: none;
@@ -97,30 +98,30 @@ ul.topnav li a {
   font-size: 1.6em;
   letter-spacing: .25em;
   text-align: center;
-  padding-bottom: 14px;
+  padding-bottom: .6em;
   text-decoration: none;
 }
-#nav_backing {
-  background: $kelp_gray; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, 
-                                $spanish_white 0%, 
-                                $mantis_green 50%, 
-                                $kelp_gray 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, 
-                                $spanish_white 0%,
-                                $mantis_green 50%, 
-                                $kelp_gray 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, 
-                                $spanish_white 0%, 
-                                $mantis_green 50%, 
-                                $kelp_gray 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( 
-                                startColorstr='$mantis_green', 
-                                endColorstr='$kelp_gray',
-                                GradientType=1 ); /* IE6-9 fallback */
-  height: 46%;
-  margin-top: -290px;
-}
+// #nav_backing {
+//   background: $kelp_gray; /* Old browsers */
+//   background: -moz-linear-gradient(-45deg, 
+//                                 $spanish_white 0%, 
+//                                 $mantis_green 50%, 
+//                                 $kelp_gray 100%); /* FF3.6-15 */
+//   background: -webkit-linear-gradient(-45deg, 
+//                                 $spanish_white 0%,
+//                                 $mantis_green 50%, 
+//                                 $kelp_gray 100%); /* Chrome10-25,Safari5.1-6 */
+//   background: linear-gradient(135deg, 
+//                                 $spanish_white 0%, 
+//                                 $mantis_green 50%, 
+//                                 $kelp_gray 100%);
+//   filter: progid:DXImageTransform.Microsoft.gradient( 
+//                                 startColorstr='$mantis_green', 
+//                                 endColorstr='$kelp_gray',
+//                                 GradientType=1 ); /* IE6-9 fallback */
+//   height: 46%;
+//   margin-top: -290px;
+// }
 
 
 
@@ -130,7 +131,7 @@ ul.topnav li a {
 
 .section {
   clear: both;
-  padding: 0px;
+  padding: 0;
   margin: .2em 2em 2em 2em;
 }
 .col {
@@ -142,12 +143,12 @@ ul.topnav li a {
 .group:before,
 .group:after { content:""; display:table; }
 .group:after { clear:both;}
-.span_2_of_2, .span_1_of_2 { width: 100%; margin-bottom: -20px;}
+.span_2_of_2, .span_1_of_2 { width: 100%; margin-bottom: -1em;}
 
 @media only screen and (min-width: 1024px) {
   .section {
     clear: both;
-    padding: 0px;
+    padding: 0;
     margin: .2em 5em 5em 5em;
   }
   .col { 
@@ -167,7 +168,7 @@ ul.topnav li a {
   color: $persian_red;
   ul {
     color: $persian_red;
-    margin: 0 0 30px 0;
+    margin: 0 0 2.5em 0;
   }
 }
 
@@ -187,17 +188,21 @@ ul.topnav li a {
 .section_container {
   margin: 0;
   padding: 0;
-  height: 125%;
+  height: 125vh;
   background-size: cover;
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: $kelp_gray;
-  color: $white;
 }
-// Magic disappearing div!
-.splash_text {
-  display: none;
+.splash_text {  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: inherit;
+  font-family: 'Homemade Apple', cursive;
+  font-weight: normal;
+  font-size: 1.4em;
+  letter-spacing: .1em;
 }
 
 .flex_center {
@@ -209,9 +214,22 @@ ul.topnav li a {
 // SECTIONS - MOBILE
 
 #welcome {
-  background-image: url("anna_and_ryan-204.jpg");
-  background-position: center center;
-  margin-top: -320px;
+  background-color: $kelp_gray;
+  background-image: url("anna_and_ryan-204-mobile-min.jpg");
+  background-position: center bottom;
+  color: $white;
+  .splash_text {
+    padding-top: 25vh;
+    font-size: 1.8em;
+  }
+  #join_us {
+    padding: .35em;
+    border-style: solid;
+    border-width: .05em;
+    border-color: $white;
+    color: $white;
+    background-color: rgba(60,40,20,.3);
+  }
 }
 #intro {
   height: auto;
@@ -219,7 +237,6 @@ ul.topnav li a {
   color: $kelp_gray;
   #welcome_sign {
     margin-top: -129px;
-    margin-bottom: 1.3em;
   }
   p {
     text-indent: 1.5em;
@@ -227,12 +244,14 @@ ul.topnav li a {
   }
 }
 #rsvp {
+  background-color: $kelp_gray;
+  color: $white;
   background-image: image-url("anna_and_ryan-237.jpg");
-  header { padding: 52% 0% 8% 0%; }
+  header { padding: 52vh 0 8vh 0; }
   a:link, a:visited  {
-    padding: 12px 20px 12px 32px;
+    padding: .35em .6em; 
     border-style: solid;
-    border-width: 2px;
+    border-width: .05em;
     border-color: $white;
     color: $white;
     font-size: 1.9em;
@@ -253,31 +272,32 @@ ul.topnav li a {
   padding-top: 0;
   #tree_emblem {
     margin-top: -79px;
-    margin-bottom: -79px;
-    padding-bottom: 40px;
   }
   #lodging_options {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: .6em;
   }
   #camping_options { 
-    div { padding: 20px 0 60px 0; }
+    div { padding: 1em 0 4em 0; }
   }
   p {
-    padding: 0 20px;
+    padding: 0 1em;
     text-align: justify;
   }
 }
 #schedule {
+  background-color: $kelp_gray;
+  color: $white;
   background-image: image-url("anna_and_ryan-88.jpg");
-  header { padding-top: 32px; }
+  height: auto;
+  header { padding-top: 2.6em; }
   table {
     font-family: $timesnewroman;
     font-weight: normal;
     font-size: 1.3em;
     letter-spacing: .1em;
-    padding: 0 10px 30px 10px;
+    padding: 0 .6em 9em .6em;
     border-collapse: collapse;
   }
   th { 
@@ -303,76 +323,74 @@ ul.topnav li a {
   tr:nth-child(7),
   tr:nth-child(8) {
       background-color: rgba(30,20,10,.5);
-      border-left: solid 2px;
-      border-right: solid 2px;
+      border-left: solid .05em;
+      border-right: solid .05em;
   }
   tr:nth-child(2),
   tr:nth-child(4) {
-      border-top: solid 2px;
+      border-top: solid .05em;
   }
   tr:nth-child(2),
   tr:nth-child(8) {
-    border-bottom: solid 2px;
+    border-bottom: solid .05em;
   }
 }
 #activities {
-  background-color: #fff;
+  background-color: $white;
   color: $kelp_gray;
   height: auto;
   #two_trees {
     margin-top: -69px;
-    margin-bottom: -69px;
-    padding-bottom: 40px; 
   }
   p {
     text-indent: 1.5em;
     text-align: justify;
+  }
+  .section {
+    padding-bottom: 2em;
   }
 }
 #photobreak_one {
   background-image: image-url("anna_and_ryan-210.jpg");
   background-position: center bottom;
-  height: 25%;
+  height: 25vh;
 }
 #venue {
-  background-color: #fff;
+  background-color: $white;
   color: $kelp_gray;
   height: auto;
-  padding-bottom: 1px;
   #three_trees {
     margin-top: -69px;
-    margin-bottom: -69px;
-    padding-bottom: 20px; 
   }
-  header { padding-top: 30px; }
   p {
     text-indent: 1.5em;
     text-align: justify;
+  }
+  .section {
+    padding-bottom: 2em;
   }
 }
 #photobreak_two {
   background-image: image-url("anna_and_ryan-27.jpg");
   background-position: center bottom;
-  height: 50%;
+  height: 50vh;
 }
 #registry {
   height: auto;
-  background-color: #fff;
+  background-color: $white;
   color: $kelp_gray;
   #solo_tree {
     margin-top: -69px;
-    margin-bottom: -69px;
-    padding-bottom: 48px; 
   }
   #registered_retailers {
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 4em;
   }
 }
 #photobreak_three {
   background-image: image-url("angled_map_bg-1366.jpg");
-  height: 35%;
+  height: 35vh;
 }
 #directions {
   height: auto;
@@ -380,40 +398,37 @@ ul.topnav li a {
   color: $kelp_gray;
   #single_tree {
     margin-top: -69px;
-    margin-bottom: -69px;
-    padding-bottom: 25px; 
   }
-  header { padding: 20px; }
   p {
-    padding: 0 20px;
+    padding: 0 1em;
     text-align: justify;
   }
   fig {
-    padding-top: 30px;
+    padding-top: 2em;
   }
   figcaption {
-    padding-bottom: 50px;
+    padding-bottom: 2em;
   }
 }
 #photobreak_four {
   background-image: image-url("anna_and_ryan-272.jpg");
   background-position: center bottom;
-  height: 70%;
+  height: 70vh;
 }
 #contact {
   height: auto;
   background-color: $kelp_gray;
-  margin-top: -27px;
-  padding-top: 2px;
-  padding-bottom: 20px;
-  h3 {
-    padding: 10px 40px;
+  color: $white;
+  padding-top: .1em;
+  padding-bottom: 2em;
+  header {
+    padding: 3em 0 0 0;
   }
   a {
-    padding: 0px .4em;
+    padding: 0 .4em;
   }
   small {
-    padding: 40px 0 4px 0;
+    padding: 3em 0 .2em 0;
     text-transform: uppercase;
     font-size: .6em;
     letter-spacing: .18em;
@@ -422,7 +437,7 @@ ul.topnav li a {
 
 #rsvp_page, #edit, #reservation, #check {
   height: auto;
-  background-color: #fff;
+  background-color: $white;
   color: $kelp_gray;
   h2 {
     text-transform: lowercase;
@@ -438,7 +453,7 @@ ul.topnav li a {
     font-weight: normal;
     font-size: 1.3em;
     letter-spacing: .1em;
-    padding: 0 10px 30px 10px;
+    padding: 0 .6em 1em .6em;
     border-collapse: collapse;
   }
   td { padding: .5em; }
@@ -451,16 +466,16 @@ ul.topnav li a {
     text-align: center;
   }
   p:last-child {
-    padding: 10px 0 100px 0;
+    padding: .8em 0 5em 0;
   }
   label {
     font-family: $georgia;
     letter-spacing: .1em;
-    padding-right: 1em;
+    padding-right: .5em;
   }
   #submit_box {
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 1em 0 0 0;
   }
   .submit_button {
     font-family: serif;
@@ -468,9 +483,9 @@ ul.topnav li a {
     text-transform: lowercase;
     background-color: $white;
     border: $kelp_gray;
-    padding: 12px 20px 12px 32px;
+    padding: .35em;
     border-style: solid;
-    border-width: 2px;
+    border-width: .05em;
     border-color: $kelp_gray;
     font-size: 1.4em;
     letter-spacing: .25em;
@@ -570,42 +585,39 @@ ul.topnav li a {
 // ----------------------------- NAVBAR - DESKTOP -----------------------------
 
 @media only screen and (min-width: 1024px) {
-  #navbar {margin-left: 20px; margin-right: 20px;}
+  #navbar {
+    padding: 1em 1em 0 2em;
+    height: 4.6em; 
+  }
   ul.topnav {
       list-style-type: none;
-      margin-top: 24px;
-      padding: 0;
       overflow: hidden;
       text-transform: none;
       text-shadow: none;
   }
   ul.topnav li a {
       display: block;
-      color: #fff;
+      color: $white;
       font-size: 1.3em;
       letter-spacing: .25em;
       text-align: center;
-      padding: 10px;
+      padding: .4em;
       text-decoration: none;
   }
   ul.topnav li.left {float: left;}
   ul.topnav li {float: right;}
   ul.topnav li a:hover {
-    background-color: #fff; 
-    color: #4B4F40;
+    background-color: $white; 
+    color: $kelp_gray;
   }
-  ul.topnav li a:hover:active {background-color: #fff; color: #4B4F40;}
+  ul.topnav li a:hover:active {background-color: $white; color: $kelp_gray;}
   ul.topnav li a.active:not(:hover) {
-    padding: 8px;
+    padding: .35em;
     border-style: solid;
-    border-width: 2px;
-    border-color: #fff;
-    color: #fff;
+    border-width: .05em;
+    border-color: $white;
+    color: $white;
     background-color: rgba(60,40,20,.2);
-  }
-  #nav_backing {
-    height: 19%;
-    margin-top: -105px;
   }
 }
 
@@ -619,32 +631,20 @@ ul.topnav li a {
   // Parallax scrolling for stronger performing machines.
   .section_container {background-attachment: fixed;}
 
-  // Magic re-appearing div!
-  .splash_text {  
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: inherit;
-    font-family: 'Homemade Apple', cursive;
-    font-weight: normal;
-    letter-spacing: .1em;
-  }
-
   // SECTIONS - DESKTOP
 
   #welcome {
     background-image: image-url("anna_and_ryan-204.jpg");
     background-position: center bottom;
-    margin-top: -105px;
-    // Magic re-appearing div!
-    h3 {
-      padding-top: 25%;
-      font-size: 2.1em;
+    margin-top: -4.6em;
+    .splash_text {
+      padding-top: 45vh;
+      font-size: 1.9em;
     }
   }
   #rsvp {
     header {
-      padding: 22% 0% 8% 0%;
+      padding: 22vh 0 8vh 0;
     }
   }
   #lodging {
@@ -654,7 +654,7 @@ ul.topnav li a {
       flex-direction: initial;
     }
     p {
-      padding: 0 26%;
+      padding: 0 30vh;
       text-align: justify;
     }
   }
@@ -667,13 +667,11 @@ ul.topnav li a {
   }
   #directions {
     p {
-      padding: 0 26%;
+      padding: 0 30vh;
       text-align: justify;
     }
   }
   #contact {
-    // Magic re-appearing div!
-    h3 {font-size: 1.4em;}
   }
 }
 
