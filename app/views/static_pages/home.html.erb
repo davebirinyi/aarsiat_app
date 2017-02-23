@@ -2,29 +2,31 @@
 <%= render "layouts/flasher" %>
 
 <section class="section_container" id="welcome">
-  <div class="splash_text">
-    <h3>
-      <div id="join_us">We hope you will join us in the forest!</div>
-    </h3>    
-  </div>
-</section>
-<section class="section_container" id="intro">
-  <div class="flex_center">
-    <img src="<%= image_url("welcome_sign.png") %>" id="welcome_sign">
-  </div>
-  <div class="section group">
-    <div class="col span_1_of_2">
-      <p>
-        We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
-      </p>
-      <p>
-        We will begin the weekend with a welcome dinner <time datetime="2017-07-07 18:00">Friday night</time> to which all are invited. <time datetime="2017-07-08 07:00">Saturday morning</time> will be a wonderful time to start the day enjoying yoga in the Tom Tom Yurt.
-      </p>
+  <div id="dimmer">
+    <div class="splash_text">
+      <h3>
+        <div id="join_us">We hope you will join us in the forest!</div>
+      </h3>    
     </div>
-    <div class="col span_1_of_2">
-      <p>
-        You can then enjoy all that Mt. Rainier has to offer taking in the beauty of the outdoors that we love so. Or book a massage at the Spa. We’ll start the festivities at <time datetime="2017-07-08 16:30">4:30pm</time> with a pre-ceremony snack and drink. After the ceremony in the forest Sanctuary we’ll have a <time datetime="2017-07-08 17:30">cocktail hour</time>, then <time datetime="2017-07-08 18:30">family style dinner</time>. Cake, drinks and of course s’mores will be shared to continue the fun.
-      </p>
+  </section>
+  <section class="section_container" id="intro">
+    <div class="flex_center">
+      <img src="<%= image_url("welcome_sign.png") %>" id="welcome_sign">
+    </div>
+    <div class="section group">
+      <div class="col span_1_of_2">
+        <p>
+          We are excited to spend the weekend at Wellspring Spa with our families and friends celebrating love, good food, the outdoors and a little spark of fire.
+        </p>
+        <p>
+          We will begin the weekend with a welcome dinner <time datetime="2017-07-07 18:00">Friday night</time> to which all are invited. <time datetime="2017-07-08 07:00">Saturday morning</time> will be a wonderful time to start the day enjoying yoga in the Tom Tom Yurt.
+        </p>
+      </div>
+      <div class="col span_1_of_2">
+        <p>
+          You can then enjoy all that Mt. Rainier has to offer taking in the beauty of the outdoors that we love so. Or book a massage at the Spa. We’ll start the festivities at <time datetime="2017-07-08 16:30">4:30pm</time> with a pre-ceremony snack and drink. After the ceremony in the forest Sanctuary we’ll have a <time datetime="2017-07-08 17:30">cocktail hour</time>, then <time datetime="2017-07-08 18:30">family style dinner</time>. Cake, drinks and of course s’mores will be shared to continue the fun.
+        </p>
+      </div>
     </div>
   </div>
 </section>
