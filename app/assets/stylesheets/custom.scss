@@ -10,6 +10,7 @@ $mantis_green: #7EBF59;
 $bondi_blue: #008DB8;
 $kelp_gray: #4B4F40;
 $warming_gray: rgba(60,40,20,.4);
+$warming_green: rgba(170,170,7,.1);
 
 // ------------------------------ FONT PALETTE: -------------------------------
 
@@ -210,18 +211,16 @@ ul.topnav li a {
     height: 100%;
     width: 100%;
     background: -moz-linear-gradient(top, 
-                                  $mantis_green 0%, 
-                                  $warming_gray 50%, 
+                                  $warming_green 0%, 
                                   rgba(255,255,255,0) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, 
-                                  $mantis_green 0%, 
-                                  $warming_gray 50%, 
+                                  $warming_green 0%, 
                                   rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, 
-                                  $warming_gray 0%, 
+                                  $warming_green 0%, 
                                   rgba(255,255,255,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( 
-                                  startColorstr='$kelp_gray', 
+                                  startColorstr="rgba(170,170,7,.1)", 
                                   endColorstr='rgba(255,255,255,0)',
                                   GradientType=0 ); /* IE6-9 fallback */
   }
