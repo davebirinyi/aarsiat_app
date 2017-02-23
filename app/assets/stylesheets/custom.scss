@@ -72,7 +72,6 @@ a { color: inherit; }
   color: $persian_red;
 }
 
-
 // ############################ MOBILE ORIENTATION ############################
 // This site is designed to be MOBILE-FIRST. Below are the default stylings,
 // intended for initial mobile renders. (The Desktop Orientation section can be
@@ -172,7 +171,6 @@ ul.topnav li a {
   }
 }
 
-
 // HOME PAGE CLASS DEFINITIONS - MOBILE
 
 .section_header {
@@ -204,7 +202,6 @@ ul.topnav li a {
   font-size: 1.4em;
   letter-spacing: .1em;
 }
-
 .flex_center {
   display: flex;
   justify-content: center;
@@ -214,7 +211,6 @@ ul.topnav li a {
 // SECTIONS - MOBILE
 
 #welcome {
-  background-color: $kelp_gray;
   background-image: url("anna_and_ryan-204-mobile-min.jpg");
   background-position: center bottom;
   color: $white;
@@ -496,9 +492,11 @@ ul.topnav li a {
       background-color: $kelp_gray;
       border-color: $white;
       color: $white;
-    }
+  }
 }
-
+#endpage_tree {
+  margin-bottom: -32px;
+}
 
 
 
