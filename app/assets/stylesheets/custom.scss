@@ -585,7 +585,7 @@ ul.topnav li a {
       font-size: 1.3em;
       letter-spacing: .25em;
       text-align: center;
-      padding: 7px;
+      padding: 10px;
       text-decoration: none;
   }
   ul.topnav li.left {float: left;}
@@ -596,7 +596,7 @@ ul.topnav li a {
   }
   ul.topnav li a:hover:active {background-color: #fff; color: #4B4F40;}
   ul.topnav li a.active:not(:hover) {
-    padding: 5px;
+    padding: 8px;
     border-style: solid;
     border-width: 2px;
     border-color: #fff;

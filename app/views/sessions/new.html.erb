@@ -5,10 +5,10 @@
 <section class="section_container" id="check">
   <h1 class="section_header">Reservation Lookup</h1>
   <%= render "layouts/flasher" %>
-  <table class="flex_center">
     <%= form_for(:session, url: check_path) do |f| %>
+  <table class="flex_center">
     <td><%= f.label :email %></td>
-    <td><%= f.email_field :email, class: "form_control" %></td>
+    <td><%= f.email_field :email %></td>
   </table>
   <div class="flex_center">
     <%= f.submit "Check Reservation", class: "submit_button" %>

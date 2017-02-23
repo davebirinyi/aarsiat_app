@@ -1,6 +1,6 @@
 <%= render "layouts/header" %>
-<%= render "layouts/flasher" %>
 <%= render "layouts/nav_backing" %>
+<%= render "layouts/flasher" %>
 
 
 <section class="section_container" id="edit">
@@ -23,11 +23,11 @@
       </tr>
       <tr>
         <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
-        <td><%= f.select :saturday_adults, (0..6).to_a, :prompt => ""%></td>
+        <td><%= f.select :saturday_adults, (0..6).to_a %></td>
       </tr>
       <tr>
         <td><%= f.label :saturday_children, "Children in Your Party" %></td>
-        <td><%= f.select :saturday_children, (0..6).to_a, :selected => 0%></td>
+        <td><%= f.select :saturday_children, (0..6).to_a %></td>
       </tr>
     </table>
 
@@ -52,11 +52,11 @@
     <table class="flex_center">
       <tr>
         <td><%= f.label :friday_adults, "Adults" %></td>
-        <td><%= f.select :friday_adults, (0..6).to_a, :selected => 0%></td>
+        <td><%= f.select :friday_adults, (0..6).to_a %></td>
       </tr>
       <tr>
         <td><%= f.label :friday_children, "Children" %></td>
-        <td><%= f.select :friday_children, (0..6).to_a, :selected => 0%></td>
+        <td><%= f.select :friday_children, (0..6).to_a %></td>
       </tr>
     </table>
 
@@ -68,11 +68,11 @@
     <table class="flex_center">
       <tr>
         <td><%= f.label :yoga_early, "7am session" %></td>
-        <td><%= f.select :yoga_early, (0..6).to_a, :selected => 0%></td>
+        <td><%= f.select :yoga_early, (0..6).to_a %></td>
       </tr>
       <tr>
         <td><%= f.label :yoga_late, "10am session" %></td>
-        <td><%= f.select :yoga_late, (0..6).to_a, :selected => 0%></td>
+        <td><%= f.select :yoga_late, (0..6).to_a %></td>
       </tr>
     </table>
     <div class="flex_center" id="submit_box">
