@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  # root   'static_pages#savedate'
-  root   'static_pages#home'
+  root   'static_pages#savedate'
+  # root   'static_pages#home'
   get    '/savedate',  to: 'static_pages#savedate'
   get    '/home',      to: 'static_pages#home'
   get    '/godzillamode' => 'guests#index'
