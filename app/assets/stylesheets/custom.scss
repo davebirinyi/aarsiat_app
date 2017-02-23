@@ -213,6 +213,7 @@ ul.topnav li a {
 #welcome {
   background-image: image-url("anna_and_ryan-204-mobile-min.jpg");
   background-position: center bottom;
+  height: 100vh;
   color: $white;
   .splash_text {
     padding-top: 25vh;
@@ -634,6 +635,7 @@ ul.topnav li a {
   #welcome {
     background-image: image-url("anna_and_ryan-204.jpg");
     background-position: center bottom;
+    height: 125vh;
     margin-top: -4.6em;
     .splash_text {
       padding-top: 45vh;
