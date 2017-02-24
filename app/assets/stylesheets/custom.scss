@@ -9,7 +9,7 @@ $persian_red: #D53223;
 $mantis_green: #7EBF59;
 $bondi_blue: #008DB8;
 $kelp_gray: #4B4F40;
-$warming_gray: rgba(60,40,20,.4);
+$warming_gray: rgba(20,20,15,.25);
 $warming_green: rgba(170,170,7,.1);
 
 // ------------------------------ FONT PALETTE: -------------------------------
@@ -316,7 +316,7 @@ ul.topnav li a {
   tr:nth-child(6),
   tr:nth-child(7),
   tr:nth-child(8) {
-      background-color: rgba(30,20,10,.5);
+      background-color: rgba(20,20,20,.75);
       border-left: solid .05em;
       border-right: solid .05em;
   }
@@ -367,7 +367,7 @@ ul.topnav li a {
 #photobreak_two {
   background-image: image-url("anna_and_ryan-27.jpg");
   background-position: center bottom;
-  height: 50vh;
+  height: 75vh;
 }
 #registry {
   height: auto;
@@ -407,7 +407,7 @@ ul.topnav li a {
 #photobreak_four {
   background-image: image-url("anna_and_ryan-272.jpg");
   background-position: center bottom;
-  height: 70vh;
+  height: 75vh;
 }
 #contact {
   height: auto;
