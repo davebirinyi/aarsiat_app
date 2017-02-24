@@ -190,6 +190,34 @@ ul.topnav li a {
 
 // SECTIONS - MOBILE
 
+#index {
+  background-color: #D8D6CA;
+  color: #997CBE;
+  h1 { 
+  background-color: #F7F9EC;
+    margin: -4vh 0 -3.3vh 0;
+    padding: 0;
+    font-size: 10.33vw;
+    font-family: Impact;
+    color: #997CBE;
+  }
+  img {
+    width: 100vw;
+  }
+  td {
+    color: #1F2739;
+    text-align: center;
+  }
+  td:first-child, th:first-child {
+    text-align: left;
+  }
+  td:nth-child(2), th:nth-child(2) {
+    text-align: left;
+  }
+  td:last-child, tr:last-child {
+    text-align: right;
+  }
+}
 #welcome {
   background-image: image-url("anna_and_ryan-204-mobile-min.jpg");
   background-position: center bottom;
