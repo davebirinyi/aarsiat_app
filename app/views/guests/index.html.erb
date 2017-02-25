@@ -22,6 +22,7 @@
         <th>Yoga 7am</th>
         <th>Yoga 9am</th>
         <th>Yoga 11am</th>
+        <th>Song Request</th>
         <th>Last Updated</th>
       </tr>
       <% @guests.order("updated_at DESC").each do |guest| %>
@@ -37,6 +38,7 @@
         <td><%= guest.yoga_early %></td>
         <td><%= guest.yoga_mid %></td>
         <td><%= guest.yoga_late %></td>
+        <td><%= guest.song_requests %></td>
         <td><%= time_ago_in_words(guest.updated_at) %></td>
       </tr>
       <% end %>

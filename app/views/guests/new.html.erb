@@ -84,6 +84,21 @@
         <td><%= f.select :yoga_late, (0..6).to_a, :selected => 0%></td>
       </tr>
     </table>
+
+    <h2>Music</h2>
+    <p>Be our DJ! We've decided to not have a professional DJ at the wedding. Instead we thought we'd ask our family and friends to share with us the music they love. Nominate the song you would most like us to add to the party playlist.</p>
+
+    <table class="flex_center">
+      <tr>
+        <td>
+          <%= f.label :song_requests, "Song" %>
+        </td>
+        <td>
+          <%= f.text_field :song_requests %>
+        </td>
+      </tr>
+    </table>
+
     <div class="flex_center" id="submit_box">
       <%= f.submit "Submit Response", class: "submit_button" %>
     </div>

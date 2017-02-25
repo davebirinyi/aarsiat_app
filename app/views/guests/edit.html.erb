@@ -14,11 +14,11 @@
     <table class="flex_center">
       <tr>
         <td><%= f.label :name %></td>
-        <td><%= f.text_field :name%></td>
+        <td><%= f.text_field :name %></td>
       </tr>
       <tr>
         <td><%= f.label :email %></td>
-        <td><%= f.email_field :email%></td>
+        <td><%= f.email_field :email %></td>
       </tr>
       <tr>
         <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
@@ -36,11 +36,11 @@
       <tr>
         <td>
           <%= f.label :vegan, "Vegan" %>
-          <%= f.check_box :vegan%>
+          <%= f.check_box :vegan %>
         </td>
         <td>
           <%= f.label :food_restrictions, "Other" %>
-          <%= f.text_field :food_restrictions%>
+          <%= f.text_field :food_restrictions %>
         </td>
       </tr>
     </table>
@@ -78,6 +78,21 @@
         <td><%= f.select :yoga_late, (0..6).to_a %></td>
       </tr>
     </table>
+
+    <h2>Music</h2>
+    <p>Nominate the song you would most like us to add to the party playlist.</p>
+
+    <table class="flex_center">
+      <tr>
+        <td>
+          <%= f.label :song_requests, "Song" %>
+        </td>
+        <td>
+          <%= f.text_field :song_requests %>
+        </td>
+      </tr>
+    </table>
+
     <div class="flex_center" id="submit_box">
       <%= f.submit "Save Changes", class: "submit_button" %>
     </div>

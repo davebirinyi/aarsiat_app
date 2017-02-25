@@ -77,6 +77,21 @@
         <td><%= @guest.yoga_late %></td>
       </tr>
     </table>
+
+    <h2>Music</h2>
+    <p>Nominate the song you would most like us to add to the party playlist.</p>
+
+    <table class="flex_center">
+      <tr>
+        <td>
+          <%= f.label :song_requests, "Song" %>
+        </td>
+        <td>
+          <%= @guest.song_requests %>
+        </td>
+      </tr>
+    </table>
+
     <p>
       Something not quite right? <%= link_to "Make Changes to the Reservation", edit_guest_path(current_guest), class: "emphasis" %>
     </p>

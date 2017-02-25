@@ -59,7 +59,8 @@ class GuestsController < ApplicationController
         :friday_children,
         :yoga_early,
         :yoga_mid,
-        :yoga_late)
+        :yoga_late,
+        :song_requests)
     end
 
     # Before filters
