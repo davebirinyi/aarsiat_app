@@ -461,6 +461,9 @@ ul.topnav li a {
   height: auto;
   background-color: $white;
   color: $kelp_gray;
+  h1 {
+    padding: 3em 0 0 0;
+  }
   h2 {
     text-transform: lowercase;
     text-align: center;
@@ -610,8 +613,11 @@ ul.topnav li a {
 
 @media only screen and (min-width: 1024px) {
   #navbar {
-    padding: 1em 1em 0 2em;
-    height: 4.6em; 
+    position: fixed;
+    top: 0;
+    padding: .2em 1em 0 2em;
+    height: 2.4em; 
+    width: 100vw;
   }
   ul.topnav {
       list-style-type: none;
@@ -622,13 +628,16 @@ ul.topnav li a {
   ul.topnav li a {
       display: block;
       color: $white;
-      font-size: 1.3em;
+      font-size: 1em;
       letter-spacing: .25em;
       text-align: center;
-      padding: .4em;
+      padding: .4em .5em;
       text-decoration: none;
   }
-  ul.topnav li.left {float: left;}
+  ul.topnav li.left {
+    float: left;
+    margin: -.1em;
+  }
   ul.topnav li {float: right;}
   ul.topnav li a:hover {
     background-color: $white; 
@@ -636,12 +645,10 @@ ul.topnav li a {
   }
   ul.topnav li a:hover:active {background-color: $white; color: $kelp_gray;}
   ul.topnav li a.active:not(:hover) {
-    padding: .35em;
+    padding: .35em .45em;
     border-style: solid;
     border-width: .05em;
     border-color: $white;
-    color: $white;
-    background-color: $warming_gray;
   }
 }
 
@@ -661,7 +668,7 @@ ul.topnav li a {
     background-image: image-url("anna_and_ryan-204.jpg");
     background-position: center bottom;
     height: 125vh;
-    margin-top: -4.6em;
+    // margin-top: -4.6em;
     .splash_text {
       padding-top: 45vh;
       font-size: 1.9em;

@@ -3,7 +3,7 @@
 
 
 <section class="section_container" id="reservation">
-  <h1 class="section_header"><%= @guest.name %></h1>
+  <h1 class="section_header">Your Reservation</h1>
   <div>
     <%= form_for(@guest, url: rsvp_path) do |f| %>
       <%= render "shared/error_messages" %>
