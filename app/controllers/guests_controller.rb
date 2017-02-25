@@ -58,6 +58,7 @@ class GuestsController < ApplicationController
         :friday_adults,
         :friday_children,
         :yoga_early,
+        :yoga_mid,
         :yoga_late)
     end
 

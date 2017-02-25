@@ -76,7 +76,11 @@
         <td><%= f.select :yoga_early, (0..6).to_a, :selected => 0%></td>
       </tr>
       <tr>
-        <td><%= f.label :yoga_late, "10am session" %></td>
+        <td><%= f.label :yoga_mid, "9am session" %></td>
+        <td><%= f.select :yoga_mid, (0..6).to_a, :selected => 0%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :yoga_late, "11am session" %></td>
         <td><%= f.select :yoga_late, (0..6).to_a, :selected => 0%></td>
       </tr>
     </table>
