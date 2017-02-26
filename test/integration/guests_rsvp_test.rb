@@ -23,7 +23,9 @@ class GuestsResponseTest < ActionDispatch::IntegrationTest
                                             friday_adults: 0,
                                             friday_children: 0,
                                             yoga_early: 0,
-                                            yoga_late: 0 } }
+                                            yoga_mid: 0,
+                                            yoga_late: 0,
+                                            song_requests: "" } }
     end
     follow_redirect!
     assert_template 'guests/show'

@@ -10,7 +10,9 @@ dbcooper:
   friday_adults: 1
   friday_children: 0
   yoga_early: 1
+  yoga_mid: 0
   yoga_late: 0
+  song_requests: Louie Louie by the Kingsmen
 
 dondraper:
   name: Don Draper
@@ -22,4 +24,6 @@ dondraper:
   friday_adults: 1
   friday_children: 0
   yoga_early: 0
+  yoga_mid: 0
   yoga_late: 2
+  song_requests: Dylan, "The Times They Are a-Changin"
