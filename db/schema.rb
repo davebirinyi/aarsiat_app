@@ -10,23 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225232538) do
+ActiveRecord::Schema.define(version: 20170227185334) do
 
   create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "saturday_adults"
-    t.integer  "saturday_children"
-    t.boolean  "vegan"
-    t.string   "food_restrictions"
-    t.integer  "friday_adults"
-    t.integer  "friday_children"
-    t.integer  "yoga_early"
-    t.integer  "yoga_late"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "yoga_mid"
-    t.string   "song_requests"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "members_in_party"
     t.index ["email"], name: "index_guests_on_email", unique: true
   end
 
