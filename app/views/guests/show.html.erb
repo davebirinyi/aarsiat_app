@@ -25,6 +25,16 @@
       </tr>
     </table>
 
+    <div class="">
+      <% if @guest.attendees.any? %>
+        <h3>Attendees (<%= @guest.attendees.count %>)</h3>
+        <ol class="attendees">
+          <%= render @attendees %>
+        </ol>
+      <% end %>
+    </div>
+
+
     <p>
       Something not quite right? <%= link_to "Make Changes to the Reservation", edit_guest_path(current_guest), class: "emphasis" %>
     </p>
