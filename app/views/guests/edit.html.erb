@@ -1,101 +1,11 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
-
+<% provide(:button_text, "Next") %>
 
 <section class="section_container" id="edit">
   <h1 class="section_header">Edit Your Reservation</h1>
   <div>
-    <%= form_for(@guest, url: rsvp_path) do |f| %>
-      <%= render "shared/error_messages" %>
-
-    <h2>The Wedding</h2>
-    <p>Ceremony and Reception, Saturday July 8th</p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :name %></td>
-        <td><%= f.text_field :name %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :email %></td>
-        <td><%= f.email_field :email %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
-        <td><%= f.select :saturday_adults, (0..6).to_a %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :saturday_children, "Children in Your Party" %></td>
-        <td><%= f.select :saturday_children, (0..6).to_a %></td>
-      </tr>
-    </table>
-
-    <p>Reception food is vegetarian. Do you have other food restrictions?</p>
-
-    <table class="flex_center">
-      <tr>
-        <td>
-          <%= f.label :vegan, "Vegan" %>
-          <%= f.check_box :vegan %>
-        </td>
-        <td>
-          <%= f.label :food_restrictions, "Other" %>
-          <%= f.text_field :food_restrictions %>
-        </td>
-      </tr>
-    </table>
-
-    <h2>Welcome Dinner</h2>
-    <p>Friday July 7th, starting at 6pm</p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :friday_adults, "Adults" %></td>
-        <td><%= f.select :friday_adults, (0..6).to_a %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :friday_children, "Children" %></td>
-        <td><%= f.select :friday_children, (0..6).to_a %></td>
-      </tr>
-    </table>
-
-    <h2>Yoga</h2>
-    <p>
-      Led by <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %> Saturday morning
-    </p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :yoga_early, "7am session" %></td>
-        <td><%= f.select :yoga_early, (0..6).to_a %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_mid, "9am session" %></td>
-        <td><%= f.select :yoga_mid, (0..6).to_a %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_late, "11am session" %></td>
-        <td><%= f.select :yoga_late, (0..6).to_a %></td>
-      </tr>
-    </table>
-
-    <h2>Music</h2>
-    <p>Nominate the song you would most like us to add to the party playlist.</p>
-
-    <table class="flex_center">
-      <tr>
-        <td>
-          <%= f.label :song_requests, "Song" %>
-        </td>
-        <td>
-          <%= f.text_field :song_requests %>
-        </td>
-      </tr>
-    </table>
-
-    <div class="flex_center" id="submit_box">
-      <%= f.submit "Save Changes", class: "submit_button" %>
-    </div>
+    <%= render "form" %>
 
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
