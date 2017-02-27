@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class GuestsCheckTest < ActionDispatch::IntegrationTest
+  include ApplicationHelper
 
   def setup
     @guest = guests(:dbcooper)
+    @attendee = attendees(:dbc)
   end
 
   test "check (in) with invalid information" do

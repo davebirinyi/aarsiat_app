@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+dbc:
   name: "DB Cooper"
   child: false
   welcome_dinner: true
@@ -12,7 +12,7 @@ one:
   song_title: "Louie Louie"
   guest: dbcooper
 
-two:
+money:
   name: "$200,000 Cash"
   child: false
   welcome_dinner: false
