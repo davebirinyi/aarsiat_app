@@ -3,27 +3,9 @@
 dbcooper:
   name: DB Cooper
   email: nevercaught@boeing.com
-  saturday_adults: 1
-  saturday_children: 0
-  vegan: false
-  food_restrictions: bourbon and water, please
-  friday_adults: 1
-  friday_children: 0
-  yoga_early: 1
-  yoga_mid: 0
-  yoga_late: 0
-  song_requests: Louie Louie by the Kingsmen
+  members_in_party: 1
 
 dondraper:
   name: Don Draper
   email: dickwhitman@scdp.com
-  saturday_adults: 1
-  saturday_children: 2
-  vegan: false
-  food_restrictions: old fashioned
-  friday_adults: 1
-  friday_children: 0
-  yoga_early: 0
-  yoga_mid: 0
-  yoga_late: 2
-  song_requests: Dylan, "The Times They Are a-Changin"
+  members_in_party: 3

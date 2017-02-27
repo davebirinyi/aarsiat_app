@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227185334) do
+ActiveRecord::Schema.define(version: 20170227204229) do
+
+  create_table "attendees", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "child"
+    t.boolean  "welcome_dinner"
+    t.string   "yoga"
+    t.boolean  "reception_dinner"
+    t.boolean  "vegan"
+    t.string   "food_restrictions"
+    t.string   "song_artist"
+    t.string   "song_title"
+    t.integer  "guest_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["guest_id", "updated_at"], name: "index_attendees_on_guest_id_and_updated_at"
+    t.index ["guest_id"], name: "index_attendees_on_guest_id"
+  end
 
   create_table "guests", force: :cascade do |t|
     t.string   "name"
