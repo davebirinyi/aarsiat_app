@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20170225232538) do
     t.string   "name"
     t.string   "email"
     t.integer  "saturday_adults"
-    t.integer  "saturday_children"
-    t.boolean  "vegan"
+    t.integer  "saturday_children", default: 0
+    t.boolean  "vegan",             default: false
     t.string   "food_restrictions"
-    t.integer  "friday_adults"
-    t.integer  "friday_children"
-    t.integer  "yoga_early"
-    t.integer  "yoga_late"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "friday_adults",     default: 0
+    t.integer  "friday_children",   default: 0
+    t.integer  "yoga_early",        default: 0
+    t.integer  "yoga_late",         default: 0
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "yoga_mid"
     t.string   "song_requests"
     t.index ["email"], name: "index_guests_on_email", unique: true
