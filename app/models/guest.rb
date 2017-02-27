@@ -5,15 +5,8 @@ class Guest < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :saturday_adults, presence: true
-  validates :saturday_children, presence: true
-  validates :vegan, inclusion: { in: [true, false] }
-  # validates :food_restrictions, presence: true
-  validates :friday_adults, presence: true
-  validates :friday_children, presence: true
-  validates :yoga_early, presence: true
-  validates :yoga_late, presence: true
-  validates :yoga_mid, presence: true
+  validates :members_in_party, presence: true, only_integer: true
+
 
   def self.to_csv
     attributes = %w{ name email saturday_adults saturday_children vegan food_restrictions friday_adults friday_children yoga_early yoga_late updated_at}
