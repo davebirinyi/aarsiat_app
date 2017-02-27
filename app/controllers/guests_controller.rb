@@ -57,14 +57,6 @@ class GuestsController < ApplicationController
 
     # Before filters
 
-    # Confirms a checked-in guest.
-    def checked_in_guest
-      unless checked_in?
-        flash[:danger] = "Check for a reservation by entering your email address."
-        redirect_to check_url
-      end
-    end
-
     # Confirms the correct guest.
     def correct_guest
       @guest = Guest.find(params[:id])

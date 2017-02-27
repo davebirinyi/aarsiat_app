@@ -30,7 +30,7 @@ class GuestsCheckTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", guest_path(@guest)
     delete check_out_path
     assert_not is_checked_in?
-    assert_redirected_to root_url
+    assert_redirected_to home_url
     follow_redirect!
     assert_select "a[href=?]", rsvp_path
     assert_select "a[href=?]", guest_path(@guest), count: 0
