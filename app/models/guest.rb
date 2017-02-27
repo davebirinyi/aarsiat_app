@@ -5,7 +5,7 @@ class Guest < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :members_in_party, presence: true, only_integer: true
+  validates :members_in_party, presence: true, numericality: { only_integer: true }
 
 
   def self.to_csv

@@ -1,6 +1,6 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
-<% provide(:button_text, "Confirm Change") %>
+<% provide(:button_text, "Confirm Changes") %>
 
 <section class="section_container" id="edit">
   <h1 class="section_header">Edit Your Reservation</h1>
@@ -10,7 +10,6 @@
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
     </p>
-    <% end %>
 
   </div>
 </section>

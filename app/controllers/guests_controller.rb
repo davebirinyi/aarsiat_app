@@ -51,16 +51,7 @@ class GuestsController < ApplicationController
       params.require(:guest).permit(
         :name,
         :email,
-        :saturday_adults,
-        :saturday_children,
-        :vegan,
-        :food_restrictions,
-        :friday_adults,
-        :friday_children,
-        :yoga_early,
-        :yoga_mid,
-        :yoga_late,
-        :song_requests)
+        :members_in_party)
     end
 
     # Before filters
