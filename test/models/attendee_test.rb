@@ -19,9 +19,4 @@ class AttendeeTest < ActiveSupport::TestCase
     assert @attendee.valid?
   end
 
-  test "guest id should be present" do
-    @attendee.guest_id = nil
-    assert_not @attendee.valid?
-  end
-
 end

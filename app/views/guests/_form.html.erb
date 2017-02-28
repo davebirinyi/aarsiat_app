@@ -16,28 +16,23 @@
     <td><%= f.select :members_in_party, ["",1,2,3,4,5,6] %></td>
   </tr>
 </table>
-<table>
-  <tr>
-    <th>Attendee Name</th>
-    <th>Child<br><small>above age 3</small></th>
-    <th>Welcome Dinner<br><small>Friday Evening</small></th>
-    <th>Yoga<br><small>Saturday Morning</small></th>
-    <th>Reception Dinner<br><small>Saturday Evening</small></th>
-    <th>Vegan</th>
-    <th>Food Restrictions</th>
-    <th>Song Artist</th>
-    <th>Song Title</th>
-  </tr>
-</table>
+
+
   <%= f.fields_for :attendees do |attendee_form| %>
     <table>
       <tr>
         <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
-        <td><%= attendee_form.check_box :child %></td>
-        <td><%= attendee_form.check_box :welcome_dinner %></td>
-        <td><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
-        <td><%= attendee_form.check_box :reception_dinner %></td>
-        <td><%= attendee_form.check_box :vegan %></td>
+        <td>
+          <%= attendee_form.label :child %><%= attendee_form.check_box :child %>
+        </td>
+        <td>
+          <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
+        <td>
+          <%= attendee_form.label :yoga %><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
+        <td>
+          <%= attendee_form.label :reception_dinner %><%= attendee_form.check_box :reception_dinner %></td>
+        <td>
+          <%= attendee_form.label :vegan %><%= attendee_form.check_box :vegan %></td>
         <td><%= attendee_form.text_field :food_restrictions, placeholder: "other food restrictions" %></td>
         <td><%= attendee_form.text_field :song_artist, placeholder: "song artist" %></td>
         <td><%= attendee_form.text_field :song_title, placeholder: "song title" %></td>

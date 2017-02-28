@@ -31,7 +31,7 @@ class GuestsController < ApplicationController
     if @guest.save
       check @guest
       flash[:success] = "Thanks for your response!"
-      redirect_to @guest #ONCE ATTENDEES FORM READY, BOOT TO THERE
+      redirect_to @guest 
     else
       render 'new'
     end
