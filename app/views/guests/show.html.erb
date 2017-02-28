@@ -6,7 +6,7 @@
   <h1 class="section_header">Your Reservation</h1>
   <div>
     <%= form_for(@guest, url: rsvp_path) do |f| %>
-      <%= render "shared/error_messages" %>
+      <%= render "shared/error_messages", object: f.object %>
 
     <h2>Response Party</h2>
 
@@ -29,12 +29,11 @@
       <% if @guest.attendees.any? %>
         <h3>Attendees (<%= @guest.attendees.count %>)</h3>
         <ol class="attendees">
-          <%= render @attendees %>
+          <%= render @guest.attendees %>
         </ol>
       <% end %>
     </div>
 
-  <%= render 'shared/attendee_form' %>
 
     <p>
       Need to change how we contact you? <%= link_to "Update Contact Information", edit_guest_path(current_guest), class: "emphasis" %>

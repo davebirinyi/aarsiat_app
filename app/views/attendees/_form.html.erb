@@ -1,6 +1,5 @@
-<%= form_for(@attendee) do |f| %>
+<%= form_for(@attendees) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <%= (@members_in_party.to_i).times do %>
   <table>
     <tr>
       <td><%= f.text_field :name, placeholder: "attendee name" %></td>
@@ -14,6 +13,5 @@
       <td><%= f.text_field :song_title, placeholder: "song title" %></td>
     </tr>
   </table>
-  <% end %>
     <%= f.submit "Add Attendees", class: "submit_button" %>
 <% end %>

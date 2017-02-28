@@ -1,7 +1,13 @@
 class AttendeesController < ApplicationController
-  before_action :checked_in_guest, only: [:create, :edit, :update, :destroy]
+  before_action :checked_in_guest, only: [:new, :create, :edit, :update, :destroy]
+
+  def new
+    @attendee = current_guest.attendees.build
+    @members_in_party = current_guest.members_in_party
+  end
 
   def create
+    @guest = current_guest
     @attendee = current_guest.attendees.build(attendee_params)
     if @attendee.save
       flash[:success] = "Attendees added"

@@ -1,10 +1,10 @@
-<% if @guest.errors.any? %>
+<% if object.errors.any? %>
   <div class="flex_center" id="error_explanation">
     <div class="emphasis">
-      The form contains <%= pluralize(@guest.errors.count, "error") %>.
+      The form contains <%= pluralize(object.errors.count, "error") %>.
     </div>
     <ul>
-    <% @guest.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       <li class="emphasis"><%= msg %></li>
     <% end %>
     </ul>
