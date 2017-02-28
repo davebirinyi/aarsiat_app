@@ -15,6 +15,8 @@ class GuestsController < ApplicationController
   def show
     @guest = Guest.find(params[:id])
     @attendees = @guest.attendees
+    @attendee = current_guest.attendees.build
+    @members_in_party = @guest.members_in_party
   end
 
   def new

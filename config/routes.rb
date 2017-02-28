@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   patch  '/rsvp',      to: 'guests#update'
   get    '/check',     to: 'sessions#new'
   post   '/check',     to: 'sessions#create'
-  delete '/check_out',  to: 'sessions#destroy'
+  delete '/check_out', to: 'sessions#destroy'
   resources :guests, only:    [:new, :create, :show, :edit, :update, :destroy]
   resources :attendees, only: [:create, :edit, :update, :destroy]
 end

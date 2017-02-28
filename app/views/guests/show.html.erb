@@ -34,9 +34,10 @@
       <% end %>
     </div>
 
+  <%= render 'shared/attendee_form' %>
 
     <p>
-      Something not quite right? <%= link_to "Make Changes to the Reservation", edit_guest_path(current_guest), class: "emphasis" %>
+      Need to change how we contact you? <%= link_to "Update Contact Information", edit_guest_path(current_guest), class: "emphasis" %>
     </p>
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.

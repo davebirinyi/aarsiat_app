@@ -1,0 +1,17 @@
+<%= form_for(@attendee) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <table>
+    <tr>
+      <td><%= f.text_field :name, placeholder: "attendee name" %></td>
+      <td><%= f.check_box :child %></td>
+      <td><%= f.check_box :welcome_dinner %></td>
+      <td><%= f.select :yoga, ["","7am","9am","11am"] %></td>
+      <td><%= f.check_box :reception_dinner %></td>
+      <td><%= f.check_box :vegan %></td>
+      <td><%= f.text_field :food_restrictions, placeholder: "other food restrictions" %></td>
+      <td><%= f.text_field :song_artist, placeholder: "song artist" %></td>
+      <td><%= f.text_field :song_title, placeholder: "song title" %></td>
+    </tr>
+  </table>
+    <%= f.submit "Add Attendees", class: "submit_button" %>
+<% end %>
