@@ -31,6 +31,7 @@
   <div class="flex_center">
     <table>
       <tr>
+        <th>Assoc. Email</th>
         <th>Attendee Name</th>
         <th>Child</th>
         <th>Welcome Dinner</th>
@@ -45,6 +46,7 @@
       <% @guests.order("updated_at DESC").each do |guest| %>
         <% guest.attendees.each do |a| %>
             <tr>
+              <td><%= guest.email %></td>
               <td><%= a.name %></td>
               <td>
                 <% if a.child? %>✔️<% end %>
