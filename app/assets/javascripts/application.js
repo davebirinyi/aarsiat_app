@@ -14,3 +14,52 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $().ready(function(){
+      $(".attendee_row").hide();
+    });
+    // $("#hide").click(function(){
+    //     $(".attendee_row").hide();
+    // });
+    // $("#one").click(function(){
+    //     $("table:nth-child(5), table:nth-child(6)").show();
+    // });
+    // $("#two").click(function(){
+    //     $(".attendee_row").show();
+    // });
+
+
+
+    $("#members_in_party_members_in_party").change(function(){
+      var members_in_party = this.value;
+    if(members_in_party==1)
+      $("table:nth-child(5)").show();
+      $("table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+    
+    if(members_in_party==2)
+      $("table:nth-child(5), table:nth-child(6)").show();
+      $("table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+   
+    if(members_in_party==3)
+      $("table:nth-child(5), table:nth-child(6), table:nth-child(7)").show();
+      $("table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+
+    if(members_in_party==4)
+      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8)").show();
+      $("table:nth-child(9), table:nth-child(10)").hide();
+
+    if(members_in_party==5)
+      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9)").show();
+      $("table:nth-child(10)").hide();
+
+    if(members_in_party==6)
+      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").show();
+
+    });
+
+
+});
+
+
+
