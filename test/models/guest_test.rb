@@ -6,7 +6,8 @@ class GuestTest < ActiveSupport::TestCase
     @guest = Guest.new(
       name: "Example Guest", 
       email: "guest@thewedding.com",
-      members_in_party: "2")
+      song_artist: "",
+      song_title: "")
   end
 
   test "should be valid" do
@@ -20,11 +21,6 @@ class GuestTest < ActiveSupport::TestCase
 
   test "email should be present" do
     @guest.email = "     "
-    assert_not @guest.valid?
-  end
-
-  test "members_in_party should be present" do
-    @guest.members_in_party = " "
     assert_not @guest.valid?
   end
 

@@ -57,7 +57,8 @@ class GuestsController < ApplicationController
       params.require(:guest).permit(
         :name,
         :email,
-        :members_in_party,
+        :song_artist,
+        :song_title,
         attendees_attributes: [
           :id,
           :name,
@@ -66,9 +67,7 @@ class GuestsController < ApplicationController
           :yoga,
           :reception_dinner,
           :vegan,
-          :food_restrictions,
-          :song_artist,
-          :song_title
+          :food_restrictions
         ])
     end
 

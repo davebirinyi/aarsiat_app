@@ -13,14 +13,16 @@
       <tr>
         <th>Guest Name</th>
         <th>Email Address</th>
-        <th>Members in Party</th>
+        <th>Song Artist</th>
+        <th>Song Title</th>
         <th>Last Updated</th>
       </tr>
       <% @guests.order("updated_at DESC").each do |guest| %>
       <tr>
         <td><%= guest.name %></td>
         <td><%= guest.email %></td>
-        <td><%= guest.members_in_party %></td>
+        <td><%= guest.song_artist %></td>
+        <td><%= guest.song_title %></td>
         <td><%= time_ago_in_words(guest.updated_at) %></td>
       </tr>
       <% end %>
@@ -39,8 +41,6 @@
         <th>Reception Dinner</th>
         <th>Vegan</th>
         <th>Food Restrictions</th>
-        <th>Song Artist</th>
-        <th>Song Title</th>
         <th>Last Updated</th>
       </tr>
       <% @guests.order("updated_at DESC").each do |guest| %>
@@ -62,8 +62,6 @@
                 <% if a.vegan? %>✔️<% end %>
               </td>
               <td><%= a.food_restrictions %></td>
-              <td><%= a.song_artist %></td>
-              <td><%= a.song_title %></td>
               <td><%= time_ago_in_words(a.updated_at) %></td>
             </tr>
         <% end %>

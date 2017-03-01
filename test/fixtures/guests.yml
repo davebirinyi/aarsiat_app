@@ -3,9 +3,11 @@
 dbcooper:
   name: DB Cooper
   email: nevercaught@boeing.com
-  members_in_party: 1
+  song_artist: Kingsmen
+  song_title: Louie Louie
 
 dondraper:
   name: Don Draper
   email: dickwhitman@scdp.com
-  members_in_party: 3
+  song_artist: Kingsmen
+  song_title: Louie Louie

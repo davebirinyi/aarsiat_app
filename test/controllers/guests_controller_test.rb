@@ -7,10 +7,10 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
     @other_guest = guests(:dondraper)
   end
   
-  # test "should get godzillamode" do
-  #   get godzillamode_path
-  #   assert_response :success
-  # end
+  test "should get godzillamode" do
+    get godzillamode_path
+    assert_response :success
+  end
 
   test "should redirect guests to rsvp" do
     get guests_path

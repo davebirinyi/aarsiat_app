@@ -8,8 +8,6 @@ dbc:
   reception_dinner: true
   vegan: false
   food_restrictions: "Bourbon + soda, please"
-  song_artist: "The Kingsmen"
-  song_title: "Louie Louie"
   guest: dbcooper
 
 money:
@@ -20,6 +18,4 @@ money:
   reception_dinner: true
   vegan: true
   food_restrictions: ""
-  song_artist: ""
-  song_title: ""
   guest: dbcooper

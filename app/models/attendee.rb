@@ -9,6 +9,4 @@ class Attendee < ApplicationRecord
   validates :reception_dinner, inclusion: { in: [ true, false ] }
   validates :vegan, inclusion: { in: [ true, false ] }
   # validates :food_restrictions
-  validates :song_artist, length: { maximum: 51 }
-  validates :song_title, length: { maximum: 481 }
 end

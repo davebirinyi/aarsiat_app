@@ -11,10 +11,6 @@
     <td><%= f.label :email %></td>
     <td><%= f.email_field :email %></td>
   </tr>
-  <tr>
-    <td><%= f.label :members_in_party, "Members in Your Party" %></td>
-    <td><%= f.select :members_in_party, ["",1,2,3,4,5,6] %></td>
-  </tr>
 </table>
 
 
@@ -34,11 +30,20 @@
         <td>
           <%= attendee_form.label :vegan %><%= attendee_form.check_box :vegan %></td>
         <td><%= attendee_form.text_field :food_restrictions, placeholder: "other food restrictions" %></td>
-        <td><%= attendee_form.text_field :song_artist, placeholder: "song artist" %></td>
-        <td><%= attendee_form.text_field :song_title, placeholder: "song title" %></td>
       </tr>
     </table>
   <% end %>
+
+<table class="flex_center">
+  <tr>
+    <td><%= f.label :song_artist %></td>
+    <td><%= f.text_field :song_artist, placeholder: "song artist" %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :song_title %></td>
+    <td><%= f.text_field :song_title, placeholder: "song title" %></td>
+  </tr>
+</table>
 
 <div class="flex_center" id="submit_box">
   <%= f.submit yield(:button_text), class: "submit_button" %>

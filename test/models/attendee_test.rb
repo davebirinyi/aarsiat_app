@@ -10,9 +10,7 @@ class AttendeeTest < ActiveSupport::TestCase
                                         yoga: "7am",
                                         reception_dinner: true,
                                         vegan: false,
-                                        food_restrictions: "Bourbon + soda, please",
-                                        song_artist: "The Kingsmen",
-                                        song_title: "Louie Louie")
+                                        food_restrictions: "Bourbon + soda, please")
   end
 
   test "should be valid" do

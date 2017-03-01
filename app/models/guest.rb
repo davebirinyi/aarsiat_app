@@ -8,7 +8,8 @@ class Guest < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :members_in_party, presence: true, numericality: { only_integer: true }
+  validates :song_artist, length: { maximum: 51 }
+  validates :song_title, length: { maximum: 481 }
 
 
   def self.to_csv

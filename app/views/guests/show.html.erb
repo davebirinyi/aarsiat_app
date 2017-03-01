@@ -19,10 +19,6 @@
         <td><%= f.label :email %></td>
         <td><%= @guest.email %></td>
       </tr>
-      <tr>
-        <td><%= f.label :members_in_party, "Members in Your Party" %></td>
-        <td><%= @guest.members_in_party %></td>
-      </tr>
     </table>
 
     <div class="">
@@ -34,6 +30,28 @@
       <% end %>
     </div>
 
+    <table class="flex_center">
+      <tr>
+        <td><%= f.label :song_artist %></td>
+        <td>
+          <% if @guest.song_artist? %>
+            <%= @guest.song_artist %>
+          <% else %>
+            <small>none</small>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :song_title %></td>
+        <td>
+          <% if @guest.song_title? %>
+            <%= @guest.song_title %>
+          <% else %>
+            <small>none</small>
+          <% end %>
+        </td>
+      </tr>
+    </table>
 
     <p>
       Need to change how we contact you? <%= link_to "Update Contact Information", edit_guest_path(current_guest), class: "emphasis" %>

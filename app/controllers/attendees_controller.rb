@@ -36,9 +36,7 @@ class AttendeesController < ApplicationController
         :yoga,
         :reception_dinner,
         :vegan,
-        :food_restrictions,
-        :song_artist,
-        :song_title
+        :food_restrictions
       )
     end
 end

@@ -1,6 +1,5 @@
 <%= form_for(@attendee) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  # <%= (@members_in_party.to_i).times do %>
   <table>
     <tr>
       <td><%= f.text_field :name, placeholder: "attendee name" %></td>
