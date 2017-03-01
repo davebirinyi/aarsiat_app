@@ -15,21 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
-    $().ready(function(){
-      $(".attendee_row").hide();
-    });
-    // $("#hide").click(function(){
-    //     $(".attendee_row").hide();
-    // });
-    // $("#one").click(function(){
-    //     $("table:nth-child(5), table:nth-child(6)").show();
-    // });
-    // $("#two").click(function(){
-    //     $(".attendee_row").show();
-    // });
+$(document).on('turbolinks:load', function() {
 
-
+    $(".attendee_row").hide();
 
     $("#members_in_party_members_in_party").change(function(){
       var members_in_party = this.value;
