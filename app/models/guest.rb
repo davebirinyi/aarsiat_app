@@ -13,15 +13,32 @@ class Guest < ApplicationRecord
 
 
   def self.to_csv
-    attributes = %w{ name email members_in_party updated_at}
+    attributes = %w{ 
+      guest_id
+      name
+      child
+      welcome_dinner
+      yoga
+      reception_dinner
+      vegan
+      food_restrictions
+      updated_at
+    }
+    guest_attributes = %w{
+      email
+    }
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
 
       all.each do |guest|
-        csv << attributes.map{ |attr| guest.send(attr) }
+          # csv << guest_attributes.map{ |attr| guest.send(attr) }
+        guest.attendees.each do |a|
+          csv << attributes.map{ |attr| a.send(attr) }
+        end
       end
     end
   end
+
 
 end

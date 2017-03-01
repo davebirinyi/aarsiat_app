@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   post   '/check',     to: 'sessions#create'
   delete '/check_out', to: 'sessions#destroy'
   resources :guests, only:    [:new, :create, :show, :edit, :update, :destroy]
-  resources :attendees, only: [:new, :create, :edit, :update, :destroy]
+  resources :attendees, only: [:index, :new, :create, :edit, :update, :destroy]
 end
