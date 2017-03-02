@@ -16,10 +16,10 @@ class Guest < ApplicationRecord
     attributes = %w{ 
       guest_id
       name
-      child
       welcome_dinner
       yoga
       reception_dinner
+      child
       vegan
       food_restrictions
       updated_at
