@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
 
   def index
+    @guests = Guest.all
   end
   
   def new

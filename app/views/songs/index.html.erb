@@ -1,0 +1,15 @@
+<section id="songs_index">
+  <div id="">
+      <% @guests.order("updated_at ASC").each do |guest| %>
+        <% guest.songs.each do |song| %>
+        <% if song.artist?||song.title? %>
+          <% thisbig = (240/(song.artist.length + song.title.length + 1).to_f) %>
+          <div class="song_row flex_center" style="font-size:<%= thisbig %>vw">
+            <%= link_to song.artist + ":" + song.title, "https://www.youtube.com/results?search_query=#{song.artist}:#{song.title}", target: "_blank" %>
+          </div>
+        <% else %>
+        <% end %>
+        <% end %>
+      <% end %>
+  </div>
+</section>
