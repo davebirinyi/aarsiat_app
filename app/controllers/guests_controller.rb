@@ -15,6 +15,7 @@ class GuestsController < ApplicationController
   def show
     @guest = Guest.find(params[:id])
     @attendees = @guest.attendees
+    @songs = @guest.songs
   end
 
   def new
@@ -23,6 +24,10 @@ class GuestsController < ApplicationController
     # @attendee_card = []
     6.times do
       @guest.attendees.build
+    end
+
+    3.times do
+      @guest.songs.build
     end
   end
 
@@ -57,8 +62,6 @@ class GuestsController < ApplicationController
       params.require(:guest).permit(
         :name,
         :email,
-        :song_artist,
-        :song_title,
         attendees_attributes: [
           :id,
           :name,
@@ -68,6 +71,11 @@ class GuestsController < ApplicationController
           :reception_dinner,
           :vegan,
           :food_restrictions
+        ],
+        songs_attributes: [
+          :id,
+          :artist,
+          :title
         ])
     end
 

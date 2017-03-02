@@ -1,5 +1,6 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
+<% provide(:button_text, "+1") %>
 
 
 <section class="section_container" id="reservation">
@@ -62,30 +63,44 @@
         <% end %>
       <% end %>
     </div>
+    <div>
+        <h2>Song Requests (<%= @guest.songs.count %>)</h2>
+      <% if @guest.songs.any? %>
+        <% @guest.songs.order("created_at ASC").each do |s| %>
+      <table class="song_row flex_center">
+        <tr>
+          <td>
+            <% if s.artist? %>
+              Artist: <%= s.artist %>
+            <% else %>
+              <small>none</small>
+            <% end %>
+          </td>
+          <td>
+            <% if s.title? %>
+              Title: <%= s.title %>
+            <% else %>
+              <small>none</small>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+      <% end %>
+      <% end %>
 
-    <h2>Music</h2>
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :song_artist %></td>
-        <td>
-          <% if @guest.song_artist? %>
-            <%= @guest.song_artist %>
-          <% else %>
-            <small>none</small>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td><%= f.label :song_title %></td>
-        <td>
-          <% if @guest.song_title? %>
-            <%= @guest.song_title %>
-          <% else %>
-            <small>none</small>
-          <% end %>
-        </td>
-      </tr>
-    </table>
+      <%= f.fields_for :songs, Song.new do |song_form| %>
+        <table class="song_row flex_center">
+          <tr>
+            <td>
+              <%= song_form.label "Just One More:" %>
+            </td>
+            <td><%= song_form.text_field :artist, placeholder: "artist" %></td>
+            <td><%= song_form.text_field :title, placeholder: "title" %></td>
+            <td><%= f.submit yield(:button_text) %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
 
     <p class="flex_center">
       <%= link_to "Edit Reservation", edit_guest_path(current_guest), class: "emphasis" %>

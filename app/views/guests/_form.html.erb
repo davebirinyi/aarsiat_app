@@ -23,8 +23,9 @@
 </table>
 
   <%= f.fields_for :attendees do |attendee_form| %>
-    <table class="attendee_row flex_center hide_me">
+    <table class="attendee_row flex_center hide_me" id=<%= "#{attendee_form.options[:child_index] + 1}" %>>
       <tr>
+        <td><%= attendee_form.label :name, "##{attendee_form.options[:child_index] + 1}" %></td>
         <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
         <td>will attend:</td>
         <td>
@@ -46,16 +47,18 @@
 
 <h2>Music</h2>
 <p>Be our DJ! We've decided to not have a professional DJ at the wedding. Instead we thought we'd ask our family and friends to share with us the music they love. Nominate the songs you would most like us to add to the party playlist.</p>
-<table class="flex_center">
-  <tr>
-    <td><%= f.label :song_artist %></td>
-    <td><%= f.text_field :song_artist, placeholder: "song artist" %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :song_title %></td>
-    <td><%= f.text_field :song_title, placeholder: "song title" %></td>
-  </tr>
-</table>
+
+<%= f.fields_for :songs do |song_form| %>
+  <table class="song_row flex_center">
+    <tr>
+      <td>
+        <%= song_form.label "Song Request ##{song_form.options[:child_index] + 1}" %>
+      </td>
+      <td><%= song_form.text_field :artist, placeholder: "artist" %></td>
+      <td><%= song_form.text_field :title, placeholder: "title" %></td>
+    </tr>
+  </table>
+<% end %>
 
   <%= render "shared/error_messages", object: f.object %>
 

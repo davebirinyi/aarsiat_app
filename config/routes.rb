@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   delete '/check_out', to: 'sessions#destroy'
   resources :guests, only:    [:new, :create, :show, :edit, :update, :destroy]
   resources :attendees, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :songs
 end

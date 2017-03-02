@@ -22,27 +22,27 @@ $(document).on('turbolinks:load', function() {
     $("#members_in_party_members_in_party").change(function(){
       var members_in_party = this.value;
     if(members_in_party==1)
-      $("table:nth-child(5)").show();
-      $("table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+      $("#1").show();
+      $("#2,#3,#4,#5,#6").hide();
     
     if(members_in_party==2)
-      $("table:nth-child(5), table:nth-child(6)").show();
-      $("table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+      $("#1,#2").show();
+      $("#3,#4,#5,#6").hide();
    
     if(members_in_party==3)
-      $("table:nth-child(5), table:nth-child(6), table:nth-child(7)").show();
-      $("table:nth-child(8), table:nth-child(9), table:nth-child(10)").hide();
+      $("#1,#2,#3").show();
+      $("#4,#5,#6").hide();
 
     if(members_in_party==4)
-      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8)").show();
-      $("table:nth-child(9), table:nth-child(10)").hide();
+      $("#1,#2,#3,#4").show();
+      $("#5,#6").hide();
 
     if(members_in_party==5)
-      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9)").show();
-      $("table:nth-child(10)").hide();
+      $("#1,#2,#3,#4,#5").show();
+      $("#6").hide();
 
     if(members_in_party==6)
-      $("table:nth-child(5), table:nth-child(6), table:nth-child(7), table:nth-child(8), table:nth-child(9), table:nth-child(10)").show();
+      $("#1,#2,#3,#4,#5,#6").show();
 
     });
 

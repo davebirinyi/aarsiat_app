@@ -13,16 +13,12 @@
       <tr>
         <th>Guest Name</th>
         <th>Email Address</th>
-        <th>Song Artist</th>
-        <th>Song Title</th>
         <th>Last Updated</th>
       </tr>
       <% @guests.order("updated_at DESC").each do |guest| %>
       <tr>
         <td><%= guest.name %></td>
         <td><%= guest.email %></td>
-        <td><%= guest.song_artist %></td>
-        <td><%= guest.song_title %></td>
         <td><%= time_ago_in_words(guest.updated_at) %></td>
       </tr>
       <% end %>
@@ -35,10 +31,10 @@
       <tr>
         <th>Assoc. Email</th>
         <th>Attendee Name</th>
-        <th>Child</th>
         <th>Welcome Dinner</th>
         <th>Yoga</th>
         <th>Reception Dinner</th>
+        <th>Child</th>
         <th>Vegan</th>
         <th>Food Restrictions</th>
         <th>Last Updated</th>
@@ -69,6 +65,27 @@
     </table>
   </div>
 
+  <h2 class="flex_center">Song List</h2>
+  <div class="flex_center">
+    <table>
+      <tr>
+        <!-- <th>Assoc. Email</th> -->
+        <th>Artist</th>
+        <th>Title</th>
+        <!-- <th>Last Updated</th> -->
+      </tr>
+      <% @guests.order("updated_at DESC").each do |guest| %>
+        <% guest.songs.each do |a| %>
+            <tr>
+              <!-- <td><%= guest.email %></td> -->
+              <td><%= a.artist %></td>
+              <td><%= a.title %></td>
+              <!-- <td><%= time_ago_in_words(a.updated_at) %></td> -->
+            </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
 
   <!-- <div class="flex_center">
     <%= image_tag("godzilla.jpg", alt: "Pretty in Pink") %>
