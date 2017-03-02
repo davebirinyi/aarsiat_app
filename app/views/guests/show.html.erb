@@ -1,10 +1,10 @@
 <%= render "layouts/header" %>
-<%= render "layouts/flasher" %>
 <% provide(:button_text, "+1") %>
 
 
 <section class="section_container" id="reservation">
   <h1 class="section_header">Your Reservation</h1>
+<%= render "layouts/flasher" %>
   <div>
     <%= form_for(@guest, url: rsvp_path) do |f| %>
       <%= render "shared/error_messages", object: f.object %>
@@ -63,6 +63,10 @@
         <% end %>
       <% end %>
     </div>
+    <p class="flex_center">
+      <%= link_to "Add Attendee", new_attendee_path(current_guest), class: "emphasis" %>
+    </p>
+
     <div>
         <h2>Song Requests (<%= @guest.songs.count %>)</h2>
       <% if @guest.songs.any? %>

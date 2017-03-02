@@ -5,6 +5,7 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.all
+    @attendees = Attendee.all
 
     respond_to do |format|
       format.html

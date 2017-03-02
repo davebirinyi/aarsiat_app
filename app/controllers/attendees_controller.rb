@@ -2,8 +2,11 @@ class AttendeesController < ApplicationController
   # before_action :checked_in_guest, only: [:new, :create, :edit, :update, :destroy]
 
   def new
-    # @attendee = current_guest.attendees.build
-    @members_in_party = current_guest.members_in_party
+    @guest = current_guest
+
+    1.times do
+      @guest.songs.build
+    end
   end
 
   def create
@@ -30,6 +33,7 @@ class AttendeesController < ApplicationController
 
     def attendee_params
       params.require(:attendee).permit( 
+        :id,
         :name,
         :child,
         :welcome_dinner,

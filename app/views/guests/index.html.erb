@@ -3,7 +3,7 @@
   <div class="flex_center">
     <%= image_tag("godzillamode.jpg", alt: "Godzilla Mode") %>
   </div>
-  <p align="center">This data may also be downloaded as a <%= link_to("CSV file", "godzillamode.csv") %>. The last update was made <%= time_ago_in_words(@guests.order("updated_at").last.updated_at) %> ago. (It was <%= @guests.order("updated_at").last.name %>.)
+  <p align="center">This data may also be downloaded as a <%= link_to("CSV file", "godzillamode.csv") %>. The last change was made <%= time_ago_in_words(@attendees.order("updated_at").last.updated_at) %> ago. (For <%= @attendees.order("updated_at").last.name %>.)
 
 
 

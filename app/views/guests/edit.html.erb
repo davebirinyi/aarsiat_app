@@ -1,9 +1,9 @@
 <%= render "layouts/header" %>
-<%= render "layouts/flasher" %>
 <% provide(:button_text, "Confirm Changes") %>
 
 <section class="section_container" id="edit">
   <h1 class="section_header">Edit Your Reservation</h1>
+<%= render "layouts/flasher" %>
   <div>
 
     <%= form_for(@guest, url: rsvp_path) do |f| %>
