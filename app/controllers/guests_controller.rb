@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
 
-  before_action :checked_in_guest, only: [:show, :edit, :update]
-  before_action :correct_guest,    only: [:show, :edit]
+  before_action :checked_in_guest, only: [:show, :edit, :update, :destroy]
+  before_action :correct_guest,    only: [:show, :edit, :destroy]
 
   def index
     @guests = Guest.all
@@ -50,11 +50,17 @@ class GuestsController < ApplicationController
   def update
     @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
     if @guest.update_attributes(guest_params)
-      flash[:success] = "Reservation updated"
+      flash[:success] = "Update successful"
       redirect_to @guest
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Guest.find(params[:id]).destroy
+    flash[:success] = "Guest deleted"
+    redirect_to rsvp_url
   end
 
   private

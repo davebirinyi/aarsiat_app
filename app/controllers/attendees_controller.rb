@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  # before_action :checked_in_guest, only: [:new, :create, :edit, :update, :destroy]
+  before_action :checked_in_guest, only: [:new, :edit, :update, :destroy]
 
   def new
     @guest = current_guest
@@ -10,14 +10,6 @@ class AttendeesController < ApplicationController
   end
 
   def create
-    # @guest = current_guest
-    # @attendee = current_guest.attendees.build(attendee_params)
-    # if @attendee.save
-    #   flash[:success] = "Attendees added"
-    #   redirect_to @guest
-    # else
-    #   render @guest
-    # end
   end
 
   def edit
@@ -27,6 +19,10 @@ class AttendeesController < ApplicationController
   end
 
   def destroy
+    @attendee = Attendee.find(params[:id])
+    @attendee.destroy
+    flash[:success] = "Attendee removed"
+    redirect_to request.referrer || guest_url
   end
 
   private

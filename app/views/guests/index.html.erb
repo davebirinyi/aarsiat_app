@@ -74,7 +74,7 @@
         <th>Title</th>
         <!-- <th>Last Updated</th> -->
       </tr>
-      <% @guests.order("updated_at DESC").each do |guest| %>
+      <% @guests.order("updated_at ASC").each do |guest| %>
         <% guest.songs.each do |a| %>
             <tr>
               <!-- <td><%= guest.email %></td> -->

@@ -1,5 +1,5 @@
 <%= render "layouts/header" %>
-<% provide(:button_text, "+1") %>
+<% provide(:button_text, "add") %>
 
 
 <section class="section_container" id="reservation">
@@ -57,6 +57,9 @@
             <% if a.food_restrictions? %>
             <td>NB: <%= a.food_restrictions %>: ✔️</td>
             <% end %>
+          <td>
+            <%= link_to "✕", a, method: :delete %>
+          </td>
           </tr>
         </table>
 
@@ -64,7 +67,7 @@
       <% end %>
     </div>
     <p class="flex_center">
-      <%= link_to "Add Attendee", new_attendee_path(current_guest), class: "emphasis" %>
+      <%= link_to "Add Attendee", new_attendee_path(current_guest) %>
     </p>
 
     <div>
@@ -87,6 +90,9 @@
               <small>none</small>
             <% end %>
           </td>
+          <td>
+            <%= link_to "✕", s, method: :delete %>
+          </td>
         </tr>
       </table>
       <% end %>
@@ -107,7 +113,7 @@
     </div>
 
     <p class="flex_center">
-      <%= link_to "Edit Reservation", edit_guest_path(current_guest), class: "emphasis" %>
+      <%= link_to "Edit Reservation", edit_guest_path(current_guest) %>
     </p>
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
