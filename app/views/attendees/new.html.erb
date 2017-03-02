@@ -22,7 +22,7 @@
       <%= render "shared/error_messages", object: f.object %>
 
       <%= f.fields_for :attendees, Attendee.new do |attendee_form| %>
-        <table class="attendee_row flex_center">
+        <table class="attendee_row flex_center" id="add_attendee">
           <tr>
             <td><%= attendee_form.label :name, "##{ @guest.attendees.count + 1 }" %></td>
             <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
@@ -53,7 +53,9 @@
     <p class="flex_center">
       <%= link_to "Cancel", guest_path(current_guest), class: "emphasis" %>
     </p>
-
+    <p>
+      Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
+    </p>
 
   </div>
 </section>
