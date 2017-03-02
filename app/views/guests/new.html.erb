@@ -1,113 +1,46 @@
 <%= render "layouts/header" %>
 <%= render "layouts/flasher" %>
-
+<% provide(:button_text, "Submit Response") %>
 
 <section class="section_container" id="rsvp_page">
   <h1 class="section_header">RSVP</h1>
+      <div class="flex_center">
+        <%= image_tag "solo_tree.png", height: "150px" %>
+        <%= image_tag "three_trees.png", height: "150px" %>
+        <%= image_tag "two_trees.png", height: "150px" %>
+      </div>
   <div>
-    <%= form_for(@guest, url: rsvp_path) do |f| %>
-      <%= render "shared/error_messages" %>
+    <div class="section_thirds group">
+      <h2>Organized Events</h2>
+      <div class="flex_center">
+        <p id="guests_welcome">Guests are welcome to attend any or all events.</p>
+      </div>
+      <div class="col span_1_of_3">
+        <h3>Welcome Dinner</h3>
+        <p class="triplet_para">
+          Join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.
+        </p>
+      </div>
+      <div class="col span_1_of_3">
+        <h3>Morning Yoga</h3>
+        <p class="triplet_para">
+          Saturday morning, Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading three yoga classes in the Tom Tom Yurt. Sessions begin at 7am, 9am, and 11am.
+        </p>
+      </div>
+      <div class="col span_1_of_3">
+        <h3>Ceremony & Reception</h3>
+        <p class="triplet_para">
+          Saturday evening, we host the wedding ceremony and reception dinner. Festivities kick off with pre-ceremony snacks and drinks at 4:30pm. Reception food is vegetarian.
+        </p>
+      </div>
 
-    <h2>The Wedding</h2>
-    <p>
-      We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.
-    </p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :name %></td>
-        <td><%= f.text_field :name%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :email %></td>
-        <td><%= f.email_field :email%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
-        <td><%= f.select :saturday_adults, (0..6).to_a, :prompt => ""%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :saturday_children, "Children in Your Party" %></td>
-        <td><%= f.select :saturday_children, (0..6).to_a, :selected => 0%></td>
-      </tr>
-    </table>
-
-    <p>
-      Reception food is vegetarian. Do you have any other food restrictions?
-    </p>
-
-    <table class="flex_center">
-      <tr>
-        <td>
-          <%= f.label :vegan, "Vegan" %>
-          <%= f.check_box :vegan%>
-        </td>
-        <td>
-          <%= f.label :food_restrictions, "Other" %>
-          <%= f.text_field :food_restrictions%>
-        </td>
-      </tr>
-    </table>
-
-    <h2>Welcome Dinner</h2>
-    <p>
-      All are invited to join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.
-    </p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :friday_adults, "Adults" %></td>
-        <td><%= f.select :friday_adults, (0..6).to_a, :selected => 0%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :friday_children, "Children" %></td>
-        <td><%= f.select :friday_children, (0..6).to_a, :selected => 0%></td>
-      </tr>
-    </table>
-
-    <h2>Yoga</h2>
-    <p>
-      Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading two yoga classes Saturday morning.
-    </p>
-
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :yoga_early, "7am session" %></td>
-        <td><%= f.select :yoga_early, (0..6).to_a, :selected => 0%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_mid, "9am session" %></td>
-        <td><%= f.select :yoga_mid, (0..6).to_a, :selected => 0%></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_late, "11am session" %></td>
-        <td><%= f.select :yoga_late, (0..6).to_a, :selected => 0%></td>
-      </tr>
-    </table>
-
-    <h2>Music</h2>
-    <p>Be our DJ! We've decided to not have a professional DJ at the wedding. Instead we thought we'd ask our family and friends to share with us the music they love. Nominate the song you would most like us to add to the party playlist.</p>
-
-    <table class="flex_center">
-      <tr>
-        <td>
-          <%= f.label :song_requests, "Song" %>
-        </td>
-        <td>
-          <%= f.text_field :song_requests %>
-        </td>
-      </tr>
-    </table>
-
-    <div class="flex_center" id="submit_box">
-      <%= f.submit "Submit Response", class: "submit_button" %>
     </div>
-
-    <% end %>
+    <h2>Your Party</h2>
+    <%= render "form" %>
 
     <p>
       <% if checked_in? %>
-        It appears you have already submitted a response. See your <%= link_to("Existing Reservation", current_guest, class: "emphasis") %>.
+        It appears you have already started filling out a reservation. See your <%= link_to("Existing Reservation", current_guest, class: "emphasis") %>.
       <% else %>
         Have you filled out this form before? Check for an <%= link_to("existing reservation", check_path) %>.
       <% end %>
@@ -117,3 +50,15 @@
 
 <%= render "layouts/tree_emblem" %>
 <%= render "layouts/footer" %>
+
+
+
+
+<!-- 
+
+
+
+
+
+
+ -->

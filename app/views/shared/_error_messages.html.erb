@@ -1,12 +1,14 @@
-<% if @guest.errors.any? %>
-  <div class="flex_center" id="error_explanation">
+<% if object.errors.any? %>
+<div class="flex_center" style="text-align:center">
+  <div id="error_explanation">
     <div class="emphasis">
-      The form contains <%= pluralize(@guest.errors.count, "error") %>.
-    </div>
-    <ul>
-    <% @guest.errors.full_messages.each do |msg| %>
-      <li class="emphasis"><%= msg %></li>
+      The form contains <%= pluralize(object.errors.count, "error") %>:
+    <% object.errors.full_messages.each do |msg| %>
+      <div class="emphasis"><%= msg %></div>
     <% end %>
-    </ul>
+    </div>
+    <br>
+    <div class="emphasis">Please refresh the page and start again.</div>
   </div>
+</div>
 <% end %>

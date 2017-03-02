@@ -1,10 +1,11 @@
 class GuestsController < ApplicationController
 
-  before_action :checked_in_guest, only: [:show, :edit, :update]
-  before_action :correct_guest,    only: [:show, :edit]
+  before_action :checked_in_guest, only: [:show, :edit, :update, :destroy]
+  before_action :correct_guest,    only: [:show, :edit, :destroy]
 
   def index
     @guests = Guest.all
+    @attendees = Attendee.all
 
     respond_to do |format|
       format.html
@@ -14,10 +15,21 @@ class GuestsController < ApplicationController
 
   def show
     @guest = Guest.find(params[:id])
+    @attendees = @guest.attendees
+    @songs = @guest.songs
   end
 
   def new
     @guest = Guest.new
+
+    # @attendee_card = []
+    6.times do
+      @guest.attendees.build
+    end
+
+    3.times do
+      @guest.songs.build
+    end
   end
 
   def create
@@ -25,7 +37,7 @@ class GuestsController < ApplicationController
     if @guest.save
       check @guest
       flash[:success] = "Thanks for your response!"
-      redirect_to @guest
+      redirect_to @guest 
     else
       render 'new'
     end
@@ -38,11 +50,17 @@ class GuestsController < ApplicationController
   def update
     @guest = current_guest # WATCH OUT FOR THIS CHEEKY FUCKER
     if @guest.update_attributes(guest_params)
-      flash[:success] = "Reservation updated"
+      flash[:success] = "Update successful"
       redirect_to @guest
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Guest.find(params[:id]).destroy
+    flash[:success] = "Guest deleted"
+    redirect_to rsvp_url
   end
 
   private
@@ -51,27 +69,24 @@ class GuestsController < ApplicationController
       params.require(:guest).permit(
         :name,
         :email,
-        :saturday_adults,
-        :saturday_children,
-        :vegan,
-        :food_restrictions,
-        :friday_adults,
-        :friday_children,
-        :yoga_early,
-        :yoga_mid,
-        :yoga_late,
-        :song_requests)
+        attendees_attributes: [
+          :id,
+          :name,
+          :child,
+          :welcome_dinner,
+          :yoga,
+          :reception_dinner,
+          :vegan,
+          :food_restrictions
+        ],
+        songs_attributes: [
+          :id,
+          :artist,
+          :title
+        ])
     end
 
     # Before filters
-
-    # Confirms a checked-in guest.
-    def checked_in_guest
-      unless checked_in?
-        flash[:danger] = "Check for a reservation by entering your email address."
-        redirect_to check_url
-      end
-    end
 
     # Confirms the correct guest.
     def correct_guest

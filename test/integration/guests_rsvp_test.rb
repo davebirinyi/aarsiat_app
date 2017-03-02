@@ -6,7 +6,7 @@ class GuestsResponseTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Guest.count' do
       post guests_path, params: { guest: { name:  "",
                                          email: "guest@invalid",
-                                         saturday_adults: "" } }
+                                         members_in_party: "" } }
     end
     assert_template 'guests/new'
   end
@@ -16,16 +16,7 @@ class GuestsResponseTest < ActionDispatch::IntegrationTest
     assert_difference 'Guest.count', 1 do
       post guests_path, params: { guest: {  name:  "Example Guest",
                                             email: "guest@wedding.com",
-                                            saturday_adults: 1,
-                                            saturday_children: 1,
-                                            vegan: false,
-                                            food_restrictions: "",
-                                            friday_adults: 0,
-                                            friday_children: 0,
-                                            yoga_early: 0,
-                                            yoga_mid: 0,
-                                            yoga_late: 0,
-                                            song_requests: "" } }
+                                            members_in_party: 1 } }
     end
     follow_redirect!
     assert_template 'guests/show'

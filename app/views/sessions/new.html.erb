@@ -13,7 +13,8 @@
     <%= f.submit "Check Reservation", class: "submit_button" %>
     <% end %>
   </div>
-  <p>Is this your first time to the site? You can <%= link_to "RSVP here", rsvp_path %>.</p>
+  <!-- ThreePerEm space inserted infront of RSVP Link -->
+  <p class="flex_center">Is this your first time to the site? You can <%= link_to("RSVP here", rsvp_path) %>.</p>
 </section>
 
 <%= render "layouts/tree_emblem" %>

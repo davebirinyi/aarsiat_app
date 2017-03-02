@@ -1,0 +1,69 @@
+<%= form_for(@guest, url: rsvp_path) do |f| %>
+
+<div>
+  <p>
+    Please enter the names of those in your party, including yourself, and indicate which events each person would like to attend. If anyone in your group has certain dietary concerns or needs specific accomodations, please enter that information as well. 
+  </p>
+</div>
+<table class="flex_center">
+  <tr>
+    <td class="midway"><%= f.label :name, "Your Name" %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td class="midway"><%= f.label :email %></td>
+    <td><%= f.email_field :email %></td>
+  </tr>
+  <tr>
+    <td class="midway"><%= f.label :members_in_party %></td>
+    <td>
+      <%= select("members_in_party", "members_in_party", [1,2,3,4,5,6], { include_blank: true }) %>
+    </td>
+  </tr>
+</table>
+
+  <%= f.fields_for :attendees do |attendee_form| %>
+    <table class="attendee_row flex_center hide_me" id=<%= "#{attendee_form.options[:child_index] + 1}" %>>
+      <tr>
+        <td><%= attendee_form.label :name, "##{attendee_form.options[:child_index] + 1}" %></td>
+        <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
+        <td>will attend:</td>
+        <td>
+          <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
+        <td>
+          <%= attendee_form.label :yoga, "Morning Yoga" %><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
+        <td>
+          <%= attendee_form.label :reception_dinner, "Ceremony & Reception" %><%= attendee_form.check_box :reception_dinner %></td>
+        <td>|</td>
+        <td>
+          <%= attendee_form.label :child, "Child under 10" %><%= attendee_form.check_box :child %>
+        </td>
+        <td>
+          <%= attendee_form.label :vegan %><%= attendee_form.check_box :vegan %></td>
+        <td><%= attendee_form.text_field :food_restrictions, placeholder: "other" %></td>
+      </tr>
+    </table>
+  <% end %>
+
+<h2>Music</h2>
+<p>Be our DJ! We've decided to not have a professional DJ at the wedding. Instead we thought we'd ask our family and friends to share with us the music they love. Nominate the songs you would most like us to add to the party playlist.</p>
+
+<%= f.fields_for :songs do |song_form| %>
+  <table class="song_row flex_center">
+    <tr>
+      <td>
+        <%= song_form.label "Song Request ##{song_form.options[:child_index] + 1}" %>
+      </td>
+      <td><%= song_form.text_field :artist, placeholder: "artist" %></td>
+      <td><%= song_form.text_field :title, placeholder: "title" %></td>
+    </tr>
+  </table>
+<% end %>
+
+  <%= render "shared/error_messages", object: f.object %>
+
+<div class="flex_center" id="submit_box">
+  <%= f.submit yield(:button_text), class: "submit_button" %>
+</div>
+
+<% end %>

@@ -14,3 +14,40 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+
+    $(".hide_me").hide();
+
+    $("#members_in_party_members_in_party").change(function(){
+      var members_in_party = this.value;
+    if(members_in_party==1)
+      $("#1").show();
+      $("#2,#3,#4,#5,#6").hide();
+    
+    if(members_in_party==2)
+      $("#1,#2").show();
+      $("#3,#4,#5,#6").hide();
+   
+    if(members_in_party==3)
+      $("#1,#2,#3").show();
+      $("#4,#5,#6").hide();
+
+    if(members_in_party==4)
+      $("#1,#2,#3,#4").show();
+      $("#5,#6").hide();
+
+    if(members_in_party==5)
+      $("#1,#2,#3,#4,#5").show();
+      $("#6").hide();
+
+    if(members_in_party==6)
+      $("#1,#2,#3,#4,#5,#6").show();
+
+    });
+
+
+});
+
+
+

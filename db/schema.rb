@@ -10,24 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225232538) do
+ActiveRecord::Schema.define(version: 20170302032512) do
+
+  create_table "attendees", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "child"
+    t.boolean  "welcome_dinner"
+    t.string   "yoga"
+    t.boolean  "reception_dinner"
+    t.boolean  "vegan"
+    t.string   "food_restrictions"
+    t.integer  "guest_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["guest_id", "updated_at"], name: "index_attendees_on_guest_id_and_updated_at"
+    t.index ["guest_id"], name: "index_attendees_on_guest_id"
+  end
 
   create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "saturday_adults"
-    t.integer  "saturday_children", default: 0
-    t.boolean  "vegan",             default: false
-    t.string   "food_restrictions"
-    t.integer  "friday_adults",     default: 0
-    t.integer  "friday_children",   default: 0
-    t.integer  "yoga_early",        default: 0
-    t.integer  "yoga_late",         default: 0
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.integer  "yoga_mid"
-    t.string   "song_requests"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_guests_on_email", unique: true
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string   "artist"
+    t.string   "title"
+    t.integer  "guest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_songs_on_guest_id"
   end
 
 end

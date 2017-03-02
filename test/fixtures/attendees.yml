@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+dbc:
+  name: "DB Cooper"
+  child: false
+  welcome_dinner: true
+  yoga: "7am"
+  reception_dinner: true
+  vegan: false
+  food_restrictions: "Bourbon + soda, please"
+  guest: dbcooper
+
+money:
+  name: "$200,000 Cash"
+  child: false
+  welcome_dinner: false
+  yoga: "7am"
+  reception_dinner: true
+  vegan: true
+  food_restrictions: ""
+  guest: dbcooper

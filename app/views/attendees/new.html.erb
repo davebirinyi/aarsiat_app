@@ -1,29 +1,30 @@
 <%= render "layouts/header" %>
-<% provide(:button_text, "Confirm Changes") %>
+<% provide(:button_text, "Add Attendee") %>
 
-<section class="section_container" id="edit">
-  <h1 class="section_header">Edit Your Reservation</h1>
+
+<section class="section_container" id="add_attendee">
+  <h1 class="section_header">Add Attendee</h1>
 <%= render "layouts/flasher" %>
-  <div>
-
-    <%= form_for(@guest, url: rsvp_path) do |f| %>
-
-    <h2>Contact Info</h2>
-    <table class="flex_center">
+  <p class="flex_center">
+    You have <%= pluralize(@guest.attendees.count, "person") %> registered already:
+  </p>
+  <div class="flex_center">
+    <table>
       <tr>
-        <td class="midway"><%= f.label :name, "Your Name" %></td>
-        <td><%= f.text_field :name %></td>
-      </tr>
-      <tr>
-        <td class="midway"><%= f.label :email %></td>
-        <td><%= f.email_field :email %></td>
+        <% @guest.attendees.order("created_at ASC").each do |a| %>
+          <td><%= a.name %> ✔️</td>
+        <% end %>
       </tr>
     </table>
+  </div>
+  <div>
+    <%= form_for(@guest, url: rsvp_path) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
 
-    <h2>Attendees (<%= @guest.attendees.count %>)</h2>
-      <%= f.fields_for :attendees do |attendee_form| %>
-        <table class="attendee_row flex_center">
+      <%= f.fields_for :attendees, Attendee.new do |attendee_form| %>
+        <table class="attendee_row flex_center" id="add_attendee">
           <tr>
+            <td><%= attendee_form.label :name, "##{ @guest.attendees.count + 1 }" %></td>
             <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
             <td>will attend:</td>
             <td>
@@ -41,30 +42,17 @@
             <td><%= attendee_form.text_field :food_restrictions, placeholder: "other" %></td>
           </tr>
         </table>
+
       <% end %>
 
-    <h2>Song Requests (<%= @guest.songs.count %>)</h2>
-
-    <%= f.fields_for :songs do |song_form| %>
-      <table class="song_row flex_center">
-        <tr>
-          <td>
-            <%= song_form.label "Song Request ##{song_form.options[:child_index] + 1}" %>
-          </td>
-          <td><%= song_form.text_field :artist, placeholder: "artist" %></td>
-          <td><%= song_form.text_field :title, placeholder: "title" %></td>
-        </tr>
-      </table>
-    <% end %>
-
       <%= render "shared/error_messages", object: f.object %>
-
-    <div class="flex_center" id="submit_box">
-      <%= f.submit yield(:button_text), class: "submit_button" %>
-    </div>
-
+      <div class="flex_center" id="submit_box">
+        <%= f.submit yield(:button_text), class: "submit_button" %>
+      </div>
     <% end %>
-
+    <p class="flex_center">
+      <%= link_to "Cancel", guest_path(current_guest), class: "emphasis" %>
+    </p>
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
     </p>

@@ -1,99 +1,119 @@
 <%= render "layouts/header" %>
-<%= render "layouts/flasher" %>
+<% provide(:button_text, "add") %>
 
 
 <section class="section_container" id="reservation">
   <h1 class="section_header">Your Reservation</h1>
+<%= render "layouts/flasher" %>
   <div>
     <%= form_for(@guest, url: rsvp_path) do |f| %>
-      <%= render "shared/error_messages" %>
+      <%= render "shared/error_messages", object: f.object %>
 
-    <h2>The Wedding</h2>
-    <p>Ceremony and Reception, Saturday July 8th</p>
+    <h2>Contact Info</h2>
 
     <table class="flex_center">
       <tr>
-        <td><%= f.label :name %></td>
+        <td><%= f.label :name, "Your Name" %></td>
         <td><%= @guest.name %></td>
       </tr>
       <tr>
         <td><%= f.label :email %></td>
         <td><%= @guest.email %></td>
       </tr>
-      <tr>
-        <td><%= f.label :saturday_adults, "Adults in Your Party" %></td>
-        <td><%= @guest.saturday_adults %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :saturday_children, "Children in Your Party" %></td>
-        <td><%= @guest.saturday_children %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :food_restrictions, "Food Restrictions" %></td>
-        <td>
-          <% if @guest.vegan? %>
-            ✔ <%= f.label :vegan, "Vegan" %>
-          <% end %>
-          <% if @guest.food_restrictions.present? %>
-            ✔ <%= @guest.food_restrictions %>
-          <% end %>
-          <% if !@guest.vegan? && !@guest.food_restrictions.present? %>
-            none
-          <% end %>
-        </td>
-      </tr>
     </table>
 
-    <h2>Welcome Dinner</h2>
-    <p>Friday July 7th, starting at 6pm</p>
+    <div class="">
+      <% if @guest.attendees.any? %>
+        <h2>Attendees (<%= @guest.attendees.count %>)</h2>
+        <% @guest.attendees.order("created_at ASC").each do |a| %>
+        <table class="attendee_row flex_center">
+          <tr>
+            <td><%= a.name %> will attend:</td>
 
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :friday_adults, "Adults" %></td>
-        <td><%= @guest.friday_adults %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :friday_children, "Children" %></td>
-        <td><%= @guest.friday_children %></td>
-      </tr>
-    </table>
+            <% if a.welcome_dinner? %>
+            <td>Welcome Dinner: ✔️</td>
+            <% end %>  
 
-    <h2>Yoga</h2>
-    <p>
-      Led by <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %> Saturday morning
+            <% if a.yoga? %>
+            <td>Morning Yoga at <%= a.yoga %>: ✔️</td>
+            <% end %>
+
+            <% if a.reception_dinner? %>
+            <td>Ceremony & Reception: ✔️</td>
+            <% end %>
+
+            <% if a.child? || a.vegan? || a.food_restrictions? %>
+            <td>|</td>
+            <% end %>
+
+            <% if a.child? %>
+            <td>Child under 10: ✔️</td>
+            <% end %>
+
+            <% if a.vegan? %>
+            <td>Vegan: ✔️</td>
+            <% end %>
+          
+            <% if a.food_restrictions? %>
+            <td>NB: <%= a.food_restrictions %>: ✔️</td>
+            <% end %>
+          <td>
+            <%= link_to "✕", a, method: :delete %>
+          </td>
+          </tr>
+        </table>
+
+        <% end %>
+      <% end %>
+    </div>
+    <p class="flex_center">
+      <%= link_to "Add Attendee", new_attendee_path(current_guest) %>
     </p>
 
-    <table class="flex_center">
-      <tr>
-        <td><%= f.label :yoga_early, "7am session" %></td>
-        <td><%= @guest.yoga_early %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_mid, "9am session" %></td>
-        <td><%= @guest.yoga_mid %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :yoga_late, "11am session" %></td>
-        <td><%= @guest.yoga_late %></td>
-      </tr>
-    </table>
+    <div>
+        <h2>Song Requests (<%= @guest.songs.count %>)</h2>
+      <% if @guest.songs.any? %>
+        <% @guest.songs.order("created_at ASC").each do |s| %>
+      <table class="song_row flex_center">
+        <tr>
+          <td>
+            <% if s.artist? %>
+              Artist: <%= s.artist %>
+            <% else %>
+              <small>none</small>
+            <% end %>
+          </td>
+          <td>
+            <% if s.title? %>
+              Title: <%= s.title %>
+            <% else %>
+              <small>none</small>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "✕", s, method: :delete %>
+          </td>
+        </tr>
+      </table>
+      <% end %>
+      <% end %>
 
-    <h2>Music</h2>
-    <p>Nominate the song you would most like us to add to the party playlist.</p>
+      <%= f.fields_for :songs, Song.new do |song_form| %>
+        <table class="song_row flex_center">
+          <tr>
+            <td>
+              <%= song_form.label "Just One More:" %>
+            </td>
+            <td><%= song_form.text_field :artist, placeholder: "artist" %></td>
+            <td><%= song_form.text_field :title, placeholder: "title" %></td>
+            <td><%= f.submit yield(:button_text) %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
 
-    <table class="flex_center">
-      <tr>
-        <td>
-          <%= f.label :song_requests, "Song" %>
-        </td>
-        <td>
-          <%= @guest.song_requests %>
-        </td>
-      </tr>
-    </table>
-
-    <p>
-      Something not quite right? <%= link_to "Make Changes to the Reservation", edit_guest_path(current_guest), class: "emphasis" %>
+    <p class="flex_center">
+      <%= link_to "Edit Reservation", edit_guest_path(current_guest) %>
     </p>
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.
