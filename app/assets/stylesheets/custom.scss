@@ -108,6 +108,8 @@ ul.topnav li a {
 
 // RESPONSIVE COLUMNS
 
+// TWIN COLUMNS
+
 .section {
   clear: both;
   padding: 0;
@@ -138,6 +140,34 @@ ul.topnav li a {
   }
   .span_1_of_2 {
     width: 48%;
+  }
+}
+
+// TRIPLET COLUMNS
+
+.section_thirds {
+  clear: both;
+  padding: 0;
+  margin: .2em 2em .2em 2em;
+}
+.span_3_of_3, .span_2_of_3, .span_1_of_3 { 
+  width: 100%; margin-bottom: -1em;
+}
+
+@media only screen and (min-width: 1024px) {
+  .section_thirds {
+    clear: both;
+    padding: 0;
+    margin: .2em .2em .2em .2em;
+  }
+  .span_3_of_3 {
+    width: 100%;
+  }
+  .span_2_of_3 {
+    width: 66%;
+  }
+  .span_1_of_3 {
+    width: 29%;
   }
 }
 
@@ -464,14 +494,24 @@ ul.topnav li a {
   h1 {
     padding: 3em 0 0 0;
   }
-  h2 {
+  h2, h3 {
     text-transform: lowercase;
     text-align: center;
     font-family: $homemade_apple;
     font-size: 1.5em;
     color: $mantis_green;
-    padding-top: .3em;
-    padding-bottom: .2em;
+    padding: .3em 0 .2em 0;
+  }
+  h3 {
+    color: $kelp_gray;
+    font-size: 1.3em;
+    padding: 0 0 .2em 0;
+  }
+  p {
+    padding: 0 1.5em;
+  }
+  #guests_welcome {
+    margin-top: -1em; 
   }
   table {
     font-family: $timesnewroman;
@@ -482,25 +522,28 @@ ul.topnav li a {
     border-collapse: collapse;
   }
   td { padding: .5em; }
-  td:first-child { 
-    width: 50%;
-    padding-right: 1em;
+  td:first-child {
     text-align: right; 
   }
-  p {
-    text-align: center;
+  .attendee_row {
+    font-size: .8em;
   }
-  p:last-child {
-    padding: .8em 0 5em 0;
+  .midway {
+    width: 50%;
+  } 
+  .triplet_para {
+    padding: 0 0 1em 0;
   }
+
   label {
     font-family: $georgia;
     letter-spacing: .1em;
-    padding-right: .5em;
+    text-transform: lowercase;
+    padding: 0 .3em 0 0;
   }
   #submit_box {
     text-align: center;
-    margin: 1em 0 0 0;
+    margin: 1em 0 2em 0;
   }
   .submit_button {
     font-family: serif;
@@ -524,7 +567,7 @@ ul.topnav li a {
   }
 }
 #endpage_tree {
-  margin-bottom: -32px;
+  margin: 100px 0 -32px 0;
 }
 
 
@@ -704,6 +747,12 @@ ul.topnav li a {
     }
   }
   #contact {
+  }
+  #rsvp_page, #edit, #reservation, #check {
+    p {
+      padding: 1em 30vh;
+      text-align: justify;
+    }
   }
 }
 

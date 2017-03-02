@@ -8,7 +8,7 @@
     <%= form_for(@guest, url: rsvp_path) do |f| %>
       <%= render "shared/error_messages", object: f.object %>
 
-    <h2>Response Party</h2>
+    <h2>Contact Info</h2>
 
     <table class="flex_center">
       <tr>
@@ -23,13 +23,47 @@
 
     <div class="">
       <% if @guest.attendees.any? %>
-        <h3>Attendees (<%= @guest.attendees.count %>)</h3>
-        <ol class="attendees">
-          <%= render @guest.attendees %>
-        </ol>
+        <h2>Attendees (<%= @guest.attendees.count %>)</h2>
+        <% @guest.attendees.order("created_at ASC").each do |a| %>
+        <table class="attendee_row flex_center">
+          <tr>
+            <td><%= a.name %> will attend:</td>
+
+            <% if a.welcome_dinner? %>
+            <td>Welcome Dinner: ✔️</td>
+            <% end %>  
+
+            <% if a.yoga? %>
+            <td>Morning Yoga at <%= a.yoga %>: ✔️</td>
+            <% end %>
+
+            <% if a.reception_dinner? %>
+            <td>Ceremony & Reception: ✔️</td>
+            <% end %>
+
+            <% if a.child? || a.vegan? || a.food_restrictions? %>
+            <td>|</td>
+            <% end %>
+
+            <% if a.child? %>
+            <td>Child under 10: ✔️</td>
+            <% end %>
+
+            <% if a.vegan? %>
+            <td>Vegan: ✔️</td>
+            <% end %>
+          
+            <% if a.food_restrictions? %>
+            <td>NB: <%= a.food_restrictions %>: ✔️</td>
+            <% end %>
+          </tr>
+        </table>
+
+        <% end %>
       <% end %>
     </div>
 
+    <h2>Music</h2>
     <table class="flex_center">
       <tr>
         <td><%= f.label :song_artist %></td>
@@ -53,8 +87,8 @@
       </tr>
     </table>
 
-    <p>
-      Need to change how we contact you? <%= link_to "Update Contact Information", edit_guest_path(current_guest), class: "emphasis" %>
+    <p class="flex_center">
+      <%= link_to "Edit Reservation", edit_guest_path(current_guest), class: "emphasis" %>
     </p>
     <p>
       Are you not <%= @guest.name %>? You can <%= link_to("exit to the main page", check_out_path, method: "delete") %>, or <%= link_to("check here", check_path) %> for another reservation.

@@ -8,38 +8,43 @@
 
     <%= form_for(@guest, url: rsvp_path) do |f| %>
 
-    <h2>Response Party</h2>
+    <h2>Your Party</h2>
     <table class="flex_center">
       <tr>
-        <td><%= f.label :name, "Your Name" %></td>
+        <td class="midway"><%= f.label :name, "Your Name" %></td>
         <td><%= f.text_field :name %></td>
       </tr>
       <tr>
-        <td><%= f.label :email %></td>
+        <td class="midway"><%= f.label :email %></td>
         <td><%= f.email_field :email %></td>
       </tr>
     </table>
 
 
       <%= f.fields_for :attendees do |attendee_form| %>
-        <table class="">
+        <table class="attendee_row flex_center">
           <tr>
             <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
+            <td>will attend:</td>
+            <td>
+              <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
+            <td>
+              <%= attendee_form.label :yoga, "Morning Yoga" %><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
+            <td>
+              <%= attendee_form.label :reception_dinner, "Ceremony & Reception" %><%= attendee_form.check_box :reception_dinner %></td>
+            <td>|</td>
             <td>
               <%= attendee_form.label :child, "Child under 10" %><%= attendee_form.check_box :child %>
             </td>
             <td>
-              <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
-            <td>
-              <%= attendee_form.label :yoga %><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
-            <td>
-              <%= attendee_form.label :reception_dinner %><%= attendee_form.check_box :reception_dinner %></td>
-            <td>
               <%= attendee_form.label :vegan %><%= attendee_form.check_box :vegan %></td>
-            <td><%= attendee_form.text_field :food_restrictions, placeholder: "other food restrictions or notes" %></td>
+            <td><%= attendee_form.text_field :food_restrictions, placeholder: "other" %></td>
           </tr>
         </table>
       <% end %>
+
+    <h2>Music</h2>
+    <p>Nominate the songs you would most like us to add to the party playlist.</p>
 
     <table class="flex_center">
       <tr>

@@ -4,8 +4,34 @@
 
 <section class="section_container" id="rsvp_page">
   <h1 class="section_header">RSVP</h1>
-
   <div>
+    <div class="section_thirds group">
+      <h2>Organized Events</h2>
+      <div class="flex_center">
+        <p id="guests_welcome">Guests are welcome to attend any or all events.</p>
+      </div>
+
+      <div class="col span_1_of_3">
+        <h3>Welcome Dinner</h3>
+        <p class="triplet_para">
+          Join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.
+        </p>
+      </div>
+      <div class="col span_1_of_3">
+        <h3>Morning Yoga</h3>
+        <p class="triplet_para">
+          Saturday morning, Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading three yoga classes in the Tom Tom Yurt. Sessions begin at 7am, 9am, and 11am.
+        </p>
+      </div>
+      <div class="col span_1_of_3">
+        <h3>Ceremony & Reception</h3>
+        <p class="triplet_para">
+          Saturday evening, we host the wedding ceremony and reception dinner. Festivities kick off with pre-ceremony snacks and drinks at 4:30pm. Reception food is vegetarian.
+        </p>
+      </div>
+
+    </div>
+    <h2>Your Party</h2>
     <%= render "form" %>
 
     <p>
@@ -26,26 +52,9 @@
 
 <!-- 
 
-    <h2>The Wedding</h2>
-    <p>
-      We would love to have your presence at the Wedding Ceremony and Reception Saturday July 8th.
-    </p>
 
-    <p>
-      Reception food is vegetarian. Do you have any other food restrictions?
-    </p>
 
-    <h2>Welcome Dinner</h2>
-    <p>
-      All are invited to join us Friday night as we start the weekend off. We’ll be serving a casual dinner at the Gazebo starting 6pm.
-    </p>
 
-    <h2>Yoga</h2>
-    <p>
-      Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading two yoga classes Saturday morning.
-    </p>
 
-    <h2>Music</h2>
-    <p>Be our DJ! We've decided to not have a professional DJ at the wedding. Instead we thought we'd ask our family and friends to share with us the music they love. Nominate the song you would most like us to add to the party playlist.</p>
 
  -->
