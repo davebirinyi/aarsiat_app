@@ -29,7 +29,12 @@
             <td>
               <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
             <td>
-              <%= attendee_form.label :yoga, "Morning Yoga" %><%= attendee_form.select :yoga, ["","7am","9am","11am"] %></td>
+              <div class="tooltip">
+                <%= attendee_form.label :yoga, "Morning Yoga" %>
+                <span class="tooltip_text"><%= render "shared/yoga_disclaimer" %></span>
+              </div>
+              <%= attendee_form.select :yoga, ["","7am","9am","11am"] %>
+            </td>
             <td>
               <%= attendee_form.label :reception_dinner, "Ceremony & Reception" %><%= attendee_form.check_box :reception_dinner %></td>
             <td>|</td>
