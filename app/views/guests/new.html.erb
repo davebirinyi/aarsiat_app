@@ -24,7 +24,13 @@
       <div class="col span_1_of_3">
         <h3>Morning Yoga</h3>
         <p class="triplet_para">
-          Saturday morning, Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading three yoga classes in the Tom Tom Yurt. Sessions begin at 7am, 9am, and 11am.
+          Saturday morning, Ryan’s friend from college, <%= link_to("Emily Rollie", "http://www.emilyrollie.com/yoga", target: "_blank") %>, will be joining us and leading three yoga classes in the Tom Tom Yurt. Sessions begin at 7am, 9am, and 11am. Available mats and towels to borrow are limited, please bring your own if you have them.
+          <span class="tooltip" id="read_disclaimer">
+            Please read and agree
+            <span class="tooltip_text">
+              <%= render "shared/yoga_disclaimer" %>
+            </span>
+          </span>.
         </p>
       </div>
       <div class="col span_1_of_3">
