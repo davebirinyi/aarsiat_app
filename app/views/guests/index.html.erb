@@ -1,8 +1,10 @@
 <section id="index">
+  <% if @guests.present? %>
   <h1 class="flex_center">GODZILLAMODE:ENGAGED</h1>
   <div class="flex_center">
     <%= image_tag("godzillamode.jpg", alt: "Godzilla Mode") %>
   </div>
+
   <p align="center">This data may also be downloaded as a <%= link_to("CSV file", "godzillamode.csv") %>. The last change was made <%= time_ago_in_words(@attendees.order("updated_at").last.updated_at) %> ago. (For <%= @attendees.order("updated_at").last.name %>.)
 
 
@@ -87,7 +89,11 @@
     </table>
   </div>
 
-  <!-- <div class="flex_center">
+<% else %>
+  <div class="flex_center">
     <%= image_tag("godzilla.jpg", alt: "Pretty in Pink") %>
-  </div> -->
+  </div>
+  <p class="flex_center">(no guest responses)</p>
+<% end %>
+
 </section>
