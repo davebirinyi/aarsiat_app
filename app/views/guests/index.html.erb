@@ -33,6 +33,7 @@
       <tr>
         <th>Assoc. Email</th>
         <th>Attendee Name</th>
+        <th>Can't Come</th>
         <th>Welcome Dinner</th>
         <th>Yoga</th>
         <th>Reception Dinner</th>
@@ -46,6 +47,7 @@
             <tr>
               <td><%= guest.email %></td>
               <td><%= a.name %></td>
+              <td><% if a.unable_to_attend? %>❌<% end %></td>
               <td>
                 <% if a.welcome_dinner? %>✔️<% end %>  
               </td>
