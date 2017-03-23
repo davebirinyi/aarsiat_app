@@ -71,7 +71,7 @@
   <div class="flex_center">
     <table>
       <tr>
-        <!-- <th>Assoc. Email</th> -->
+        <th>Assoc. Email</th>
         <th>Artist</th>
         <th>Title</th>
         <!-- <th>Last Updated</th> -->
@@ -79,7 +79,7 @@
       <% @guests.order("updated_at ASC").each do |guest| %>
         <% guest.songs.each do |a| %>
             <tr>
-              <!-- <td><%= guest.email %></td> -->
+              <td><%= guest.email %></td>
               <td><%= a.artist %></td>
               <td><%= a.title %></td>
               <!-- <td><%= time_ago_in_words(a.updated_at) %></td> -->
