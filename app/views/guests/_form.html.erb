@@ -2,7 +2,7 @@
 
 <div>
   <p>
-    Please enter the names of those in your party, including yourself, and indicate which events each person would like to attend. If anyone in your group has certain dietary concerns or needs specific accomodations, please enter that information as well. 
+    Please enter the names of those in your party, including yourself, and indicate which events each person would like to attend, or if they are unable to attend. If anyone in your group has certain dietary concerns or needs specific accomodations, please enter that information as well. 
   </p>
 </div>
 <table class="flex_center">
@@ -27,12 +27,15 @@
       <tr>
         <td><%= attendee_form.label :name, "##{attendee_form.options[:child_index] + 1}" %></td>
         <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
+        <td><%= attendee_form.label :unable_to_attend, "cannot attend" %>
+            <%= attendee_form.check_box :unable_to_attend %></td>
+        <td>|</td>
         <td>will attend:</td>
         <td>
           <%= attendee_form.label :welcome_dinner %><%= attendee_form.check_box :welcome_dinner %></td>
         <td>
           <div class="tooltip">
-            <%= attendee_form.label :yoga, "Morning Yoga" %>
+            <%= attendee_form.label :yoga, "Yoga" %>
             <span class="tooltip_text"><%= render "shared/yoga_disclaimer" %></span>
           </div>
           <%= attendee_form.select :yoga, ["","7am","9am","11am"] %>

@@ -28,6 +28,9 @@
         <% @guest.attendees.order("created_at ASC").each do |a| %>
         <table class="attendee_row flex_center">
           <tr>
+          <% if a.unable_to_attend? %>
+            <td><%= a.name %> is unable to attend: ✔️</td>
+          <% else %>
             <td><%= a.name %> will attend:</td>
 
             <% if a.welcome_dinner? %>
@@ -57,6 +60,7 @@
             <% if a.food_restrictions? %>
             <td>NB: <%= a.food_restrictions %>: ✔️</td>
             <% end %>
+          <% end %>
           <td>
             <%= link_to "✕", a, method: :delete %>
           </td>

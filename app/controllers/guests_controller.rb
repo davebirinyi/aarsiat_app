@@ -77,7 +77,8 @@ class GuestsController < ApplicationController
           :yoga,
           :reception_dinner,
           :vegan,
-          :food_restrictions
+          :food_restrictions,
+          :unable_to_attend
         ],
         songs_attributes: [
           :id,

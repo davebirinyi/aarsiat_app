@@ -16,6 +16,7 @@ class Guest < ApplicationRecord
     attributes = %w{ 
       guest_id
       name
+      unable_to_attend
       welcome_dinner
       yoga
       reception_dinner
