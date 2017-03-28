@@ -8,11 +8,11 @@
 <table class="flex_center">
   <tr>
     <td class="midway"><%= f.label :name, "Your Name" %></td>
-    <td><%= f.text_field :name %></td>
+    <td><%= f.text_field :name, required: true %></td>
   </tr>
   <tr>
     <td class="midway"><%= f.label :email %></td>
-    <td><%= f.email_field :email %></td>
+    <td><%= f.email_field :email, required: true %></td>
   </tr>
   <tr>
     <td class="midway"><%= f.label :members_in_party %></td>
@@ -26,7 +26,12 @@
     <table class="attendee_row flex_center hide_me" id=<%= "#{attendee_form.options[:child_index] + 1}" %>>
       <tr>
         <td><%= attendee_form.label :name, "##{attendee_form.options[:child_index] + 1}" %></td>
-        <td><%= attendee_form.text_field :name, placeholder: "attendee name" %></td>
+        <% if (attendee_form.options[:child_index] < 1) %>
+        <td><%= attendee_form.text_field :name, placeholder: "your name", required: true %>
+        <% else %>
+        <td><%= attendee_form.text_field :name, placeholder: "attendee name" %>
+        <% end %>
+        </td>
         <td><%= attendee_form.label :unable_to_attend, "cannot attend" %>
             <%= attendee_form.check_box :unable_to_attend %></td>
         <td>|</td>
