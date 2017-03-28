@@ -4,7 +4,7 @@ class Guest < ApplicationRecord
   accepts_nested_attributes_for :attendees, 
     reject_if: lambda {|attributes| attributes['name'].blank?}
   accepts_nested_attributes_for :songs,
-    reject_if: lambda {|attributes| attributes['artist']&&['title'].blank?}
+    reject_if: lambda {|attributes| attributes['artist'].blank? && attributes['title'].blank?}
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
