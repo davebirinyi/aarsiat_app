@@ -18,6 +18,7 @@
 $(document).on('turbolinks:load', function() {
 
     $(".hide_me").hide();
+    $("#1").show();
 
     $("#members_in_party_members_in_party").change(function(){
       var members_in_party = this.value;
